@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'detect',
     loadChildren: () => import('./englishpages/detect/detect.module').then( m => m.DetectPageModule)
   },
+  {
+    path: 'prevent',
+    loadChildren: () => import('./englishpages/prevent/prevent.module').then( m => m.PreventPageModule)
+  },
 ];
 
 @NgModule({
