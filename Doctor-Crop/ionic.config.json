@@ -1,0 +1,7 @@
+{
+  "name": "Doctor-Crop",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
