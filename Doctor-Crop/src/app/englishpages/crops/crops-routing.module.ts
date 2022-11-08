@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'read',
-    loadChildren: () => import('./read/read.module').then( m => m.ReadPageModule)
+    loadChildren: () => import('./Brinjal/read/read.module').then( m => m.ReadPageModule)
   }
 ];
 
