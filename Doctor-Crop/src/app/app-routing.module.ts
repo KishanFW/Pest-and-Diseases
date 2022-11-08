@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'settings',
     loadChildren: () => import('./englishpages/settings/settings.module').then( m => m.SettingsPageModule)
   },
+  {
+    path: 'detect',
+    loadChildren: () => import('./englishpages/detect/detect.module').then( m => m.DetectPageModule)
+  },
 ];
 
 @NgModule({
