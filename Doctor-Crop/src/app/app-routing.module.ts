@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'prevent',
     loadChildren: () => import('./englishpages/prevent/prevent.module').then( m => m.PreventPageModule)
   },
+  {
+    path: 'crops',
+    loadChildren: () => import('./englishpages/crops/crops.module').then( m => m.CropsPageModule)
+  },
 ];
 
 @NgModule({
