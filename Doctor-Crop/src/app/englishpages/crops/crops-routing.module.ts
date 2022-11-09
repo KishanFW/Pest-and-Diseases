@@ -9,10 +9,6 @@ const routes: Routes = [
     component: CropsPage
   },
   {
-    path: 'read',
-    loadChildren: () => import('./Brinjal/read/read.module').then( m => m.ReadPageModule)
-  },
-  {
     path: 'brinjal',
     loadChildren: () => import('./brinjal/brinjal.module').then( m => m.BrinjalPageModule)
   }
