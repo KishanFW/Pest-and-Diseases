@@ -27,10 +27,6 @@ const routes: Routes = [
     path: 'crops',
     loadChildren: () => import('./englishpages/crops/crops.module').then( m => m.CropsPageModule)
   },
-  {
-    path: 'varieties',
-    loadChildren: () => import('./englishpages/varieties/varieties.module').then( m => m.VarietiesPageModule)
-  },
 ];
 
 @NgModule({
