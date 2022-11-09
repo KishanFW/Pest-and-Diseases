@@ -1,8 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+
+    <ion-button routerLink="/settings"  fill="clear" slot="start">
+      <ion-icon slot="icon-only" name="menu"></ion-icon>
+    </ion-button>
+
     <ion-title>
-      PEST AND DISEASES
+      <b>Pest and Diseases</b>
     </ion-title>
+    
   </ion-toolbar>
 </ion-header>
 
@@ -20,8 +26,11 @@
 
 <ion-footer [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      
-    </ion-title>
+    <div id="footer">
+      <ion-button routerLink="/home"  fill="clear">
+        <ion-icon slot="icon-only" name="home" size="large"></ion-icon>
+      </ion-button>
+      <br><b>Home</b>
+    </div>
   </ion-toolbar>
 </ion-footer>
