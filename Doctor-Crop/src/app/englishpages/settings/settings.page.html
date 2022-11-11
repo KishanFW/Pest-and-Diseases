@@ -5,47 +5,39 @@
 </ion-header>
 
 <ion-content>
+  <ion-list>
   <br><br>
   
   <ion-label>General</ion-label>
   <br><br>
-  <ion-toolbar>
-    <ion-button expand="full" fill="clear">
-      <ion-icon slot="start" name="settings"></ion-icon>
-      <p align="Left">App Settings<br>
-      <ion-label>Change Language, notifications, etc</ion-label></p><br>
+  <ion-item>
+    <ion-button expand="full" fill="clear"  style="height: 50px">
+       <ion-icon slot="start" name="settings"></ion-icon>
+       <p align="Left">App Settings<br>
+       <ion-text style="font-size: 12px">Change Language, notifications, etc</ion-text>
+       </p><br>
     </ion-button>
-  </ion-toolbar>
-  <ion-item-divider></ion-item-divider>
-
-  <br><br>
-
-  <ion-label>Privacy Settings</ion-label>
-  <br><br>
-  <ion-toolbar>
+  </ion-item>
   
-    <ion-button expand="full" fill="clear">
-    <ion-icon slot="start" name="alert-circle"></ion-icon>
-    <p align="left">About</p>
-    </ion-button>
-
-  </ion-toolbar>
-  <ion-item-divider></ion-item-divider>
-  
-
   <br><br>
   <ion-label>Other</ion-label>
   <br><br>
-  <ion-toolbar>
-    
-    <ion-button expand="full" fill="clear">
-      <ion-icon slot="start" name="paper-plane"></ion-icon>
-      <p align="Left">Welcome Tour<br>
-      <ion-label>The ease of use Doctor-Crop</ion-label><br>
-    </p>
+  <ion-item>
+    <ion-button expand="full" fill="clear" style="height: 50px">
+       <ion-icon slot="start" name="paper-plane"></ion-icon>
+       <p align="Left">Welcome Tour<br>
+       <ion-text style="font-size: 12px">The ease of use Doctor-Crop</ion-text>
+       </p><br>
     </ion-button>
-  
-  </ion-toolbar>
-  <ion-item-divider></ion-item-divider>
+  </ion-item>
+
+  <br><br>
+  <ion-item>
+    <ion-button expand="full" fill="clear" style="height:50px">
+     <ion-icon slot="start" name="alert-circle"></ion-icon>
+     <p align="left">About</p>
+    </ion-button>
+  </ion-item>
+</ion-list>
 
 </ion-content>
