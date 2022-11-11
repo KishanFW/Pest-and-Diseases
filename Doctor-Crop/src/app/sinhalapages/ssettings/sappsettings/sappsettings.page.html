@@ -1,9 +1,25 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>sappsettings</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-back-button routerLink="/ssettings"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title><b>යෙදුම් ආශ්‍රිත සැකසුම්</b></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
 </ion-content>
+
+<ion-footer [translucent]="true">
+  <ion-toolbar>
+    <div id="footer">
+      <ion-button routerLink="/shome"  fill="clear">
+        <ion-icon slot="icon-only" name="home" size="large"></ion-icon>
+      </ion-button>
+      <br><b>මුල් පිටුව</b>
+    </div>
+  </ion-toolbar>
+</ion-footer>
