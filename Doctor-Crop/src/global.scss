@@ -25,6 +25,14 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+.header-footer-background-color{
+    --background: #5cf304
+    }
+    
+.header-footer-component{
+    color: white;
+    }
+    
 #footer{
     text-align: center;
     top: 0%;
