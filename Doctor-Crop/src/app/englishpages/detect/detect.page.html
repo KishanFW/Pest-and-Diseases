@@ -1,9 +1,25 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>detect</ion-title>
+  <ion-toolbar  class="header-footer-background-color">
+
+    <ion-buttons slot="start">
+      <ion-back-button routerLink="/home" class="header-footer-component"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="header-footer-component" ><b>Detect</b></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content style="--background: rgb(19, 1, 1);">
 
 </ion-content>
+
+<ion-footer [translucent]="true">
+  <ion-toolbar  class="header-footer-background-color">
+    <div id="footer" class="header-footer-component">
+      <ion-button routerLink="/home"  fill="clear">
+        <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
+      </ion-button>
+      <br><b>Home</b>
+    </div>
+  </ion-toolbar>
+</ion-footer>
