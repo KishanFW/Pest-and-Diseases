@@ -2,7 +2,7 @@
   <ion-toolbar  class="header-footer-background-color" >
 
     <ion-buttons slot="start"  class="header-footer-component">
-      <ion-back-button></ion-back-button>
+      <ion-back-button class="header-footer-component"></ion-back-button>
     </ion-buttons>
 
     <ion-title  class="header-footer-component"><b>Brinjal</b></ion-title>
@@ -12,9 +12,9 @@
     </ion-button>
     <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
       <ng-template >
-       <ion-content style="background-color: rgb(20, 17, 17);">
+       <ion-content style="background-color: rgb(19, 1, 1);">
 
-        <ion-list style="background-color: rgb(20, 17, 17);">
+        <ion-list style="background-color: rgb(19, 1, 1);">
           <ion-radio-group value="english">
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">English</ion-label>

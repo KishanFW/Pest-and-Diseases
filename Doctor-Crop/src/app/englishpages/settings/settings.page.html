@@ -12,9 +12,9 @@
     </ion-button>
     <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
       <ng-template >
-       <ion-content style="background-color: rgb(20, 17, 17);">
+       <ion-content style="background-color: rgb(19, 1, 1);">
 
-        <ion-list style="background-color: rgb(20, 17, 17);">
+        <ion-list style="background-color: rgb(19, 1, 1);">
           <ion-radio-group value="english">
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">English</ion-label>
@@ -37,28 +37,31 @@
 
 <ion-content style="--background: rgb(19, 1, 1);">
   <br>
-  <ion-text style="color: #5cf304;">General</ion-text>
+  <strong style="color: #ffffff; font-size: 20px;">General</strong>
   <br><br>
-  <ion-item>
-       <ion-icon slot="start" name="settings"></ion-icon>
-       <p align="Left">App Settings<br>
-       <ion-text style="font-size: 12px">Change Language, notifications, etc</ion-text>
+
+  <ion-item style="--background: rgb(19, 1, 1);" routerLink="/settings/appsettings">
+       <ion-icon slot="start" name="settings" style="color: #f70707;" size="large"></ion-icon>
+       <p align="Left" style="color: #5cf304;">App Settings<br>
+       <ion-text style="font-size: 14px; color: #ffffff;">Change Language, notifications, etc</ion-text>
        </p>
   </ion-item>
   
   <br><br>
-  <ion-text style="color: #5cf304;">Other</ion-text>
+  <strong style="color: #ffffff; font-size: 20px;">Other</strong>
   <br><br>
-  <ion-item>
-       <ion-icon slot="start" name="paper-plane"></ion-icon>
-       <p align="Left">Welcome Tour<br>
-       <ion-text style="font-size: 12px">The ease of use Doctor-Crop</ion-text>
+
+  <ion-item style="--background: rgb(19, 1, 1);">
+       <ion-icon slot="start" name="paper-plane" style="color: #14f8e5;" size="large"></ion-icon>
+       <p align="Left" style="color: #5cf304;">Welcome Tour<br>
+       <ion-text style="font-size: 14px; color: #ffffff;">The ease of use Doctor-Crop</ion-text>
        </p>
-  </ion-item>
+  </ion-item >
   <br>
-  <ion-item>
-     <ion-icon slot="start" name="alert-circle"></ion-icon>
-     <p align="left">About</p>
+  
+  <ion-item style="--background: rgb(19, 1, 1);" routerLink="/settings/about">
+     <ion-icon slot="start" name="alert-circle-outline" style="color: #f7f307;" size="large"></ion-icon>
+     <p align="left" style="color: #5cf304;">About</p>
   </ion-item>
 
 </ion-content>

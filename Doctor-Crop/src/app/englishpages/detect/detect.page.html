@@ -12,9 +12,9 @@
     </ion-button>
     <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
       <ng-template >
-       <ion-content style="background-color: rgb(20, 17, 17);">
+       <ion-content style="background-color: rgb(19, 1, 1);">
 
-        <ion-list style="background-color: rgb(20, 17, 17);">
+        <ion-list style="background-color: rgb(19, 1, 1);">
           <ion-radio-group value="english">
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">English</ion-label>
@@ -36,32 +36,26 @@
 </ion-header>
 
 <ion-content style="--background: rgb(19, 1, 1);">
+  <br><br>
 
-  <ion-item>
-
-  <ion-text style="font-size:20px">Read it yourself</ion-text>
-
-  <img src="/assets/read.png" slot="start" style="width:50px;height:50px;">
-
-  </ion-item> <br>
-
-
-  <ion-item>
-
-    <ion-text style="font-size:20px">Select symptoms</ion-text>
-
-      <img src="/assets/select.png" slot="start" style="width:50px;height:50px;">
-
-  </ion-item> <br>
+  <ion-item style="--background: rgb(19, 1, 1);" routerLink="/crops">
+    <ion-text style="font-size:25px; color: #5cf304;">Read it yourself</ion-text>
+    <img src="/assets/read.png" slot="start" style="width:50px;height:50px;">
+    <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
+  </ion-item> <br><br>
 
 
+  <ion-item style="--background: rgb(19, 1, 1);">
+    <ion-text style="font-size:25px; color: #5cf304;">Select symptoms</ion-text>
+    <img src="/assets/select.png" slot="start" style="width:50px;height:50px;">
+    <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
+  </ion-item> <br><br>
 
-  <ion-item>
 
-    <ion-text style="font-size:20px">Take a picture</ion-text>
-
+  <ion-item style="--background: rgb(19, 1, 1);">
+    <ion-text style="font-size:25px; color: #5cf304;">Take a picture</ion-text>
     <img src="/assets/camera1.jpg" slot="start" style="width:50px;height:50px;">
-
+    <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
   </ion-item>
 
 </ion-content>

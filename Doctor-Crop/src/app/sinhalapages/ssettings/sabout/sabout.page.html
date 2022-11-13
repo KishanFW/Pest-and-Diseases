@@ -1,23 +1,62 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="header-footer-background-color">
 
     <ion-buttons slot="start">
-      <ion-back-button routerLink="/ssettings"></ion-back-button>
+      <ion-back-button routerLink="/ssettings" class="header-footer-component"></ion-back-button>
     </ion-buttons>
 
-    <ion-title><b>යෙදුම ගැන</b></ion-title>
+    <ion-title class="header-footer-component"><b>යෙදුම ගැන</b></ion-title>
+
+    <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
+      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
+    </ion-button>
+    <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
+      <ng-template >
+       <ion-content style="background-color: rgb(19, 1, 1);">
+
+        <ion-list style="background-color: rgb(19, 1, 1);">
+          <ion-radio-group value="sinhala">
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">English</ion-label>
+              <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/settings/about"></ion-radio>
+            </ion-item>
+        
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">සිංහල</ion-label>
+              <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/ssettings/sabout"></ion-radio>
+            </ion-item>
+        
+          </ion-radio-group>
+        </ion-list>
+        
+       </ion-content>
+      </ng-template>
+    </ion-popover>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  
+<ion-content style="--background: rgb(19, 1, 1);">
+
+<ion-card style="--background: rgb(19, 1, 1);">
+<ion-card-content>
+
+  <p align="justify" style="margin-left:10px; margin-right:10px; font-size: 18px; color: #ffffff;" >
+    Doctor-crop යනු බෝග රෝග හඳුනාගැනීම, වැළැක්වීම සහ ප්‍රතිකාර නිර්දේශ උපදේශකයෙකි.
+    එය භෝග නිෂ්පාදනය සහ කළමනාකරණය සඳහා සම්පූර්ණ විසඳුමක් ලෙස සේවය කරයි.
+    <br><br>සැබෑ ජීවිත දත්ත කට්ටලය පුරෝකථනයක් කිරීමට සහ ප්‍රතිකාර පිළිබඳ විස්තරය, උදාහරණ සහ උපදෙස් ලබා දීමට භාවිතා කරයි. එය ඔබට ගෙවතු වගා ගැටලු විසඳීමට සහ පළිබෝධනාශක, දිලීර නාශක හෝ වල් නාශක සඳහා අඩු වියදමකින් හොඳ අස්වැන්නක් ලබා ගැනීමට උපකාරී වේ. රෝග විනිශ්චයක් ලබා ගැනීමට ඔබට උපාංගයේ අන්තර්ජාලය තිබිය යුතුය. මෙම යෙදුමට පුරෝකථනය කළ හැක්කේ දන්නා රෝග පමණි.
+    <br><br>
+    මෙම යෙදුම ගෙවතු වගා කරන්නන්ට ක්ෂේත්‍ර තුළ ප්‍රායෝගික ආධාරකයක් ලෙස භාවිතා කිරීමට පහසු වන පරිදි නිර්මාණය කර ඇත.පළිබෝධ සහ රෝග හඳුනා ගැනීමෙන් ඵලදායී පාලනය සඳහා පරිශීලකයින්ට පළමු පියවර ගත හැකිය.
+  </p>
+</ion-card-content>
+</ion-card>
 </ion-content>
 
+
 <ion-footer [translucent]="true">
-  <ion-toolbar>
-    <div id="footer">
+  <ion-toolbar class="header-footer-background-color">
+    <div id="footer" class="header-footer-component">
       <ion-button routerLink="/shome"  fill="clear">
-        <ion-icon slot="icon-only" name="home" size="large"></ion-icon>
+        <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
       </ion-button>
       <br><b>මුල් පිටුව</b>
     </div>
