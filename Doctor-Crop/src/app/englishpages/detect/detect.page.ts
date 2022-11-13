@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
 
 
 @Component({
@@ -9,33 +8,9 @@ import { AlertController } from '@ionic/angular';
 })
 export class DetectPage implements OnInit {
 
-  constructor(private alertController: AlertController) { }
+  constructor() { }
 
-   async showAlert() {
-    const alert = await this.alertController.create({
-      header: 'Alert',
-      subHeader: 'Important message',
-      message: 'This is an alert!',
-      buttons: ['OK'],
-    });
-
-    await alert.present();
-  }
-
-
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      header: 'Alert',
-      subHeader: 'Important message',
-      message: 'This is an alert!',
-      buttons: ['OK'],
-    });
-
-    await alert.present();
-  }
-
-
-  
+   
   ngOnInit() {
   }
 
