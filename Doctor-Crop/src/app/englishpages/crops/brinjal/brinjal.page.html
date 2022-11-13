@@ -9,8 +9,30 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content style="--background: rgb(19, 1, 1);"
->
+<ion-content style="--background: rgb(19, 1, 1);">
+  <ion-segment value="default">
+    <ion-segment-button routerLink="/crops" value="segment">
+      <ion-label>Crops</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="default">
+      <ion-label>varieties</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-item expand="full">
+    <img  src="assets/brinjalvarieties/amanda.jpg"><ion-label>Amanda F1</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <img  src="assets/brinjalvarieties/anjalee.jpg"><ion-label>Anjalee-F1</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <img  src="assets/brinjalvarieties/hordi.jpg"><ion-label>HORDI Lenairi 1</ion-label>
+  </ion-item>
+<ion-item>
+  <img  src="assets/brinjalvarieties/thinnawely.png"><ion-label>Thinnaweli purple</ion-label>
+  </ion-item>
 
 </ion-content>
 
