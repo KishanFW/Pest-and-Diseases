@@ -17,15 +17,15 @@
        <ion-content style="background-color: rgb(20, 17, 17);">
 
         <ion-list style="background-color: rgb(20, 17, 17);">
-          <ion-radio-group value="languages">
+          <ion-radio-group value="english">
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">English</ion-label>
-              <ion-radio slot="end" value="english" [checked]="truefalse" routerLink="/new-page"></ion-radio>
+              <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/home"></ion-radio>
             </ion-item>
         
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">සිංහල</ion-label>
-              <ion-radio slot="end" value="sinhala" routerLink="/snew-page"></ion-radio>
+              <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/shome"></ion-radio>
             </ion-item>
         
           </ion-radio-group>
