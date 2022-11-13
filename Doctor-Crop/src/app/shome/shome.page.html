@@ -1,14 +1,14 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="header-footer-background-color">
 
     <ion-button routerLink="/ssettings"  fill="clear" slot="start">
-      <ion-icon slot="icon-only" name="menu"></ion-icon>
+      <ion-icon slot="icon-only" name="menu" class="header-footer-component"></ion-icon>
     </ion-button>
 
-    <ion-title><b>පළිබෝධ සහ රෝග</b></ion-title>
+    <ion-title class="header-footer-component"><b>පළිබෝධ සහ රෝග</b></ion-title>
 
     <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
-      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" color="dark"></ion-icon>
+      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
     </ion-button>
     <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
       <ng-template >
@@ -35,7 +35,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content style="--background: rgb(19, 1, 1);">
   <ion-item>
     <ion-text style="font-size:20px">හඳුනාගන්න</ion-text>
   
@@ -60,10 +60,10 @@
 </ion-content>
 
 <ion-footer [translucent]="true">
-  <ion-toolbar>
-    <div id="footer">
+  <ion-toolbar class="header-footer-background-color">
+    <div id="footer" class="header-footer-component">
       <ion-button routerLink="/shome"  fill="clear">
-        <ion-icon slot="icon-only" name="home" size="large"></ion-icon>
+        <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
       </ion-button>
       <br><b>මුල් පිටුව</b>
     </div>

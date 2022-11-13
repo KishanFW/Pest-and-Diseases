@@ -1,14 +1,14 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="header-footer-background-color">
 
     <ion-buttons slot="start">
-      <ion-back-button routerLink="/shome"></ion-back-button>
+      <ion-back-button routerLink="/shome" class="header-footer-component"></ion-back-button>
     </ion-buttons>
 
-    <ion-title><b>හඳුනාගන්න</b></ion-title>
+    <ion-title class="header-footer-component"><b>හඳුනාගන්න</b></ion-title>
 
     <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
-      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" color="dark"></ion-icon>
+      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
     </ion-button>
     <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
       <ng-template >
@@ -35,9 +35,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div id="container">
-
+<ion-content style="--background: rgb(19, 1, 1);">
     <ion-item>
     <ion-text style="font-size:20px">එය ඔබම කියවන්න</ion-text>
   
@@ -53,23 +51,20 @@
   
      </ion-item> <br>
   
-  
-  
     <ion-item>
       <ion-text style="font-size:20px">පින්තුරයක් ගන්න</ion-text>
   
       <img src="/assets/camera1.jpg" slot="start" style="width:50px;height:50px;">
   
     </ion-item>
-    </div>
 
 </ion-content>
 
 <ion-footer [translucent]="true">
-  <ion-toolbar>
-    <div id="footer">
+  <ion-toolbar class="header-footer-background-color">
+    <div id="footer" class="header-footer-component">
       <ion-button routerLink="/shome"  fill="clear">
-        <ion-icon slot="icon-only" name="home" size="large"></ion-icon>
+        <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
       </ion-button>
       <br><b>මුල් පිටුව</b>
     </div>
