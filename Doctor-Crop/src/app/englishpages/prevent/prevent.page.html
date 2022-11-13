@@ -8,12 +8,32 @@
 
 
   <div id="container">
-    
-    <ion-button shape="round" expand="full" (click)="showAlert()">Read it yourself</ion-button> <br>
 
-    <ion-button shape="round" expand="full" (click)="presentAlert()">Select precautions</ion-button> 
+    <ion-item>
+      <ion-text style="font-size:20px">Read it yourself</ion-text>
 
-    
+      <img src="/assets/read.png" slot="start" style="width:50px;height:50px;">
+
+
+      <ion-button (click)="showAlert()" fill="clear">
+        <ion-icon name="alert-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-item> <br>
+
+
+
+    <ion-item>
+      <ion-text style="font-size:20px">Select precautions</ion-text>
+
+      <img src="/assets/precautions.png" slot="start" style="width:50px;height:50px;">
+
+
+      <ion-button (click)="showAlert()" fill="clear">
+        <ion-icon name="alert-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+  
   </div>
 
 
