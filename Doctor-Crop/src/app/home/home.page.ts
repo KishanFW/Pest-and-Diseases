@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +7,34 @@ import { Component, ViewChild } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  constructor(private alertController: AlertController) {}
+
+  async showAlert() {
+    const alert = await this.alertController.create({
+    
+      
+      message: 'Detect means identifying symptoms after planting.',
+
+      buttons: ['OK'],
+
+
+    });
+
+    await alert.present();
+  }
+
+
+
+async presentAlert() {
+    const alert = await this.alertController.create({
+    
+      
+      message: 'Prevent means following precautions to avoid diseases.',
+
+      buttons: ['OK'],
+
+
+    });
 
   @ViewChild('popover') popover;
 
@@ -17,4 +46,8 @@ export class HomePage {
   }
   constructor() {}
 
+    await alert.present();
+  }
+  
+  
 }
