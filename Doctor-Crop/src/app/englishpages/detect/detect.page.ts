@@ -1,6 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AlertController } from '@ionic/angular';
-
 
 @Component({
   selector: 'app-detect',
@@ -9,29 +7,9 @@ import { AlertController } from '@ionic/angular';
 })
 export class DetectPage implements OnInit {
 
-  constructor(private alertController: AlertController) { }
-
-   async showAlert() {
-    const alert = await this.alertController.create({
-      header: 'Alert',
-      subHeader: 'Important message',
-      message: 'This is an alert!',
-      buttons: ['OK'],
-    });
-
-    await alert.present();
-  }
-
-
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      header: 'Alert',
-      subHeader: 'Important message',
-      message: 'This is an alert!',
-      buttons: ['OK'],
-    });
-
-    await alert.present();
+  constructor() { }
+  
+  ngOnInit() {
   }
 
   @ViewChild('popover') popover;
@@ -41,9 +19,6 @@ export class DetectPage implements OnInit {
   private presentPopover(e: Event) {
     this.popover.event = e;
     this.isOpen = true;
-  }
-  
-  ngOnInit() {
   }
 
 }

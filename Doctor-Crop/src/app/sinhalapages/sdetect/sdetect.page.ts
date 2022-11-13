@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-sdetect',
   templateUrl: './sdetect.page.html',
@@ -8,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class SdetectPage implements OnInit {
 
   constructor() { }
+
+ 
 
   ngOnInit() {
   }
