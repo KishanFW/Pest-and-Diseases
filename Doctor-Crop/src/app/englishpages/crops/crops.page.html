@@ -1,10 +1,15 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>crops</ion-title>
+  <ion-toolbar  class="header-footer-background-color">
+
+    <ion-buttons slot="start">
+      <ion-back-button  class="header-footer-text"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="header-footer-component"><b>Crops</b></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content style="--background: rgb(19, 1, 1);">
   <ion-segment value="default">
     <ion-segment-button value="default">
       <ion-label>Crops</ion-label>
@@ -28,4 +33,16 @@
   <ion-item>
       <img src="assets/cassava.png"><ion-label>Casava</ion-label>
   </ion-item>
+
 </ion-content>
+
+<ion-footer [translucent]="true">
+  <ion-toolbar class="header-footer-background-color">
+    <div id="footer" class="header-footer-component">
+      <ion-button routerLink="/home"  fill="clear">
+        <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
+      </ion-button >
+      <br><b>Home</b>
+    </div>
+  </ion-toolbar>
+</ion-footer>

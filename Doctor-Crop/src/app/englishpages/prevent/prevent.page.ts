@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-prevent',
@@ -7,7 +9,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PreventPage implements OnInit {
 
-  constructor() { }
+  constructor(private alertController: AlertController) { }
+
+  async showAlert() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Important message',
+      message: 'This is an alert!',
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+  }
+
+
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Important message',
+      message: 'This is an alert!',
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+  }
+
+  @ViewChild('popover') popover;
+
+  isOpen = false;
+
+  private presentPopover(e: Event) {
+    this.popover.event = e;
+    this.isOpen = true;
+  }
 
   ngOnInit() {
   }

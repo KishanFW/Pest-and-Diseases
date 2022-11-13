@@ -1,9 +1,58 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>appsettings</ion-title>
+  <ion-toolbar class="header-footer-background-color">
+
+    <ion-buttons slot="start">
+      <ion-back-button routerLink="/settings" class="header-footer-component"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="header-footer-component"><b>App Settings</b></ion-title>
+
+    <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
+      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
+    </ion-button>
+    <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
+      <ng-template >
+       <ion-content style="background-color: rgb(20, 17, 17);">
+
+        <ion-list style="background-color: rgb(20, 17, 17);">
+          <ion-radio-group value="english">
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">English</ion-label>
+              <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/settings/appsettings"></ion-radio>
+            </ion-item>
+        
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">සිංහල</ion-label>
+              <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/ssettings/sappsettings"></ion-radio>
+            </ion-item>
+        
+          </ion-radio-group>
+        </ion-list>
+        
+       </ion-content>
+      </ng-template>
+    </ion-popover>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content  style="--background: rgb(19, 1, 1);">
+     <br><br>
+     <ion-text style="color: #5cf304;">General</ion-text>
+     <br>
+     <br>
+      <ion-item>
+         <ion-icon slot="start" name="settings"></ion-icon>
+         <ion-text align="center">App Language</ion-text>
+      </ion-item>
 </ion-content>
+
+<ion-footer [translucent]="true">
+  <ion-toolbar class="header-footer-background-color">
+    <div id="footer" class="header-footer-component">
+      <ion-button routerLink="/home"  fill="clear">
+        <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
+      </ion-button>
+      <br><b>Home</b>
+    </div>
+  </ion-toolbar>
+</ion-footer>
