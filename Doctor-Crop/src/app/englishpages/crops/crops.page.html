@@ -6,30 +6,65 @@
     </ion-buttons>
 
     <ion-title class="header-footer-component"><b>Crops</b></ion-title>
+
+    <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
+      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
+    </ion-button>
+    <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
+      <ng-template >
+       <ion-content style="background-color: rgb(20, 17, 17);">
+
+        <ion-list style="background-color: rgb(20, 17, 17);">
+          <ion-radio-group value="english">
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">English</ion-label>
+              <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/crops"></ion-radio>
+            </ion-item>
+        
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">සිංහල</ion-label>
+              <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/scrops"></ion-radio>
+            </ion-item>
+        
+          </ion-radio-group>
+        </ion-list>
+        
+       </ion-content>
+      </ng-template>
+    </ion-popover>
   </ion-toolbar>
 </ion-header>
 
 <ion-content style="--background: rgb(19, 1, 1);">
+
   <ion-segment value="default">
+
     <ion-segment-button value="default">
       <ion-label>Crops</ion-label>
     </ion-segment-button>
+
     <ion-segment-button value="segment" [disabled]="true">
       <ion-label>varieties</ion-label>
     </ion-segment-button>
+
   </ion-segment>
+
   <ion-item routerLink="/crops/brinjal">
     <img src="assets/bri.webp"><ion-label>Brinjal</ion-label>
   </ion-item>
+
   <ion-item>
     <img src="assets/banana.png"><ion-label>Banana</ion-label>
   </ion-item>
+
   <ion-item>
       <img  src="assets/bitterground.png"><ion-label>Bitter Gound</ion-label>
   </ion-item>
+
   <ion-item>   
       <img src="assets/carrot.png"><ion-label>Carrot</ion-label>
   </ion-item>
+
   <ion-item>
       <img src="assets/cassava.png"><ion-label>Casava</ion-label>
   </ion-item>
