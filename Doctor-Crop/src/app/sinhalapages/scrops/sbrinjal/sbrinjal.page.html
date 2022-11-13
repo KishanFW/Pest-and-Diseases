@@ -9,9 +9,37 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  
+<ion-content style="--background: rgb(19, 1, 1);">
+
+  <ion-segment value="segment">
+    <ion-segment-button routerLink="/scrops" value="default">
+      <ion-label>බෝග</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="segment">
+      <ion-label>වර්ග</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-item expand="full">
+    <img  src="assets/brinjalvarieties/amanda.jpg"><ion-label>අමන්දා</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <img  src="assets/brinjalvarieties/anjalee.jpg"><ion-label>අංජලී</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <img  src="assets/brinjalvarieties/hordi.jpg"><ion-label>හෝර්ඩි ලේන ඉරි</ion-label>
+  </ion-item>
+
+  <ion-item>
+  <img  src="assets/brinjalvarieties/thinnawely.png"><ion-label>තින්නවේලි දම්</ion-label>
+  </ion-item>
+
 </ion-content>
+  
+
 
 <ion-footer [translucent]="true">
   <ion-toolbar>
