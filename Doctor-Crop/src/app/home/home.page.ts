@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AlertController } from '@ionic/angular';
-
 
 @Component({
   selector: 'app-home',
@@ -36,6 +35,16 @@ async presentAlert() {
 
 
     });
+
+  @ViewChild('popover') popover;
+
+  isOpen = false;
+
+  private presentPopover(e: Event) {
+    this.popover.event = e;
+    this.isOpen = true;
+  }
+  constructor() {}
 
     await alert.present();
   }

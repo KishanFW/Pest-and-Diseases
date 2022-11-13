@@ -1,9 +1,30 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>about</ion-title>
+  <ion-toolbar class="header-footer-background-color">
+
+    <ion-buttons slot="start">
+      <ion-back-button routerLink="/settings" class="header-footer-component"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="header-footer-component"><b>About</b></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content  style="--background: rgb(19, 1, 1);">
 
+<h5 style="color: #5cf304;">Disclaimer</h5>
+<p align="justify" style="color: white;">
+  By downloading, accessing or using Doctor-Crop mobile app, you signify your assent to this disclaimer.<br> 
+  The content of this app, including without limitations, all data, information,text, graphics, links and other materials are provided as a convenience to our app users and are meant to be used for informational purposes only.
+</p>
 </ion-content>
+
+<ion-footer [translucent]="true">
+  <ion-toolbar class="header-footer-background-color">
+    <div id="footer" class="header-footer-component">
+      <ion-button routerLink="/home"  fill="clear">
+        <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
+      </ion-button>
+      <br><b>Home</b>
+    </div>
+  </ion-toolbar>
+</ion-footer>
