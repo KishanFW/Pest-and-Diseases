@@ -35,6 +35,8 @@ async presentAlert() {
 
 
     });
+    await alert.present();
+  }
 
   @ViewChild('popover') popover;
 
@@ -44,10 +46,5 @@ async presentAlert() {
     this.popover.event = e;
     this.isOpen = true;
   }
-  constructor() {}
-
-    await alert.present();
-  }
-  
   
 }
