@@ -6,6 +6,32 @@
     </ion-buttons>
 
     <ion-title class="header-footer-component"><b>Settings</b></ion-title>
+    
+    <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
+      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
+    </ion-button>
+    <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
+      <ng-template >
+       <ion-content style="background-color: rgb(20, 17, 17);">
+
+        <ion-list style="background-color: rgb(20, 17, 17);">
+          <ion-radio-group value="english">
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">English</ion-label>
+              <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/settings"></ion-radio>
+            </ion-item>
+        
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">සිංහල</ion-label>
+              <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/ssettings"></ion-radio>
+            </ion-item>
+        
+          </ion-radio-group>
+        </ion-list>
+        
+       </ion-content>
+      </ng-template>
+    </ion-popover>
   </ion-toolbar>
 </ion-header>
 

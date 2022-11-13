@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-prevent',
@@ -9,6 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class PreventPage implements OnInit {
 
   constructor() { }
+
+  @ViewChild('popover') popover;
+
+  isOpen = false;
+
+  private presentPopover(e: Event) {
+    this.popover.event = e;
+    this.isOpen = true;
+  }
 
   ngOnInit() {
   }
