@@ -35,8 +35,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content  style="--background: rgb(19, 1, 1);">
+  <br><br>
+  <ion-text style="color: #5cf304;">General</ion-text>
+  <br>
+  <br>
+   <ion-item>
+      <ion-icon slot="start" name="settings"></ion-icon>
+      <ion-text align="center">කැමති භාෂාව</ion-text>
+      
+      <select name="languages" id="languages" slot="end" >
+        <option value="English">English</option>
+        <option value="සිංහල" selected>සිංහල</option>
 
+      </select>
+   </ion-item>
 </ion-content>
 
 <ion-footer [translucent]="true">
