@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-read',
@@ -10,6 +10,10 @@ export class ReadPage implements OnInit {
   ishidden: boolean = true;
   updownicon: String = "caret-down-outline"
 
+  constructor() { }
+
+  ngOnInit() {
+  }
   slidedown(){
 
     if(this.ishidden === true){
@@ -26,9 +30,12 @@ export class ReadPage implements OnInit {
 
   }
 
-  constructor() { }
+  @ViewChild('popover') popover;
 
-  ngOnInit() {
+  isOpen = false;
+
+  private presentPopover(e: Event) {
+    this.popover.event = e;
+    this.isOpen = true;
   }
-
 }

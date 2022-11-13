@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
 
@@ -34,7 +34,14 @@ export class DetectPage implements OnInit {
     await alert.present();
   }
 
+  @ViewChild('popover') popover;
 
+  isOpen = false;
+
+  private presentPopover(e: Event) {
+    this.popover.event = e;
+    this.isOpen = true;
+  }
   
   ngOnInit() {
   }
