@@ -1,20 +1,20 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="header-footer-background-color">
 
     <ion-buttons slot="start">
-      <ion-back-button routerLink="/shome"></ion-back-button>
+      <ion-back-button routerLink="/shome" class="header-footer-component"></ion-back-button>
     </ion-buttons>
 
-    <ion-title><b>වළක්වන්න</b></ion-title>
+    <ion-title class="header-footer-component"><b>වළක්වන්න</b></ion-title>
 
     <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
-      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" color="dark"></ion-icon>
+      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
     </ion-button>
     <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
       <ng-template >
-       <ion-content style="background-color: rgb(20, 17, 17);">
+       <ion-content style="background-color: rgb(19, 1, 1);">
 
-        <ion-list style="background-color: rgb(20, 17, 17);">
+        <ion-list style="background-color: rgb(19, 1, 1);">
           <ion-radio-group value="sinhala">
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">English</ion-label>
@@ -36,7 +36,7 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content style="--background: rgb(19, 1, 1);">
 
   <ion-item>
 
@@ -59,12 +59,11 @@
 </ion-content>
 
 
-
 <ion-footer [translucent]="true">
-  <ion-toolbar>
-    <div id="footer">
+  <ion-toolbar class="header-footer-background-color">
+    <div id="footer" class="header-footer-component">
       <ion-button routerLink="/shome"  fill="clear">
-        <ion-icon slot="icon-only" name="home" size="large"></ion-icon>
+        <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
       </ion-button>
       <br><b>මුල් පිටුව</b>
     </div>

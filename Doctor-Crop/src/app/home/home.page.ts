@@ -30,7 +30,7 @@ async presentAlert() {
     
       
       message: 'Prevent means following precautions to avoid diseases.',
-
+      
       buttons: ['OK'],
 
 
