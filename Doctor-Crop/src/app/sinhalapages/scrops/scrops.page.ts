@@ -20,4 +20,17 @@ export class ScropsPage implements OnInit {
     this.popover.event = e;
     this.isOpen = true;
   }
+
+  variety: String = null;
+  routerlink: String ="/scrops";
+
+  brinjalselect(){
+      this.variety = "brinjal";
+  }
+
+  govariety(){
+
+      if(this.variety==="brinjal")
+        this.routerlink = "/scrops/sbrinjal";
+  }
 }

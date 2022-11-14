@@ -21,5 +21,18 @@ export class CropsPage implements OnInit {
     this.isOpen = true;
   }
 
+  variety: String = null;
+  routerlink: String ="/crops";
+
+  brinjalselect(){
+      this.variety = "brinjal";
+  }
+
+  govariety(){
+
+      if(this.variety==="brinjal")
+        this.routerlink = "/crops/brinjal";
+  }
+
 }
 

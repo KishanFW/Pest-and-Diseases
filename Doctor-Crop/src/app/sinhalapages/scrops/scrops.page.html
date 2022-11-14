@@ -38,27 +38,44 @@
 <ion-content style="--background: rgb(19, 1, 1);">
 
   <ion-segment value="default">
-    <ion-segment-button value="default">
-      <ion-label>බෝග</ion-label>
+
+    <ion-segment-button value="default" routerLink="/scrops">
+      <ion-label style="color: #ffffff; font-size: 20px;">බෝග</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="segment" [disabled]="true">
-      <ion-label>වර්ග</ion-label>
+
+    <ion-segment-button (click)="govariety()" routerLink="{{routerlink}}">
+      <ion-label style="color: #ffffff; font-size: 20px;">වර්ග</ion-label>
     </ion-segment-button>
   </ion-segment>
-  <ion-item routerLink="/scrops/sbrinjal">
-    <img src="assets/bri.webp"><ion-label>වම්බටු</ion-label>
+
+  <br>
+  <ion-item (click)="brinjalselect()" routerLink="/scrops/sbrinjal" style="--background: rgb(19, 1, 1);">
+    <img src="assets/bri.webp"><ion-label style="color: #5cf304; font-size: 22px;">වම්බටු</ion-label>
+    <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
   </ion-item>
-  <ion-item>
-    <img src="assets/banana.png"><ion-label>කෙසෙල්</ion-label>
+
+  <br>
+  <ion-item style="--background: rgb(19, 1, 1);">
+    <img src="assets/banana.png"><ion-label style="color: #5cf304; font-size: 22px;">කෙසෙල්</ion-label>
+    <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
   </ion-item>
-  <ion-item>
-      <img  src="assets/bitterground.png"><ion-label>	කරවිල</ion-label>
+
+  <br>
+  <ion-item style="--background: rgb(19, 1, 1);">
+      <img  src="assets/bitterground.png"><ion-label style="color: #5cf304; font-size: 22px;">	කරවිල</ion-label>
+      <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
   </ion-item>
-  <ion-item>   
-      <img src="assets/carrot.png"><ion-label>කැරට්</ion-label>
+
+  <br>
+  <ion-item style="--background: rgb(19, 1, 1);">   
+      <img src="assets/carrot.png"><ion-label style="color: #5cf304; font-size: 22px;">කැරට්</ion-label>
+      <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
   </ion-item>
-  <ion-item>
-      <img src="assets/cassava.png"><ion-label>	මඤ්ඤොක්කා </ion-label>
+
+  <br>
+  <ion-item style="--background: rgb(19, 1, 1);">
+      <img src="assets/cassava.png"><ion-label style="color: #5cf304; font-size: 22px;">	මඤ්ඤොක්කා </ion-label>
+      <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
   </ion-item>
 
 </ion-content>

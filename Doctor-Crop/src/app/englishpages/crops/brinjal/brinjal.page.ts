@@ -20,4 +20,5 @@ export class BrinjalPage implements OnInit {
     this.popover.event = e;
     this.isOpen = true;
   }
+
 }
