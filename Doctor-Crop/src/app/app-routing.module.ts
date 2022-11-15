@@ -24,16 +24,8 @@ const routes: Routes = [
     loadChildren: () => import('./englishpages/prevent/prevent.module').then( m => m.PreventPageModule)
   },
   {
-    path: 'crops',
-    loadChildren: () => import('./englishpages/crops/crops.module').then( m => m.CropsPageModule)
-  },
-  {
     path: 'shome',
     loadChildren: () => import('./shome/shome.module').then( m => m.ShomePageModule)
-  },
-  {
-    path: 'scrops',
-    loadChildren: () => import('./sinhalapages/scrops/scrops.module').then( m => m.ScropsPageModule)
   },
   {
     path: 'sdetect',
