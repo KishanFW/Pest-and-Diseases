@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: SdetectPage
+  },  {
+    path: 'scrop-cropvar',
+    loadChildren: () => import('./scrop-cropvar/scrop-cropvar.module').then( m => m.ScropCropvarPageModule)
   }
+
 ];
 
 @NgModule({

@@ -39,6 +39,23 @@ const routes: Routes = [
     path: 'ssettings',
     loadChildren: () => import('./sinhalapages/ssettings/ssettings.module').then( m => m.SsettingsPageModule)
   },
+  {
+    path: 'thome',
+    loadChildren: () => import('./thome/thome.module').then( m => m.ThomePageModule)
+  },  {
+    path: 'tdetect',
+    loadChildren: () => import('./tamilpages/tdetect/tdetect.module').then( m => m.TdetectPageModule)
+  },
+  {
+    path: 'tprevent',
+    loadChildren: () => import('./tamilpages/tprevent/tprevent.module').then( m => m.TpreventPageModule)
+  },
+  {
+    path: 'tsettings',
+    loadChildren: () => import('./tamilpages/tsettings/tsettings.module').then( m => m.TsettingsPageModule)
+  },
+
+
 ];
 
 @NgModule({

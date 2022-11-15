@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: PreventPage
+  },
+  {
+    path: 'crop-cropvar',
+    loadChildren: () => import('./crop-cropvar/crop-cropvar.module').then( m => m.CropCropvarPageModule)
   }
 ];
 
