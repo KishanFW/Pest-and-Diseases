@@ -1,9 +1,54 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>thome</ion-title>
+
+    <ion-button routerLink="/tsettings"  fill="clear" slot="start">
+      <ion-icon slot="icon-only" name="menu"></ion-icon>
+    </ion-button>
+
+    <ion-title style="font-size: 14px;">
+      <b>பூச்சி மற்றும் நோய்கள்</b>
+    </ion-title>
+
+    <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
+      <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+    </ion-button>
+    <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
+      <ng-template >
+       <ion-content style="background-color: rgb(19, 1, 1);">
+
+        <ion-list style="background-color: rgb(19, 1, 1);">
+          <ion-radio-group value="english">
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">English</ion-label>
+              <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/home"></ion-radio>
+            </ion-item>
+        
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">සිංහල</ion-label>
+              <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/shome"></ion-radio>
+            </ion-item>
+        
+          </ion-radio-group>
+        </ion-list>
+        
+       </ion-content>
+      </ng-template>
+    </ion-popover>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
 </ion-content>
+
+<ion-footer [translucent]="true">
+  <ion-toolbar>
+    <div id="footer" style="font-size: 10px;">
+      <ion-button routerLink="/thome"  fill="clear">
+        <ion-icon slot="icon-only" name="home" size="large"></ion-icon>
+      </ion-button>
+      <br><b>முகப்பு பக்கம்</b>
+    </div>
+  </ion-toolbar>
+</ion-footer>
