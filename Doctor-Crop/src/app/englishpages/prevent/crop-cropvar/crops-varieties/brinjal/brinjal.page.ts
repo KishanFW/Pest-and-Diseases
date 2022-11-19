@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-varieties',
-  templateUrl: './varieties.page.html',
-  styleUrls: ['./varieties.page.scss'],
+  selector: 'app-brinjal',
+  templateUrl: './brinjal.page.html',
+  styleUrls: ['./brinjal.page.scss'],
 })
-export class VarietiesPage implements OnInit {
+export class BrinjalPage implements OnInit {
 
   constructor() { }
 

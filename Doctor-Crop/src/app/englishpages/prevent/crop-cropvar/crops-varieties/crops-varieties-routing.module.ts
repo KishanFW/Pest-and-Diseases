@@ -9,8 +9,8 @@ const routes: Routes = [
     component: CropsVarietiesPage
   },
   {
-    path: 'varieties',
-    loadChildren: () => import('./varieties/varieties.module').then( m => m.VarietiesPageModule)
+    path: 'brinjal',
+    loadChildren: () => import('./brinjal/brinjal.module').then( m => m.BrinjalPageModule)
   }
 ];
 
