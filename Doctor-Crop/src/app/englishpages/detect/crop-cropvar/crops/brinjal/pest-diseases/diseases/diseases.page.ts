@@ -81,50 +81,50 @@ export class DiseasesPage implements OnInit {
 
   slidedown5(){
 
-    if(this.ishidden4 === true){
-      this.ishidden4 = false;
-      this.updownicon4 = "caret-up-outline"
-    }else if(this.ishidden4 === false){
+    if(this.ishidden5 === true){
+      this.ishidden5= false;
+      this.updownicon5 = "caret-up-outline"
+    }else if(this.ishidden5 === false){
 
-      this.ishidden4 = true;
-      this.updownicon4 = "caret-down-outline"
+      this.ishidden5 = true;
+      this.updownicon5 = "caret-down-outline"
     }
   }
 
   slidedown6(){
 
-    if(this.ishidden4 === true){
-      this.ishidden4 = false;
-      this.updownicon4 = "caret-up-outline"
-    }else if(this.ishidden4 === false){
+    if(this.ishidden6 === true){
+      this.ishidden6 = false;
+      this.updownicon6 = "caret-up-outline"
+    }else if(this.ishidden6 === false){
 
-      this.ishidden4 = true;
-      this.updownicon4 = "caret-down-outline"
+      this.ishidden6 = true;
+      this.updownicon6 = "caret-down-outline"
     }
   }
 
 
   slidedown7(){
 
-    if(this.ishidden4 === true){
-      this.ishidden4 = false;
-      this.updownicon4 = "caret-up-outline"
-    }else if(this.ishidden4 === false){
+    if(this.ishidden7 === true){
+      this.ishidden7 = false;
+      this.updownicon7 = "caret-up-outline"
+    }else if(this.ishidden7 === false){
 
-      this.ishidden4 = true;
-      this.updownicon4 = "caret-down-outline"
+      this.ishidden7 = true;
+      this.updownicon7 = "caret-down-outline"
     }
   }
 
   slidedown8(){
 
-    if(this.ishidden4 === true){
-      this.ishidden4 = false;
-      this.updownicon4 = "caret-up-outline"
-    }else if(this.ishidden4 === false){
+    if(this.ishidden8 === true){
+      this.ishidden8 = false;
+      this.updownicon8 = "caret-up-outline"
+    }else if(this.ishidden8 === false){
 
-      this.ishidden4 = true;
-      this.updownicon4 = "caret-down-outline"
+      this.ishidden8 = true;
+      this.updownicon8 = "caret-down-outline"
     }
   }
 
