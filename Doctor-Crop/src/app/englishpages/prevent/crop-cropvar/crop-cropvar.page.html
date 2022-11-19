@@ -2,7 +2,7 @@
   <ion-toolbar>
 
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button routerLink="/prevent"></ion-back-button>
     </ion-buttons>
 
     <ion-title>Crop or Crop and Variety</ion-title>
@@ -24,6 +24,11 @@
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">සිංහල</ion-label>
               <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/sprevent/scrop-cropvar"></ion-radio>
+            </ion-item>
+
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">தமிழ்</ion-label>
+              <ion-radio slot="end" value="tamil" (click)="isOpen = false" routerLink="/tprevent/tcrop-cropvar"></ion-radio>
             </ion-item>
         
           </ion-radio-group>
