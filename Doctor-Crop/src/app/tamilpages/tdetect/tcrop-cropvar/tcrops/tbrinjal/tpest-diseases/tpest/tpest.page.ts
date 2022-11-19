@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-tpest',
@@ -12,4 +12,12 @@ export class TpestPage implements OnInit {
   ngOnInit() {
   }
 
+  @ViewChild('popover') popover;
+
+  isOpen = false;
+
+  private presentPopover(e: Event) {
+    this.popover.event = e;
+    this.isOpen = true;
+  }
 }

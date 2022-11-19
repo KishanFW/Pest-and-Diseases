@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: CropsVarietiesPage
+  },
+  {
+    path: 'varieties',
+    loadChildren: () => import('./varieties/varieties.module').then( m => m.VarietiesPageModule)
   }
 ];
 

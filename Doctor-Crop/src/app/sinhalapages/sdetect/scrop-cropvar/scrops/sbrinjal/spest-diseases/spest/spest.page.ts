@@ -68,13 +68,12 @@ export class SpestPage implements OnInit {
       this.updownicon4 = "caret-down-outline"
     }
   }
+  
   @ViewChild('popover') popover;
-
   isOpen = false;
 
   private presentPopover(e: Event) {
     this.popover.event = e;
     this.isOpen = true;
   }
-
 }
