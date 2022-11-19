@@ -1,11 +1,10 @@
 <ion-header>
   <ion-toolbar class="header-footer-background-color">
-
     <ion-buttons slot="start">
-      <ion-back-button routerLink="/crops/brinjal" class="header-footer-component"> </ion-back-button>
-    </ion-buttons>  
+      <ion-back-button routerLink="/detect/crop-cropvar/crops/brinjal" class="header-footer-component"></ion-back-button>
+    </ion-buttons>
 
-    <ion-title class="header-footer-component"><b>diseases</b></ion-title>
+    <ion-title class="header-footer-component">Diseases</ion-title>
 
     <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
       <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
@@ -18,12 +17,17 @@
           <ion-radio-group value="english">
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">English</ion-label>
-              <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/crops/brinjal/read"></ion-radio>
+              <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/detect/crop-cropvar/crops/brinjal/pest-diseases/diseases"></ion-radio>
             </ion-item>
         
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">සිංහල</ion-label>
-              <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/scrops/sbrinjal/sread"></ion-radio>
+              <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/sdetect/scrop-cropvar/scrops/sbrinjal/spest-diseases/sdiseases"></ion-radio>
+            </ion-item>
+
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">தமிழ்</ion-label>
+              <ion-radio slot="end" value="tamil" (click)="isOpen = false" routerLink="/tdetect/tcrop-cropvar/tcrops/tbrinjal/tpest-diseases/tdiseases"></ion-radio>
             </ion-item>
         
           </ion-radio-group>
@@ -34,9 +38,6 @@
     </ion-popover>
   </ion-toolbar>
 </ion-header>
-
-
-
 
 <ion-content style="--background: rgb(19, 1, 1);">
   <br>
@@ -409,5 +410,4 @@
       </div>
     </ion-toolbar>
   </ion-footer>
-
 
