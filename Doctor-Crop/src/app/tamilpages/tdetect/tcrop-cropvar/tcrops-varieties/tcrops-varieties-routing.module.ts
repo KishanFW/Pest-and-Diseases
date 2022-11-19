@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: TcropsVarietiesPage
+  },
+  {
+    path: 'tvarieties',
+    loadChildren: () => import('./tvarieties/tvarieties.module').then( m => m.TvarietiesPageModule)
   }
 ];
 
