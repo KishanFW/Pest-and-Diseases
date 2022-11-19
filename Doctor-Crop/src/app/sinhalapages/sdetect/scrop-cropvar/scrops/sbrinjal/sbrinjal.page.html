@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button routerLink="/sdetect/scrop-cropvar/scrops"></ion-back-button>
     </ion-buttons>
 
     <ion-title>වම්බටු</ion-title>
@@ -24,6 +24,11 @@
               <ion-label color="light">සිංහල</ion-label>
               <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/sdetect/scrop-cropvar/scrops/sbrinjal"></ion-radio>
             </ion-item>
+
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">தமிழ்</ion-label>
+              <ion-radio slot="end" value="tamil" (click)="isOpen = false" routerLink="/tdetect/tcrop-cropvar/tcrops/tbrinjal"></ion-radio>
+            </ion-item>
         
           </ion-radio-group>
         </ion-list>
@@ -41,7 +46,7 @@
 <ion-footer [translucent]="true">
   <ion-toolbar>
     <div id="footer">
-      <ion-button routerLink="/home"  fill="clear">
+      <ion-button routerLink="/shome"  fill="clear">
         <ion-icon slot="icon-only" name="home" size="large"></ion-icon>
       </ion-button>
       <br><b>මුල් පිටුව</b>
