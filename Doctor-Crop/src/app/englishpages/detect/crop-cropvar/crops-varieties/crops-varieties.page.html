@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button routerLink="/detect/crop-cropvar"></ion-back-button>
     </ion-buttons>
 
     <ion-title>Crops</ion-title>
@@ -25,6 +25,11 @@
               <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/sdetect/scrop-cropvar/scrops-varieties"></ion-radio>
             </ion-item>
         
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">தமிழ்</ion-label>
+              <ion-radio slot="end" value="tamil" (click)="isOpen = false" routerLink="/tdetect/tcrop-cropvar/tcrops-varieties"></ion-radio>
+            </ion-item>
+
           </ion-radio-group>
         </ion-list>
         
