@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button routerLink="/sprevent/scrop-cropvar"></ion-back-button>
+      <ion-back-button routerLink="/sprevent/scrop-cropvar/scrops-varieties"></ion-back-button>
     </ion-buttons>
 
     <ion-title>වම්බටු</ion-title>
@@ -39,9 +39,57 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content style="--background: rgb(19, 1, 1);">
+
+  <ion-segment value="segment">
+    <ion-segment-button routerLink="/sprevent/scrop-cropvar/scrops-varieties" value="default">
+      <ion-label style="color: #ffffff; font-size: 20px;">බෝග</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="segment">
+      <ion-label style="color: #ffffff; font-size: 20px;">වර්ග</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <br>
+  <ion-item style="--background: rgb(19, 1, 1);" >
+    <img  src="assets/brinjalvarieties/amanda.jpg"><ion-label style="color: #5cf304; font-size: 22px;">අමන්දා</ion-label>
+    <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
+  </ion-item>
+
+  <br>
+  <ion-item style="--background: rgb(19, 1, 1);" >
+    <img  src="assets/brinjalvarieties/anjalee.jpg"><ion-label style="color: #5cf304; font-size: 22px;">අංජලී</ion-label>
+    <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
+  </ion-item>
+
+  <br>
+  <ion-item style="--background: rgb(19, 1, 1);" >
+    <img  src="assets/brinjalvarieties/hordi.jpg"><ion-label style="color: #5cf304; font-size: 22px;">හෝර්ඩි ලේන ඉරි</ion-label>
+    <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
+  </ion-item>
+
+  <br>
+  <ion-item style="--background: rgb(19, 1, 1);" >
+    <img  src="assets/brinjalvarieties/thinnawely.png"><ion-label style="color: #5cf304; font-size: 22px;">තින්නවේලි දම්</ion-label>
+    <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
+  </ion-item>
+
+  <br>
+  <ion-item style="--background: rgb(19, 1, 1);" >
+    <img  src="assets/brinjalvarieties/padagoda.png"><ion-label style="color: #5cf304; font-size: 20px;">පාදාගොඩ</ion-label>
+    <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon> 
+  </ion-item>
+  
+  <br>
+  <ion-item style="--background: rgb(19, 1, 1);" >
+    <img  src="assets/brinjalvarieties/SM.png"><ion-label style="color: #5cf304; font-size: 20px;">SM-164</ion-label>
+    <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon> 
+  </ion-item>
   
 </ion-content>
+
+
 
 <ion-footer [translucent]="true">
   <ion-toolbar>
