@@ -38,8 +38,49 @@
     </ion-popover>
   </ion-toolbar>
 </ion-header>
+<ion-content style="--background: rgb(19, 1, 1);">
 
-<ion-content>
+  <ion-segment value="default">
+
+    <ion-segment-button value="default" routerLink="/crops">
+      <ion-label style="color: #ffffff; font-size: 18px;">Crops</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button (click)="govariety()" routerLink="{{routerlink}}">
+      <ion-label style="color: #ffffff; font-size: 18px;">varieties</ion-label>
+    </ion-segment-button>
+
+  </ion-segment>
+  
+  <br>
+  <ion-item (click)="brinjalselect()"  style="--background: rgb(19, 1, 1);">
+    <img src="assets/bri.webp"><ion-label style="color: #5cf304; font-size: 20px;">Brinjal</ion-label>
+    <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
+  </ion-item>
+
+  <br>
+  <ion-item style="--background: rgb(19, 1, 1);">
+    <img src="assets/banana.png"><ion-label style="color: #5cf304; font-size: 20px;">Banana</ion-label>
+    <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
+  </ion-item>
+
+  <br>
+  <ion-item style="--background: rgb(19, 1, 1);">
+      <img  src="assets/bitterground.png"><ion-label style="color: #5cf304; font-size: 20px;">Bitter Gound</ion-label>
+      <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
+  </ion-item>
+
+  <br>
+  <ion-item style="--background: rgb(19, 1, 1);">   
+      <img src="assets/carrot.png"><ion-label style="color: #5cf304; font-size: 20px;">Carrot</ion-label>
+      <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
+  </ion-item>
+
+  <br>
+  <ion-item style="--background: rgb(19, 1, 1);">
+      <img src="assets/cassava.png"><ion-label  style="color: #5cf304; font-size: 20px;">Casava</ion-label>
+      <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
+  </ion-item>
 
 </ion-content>
 
