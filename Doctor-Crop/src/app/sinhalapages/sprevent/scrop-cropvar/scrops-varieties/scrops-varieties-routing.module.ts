@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: ScropsVarietiesPage
+  },
+  {
+    path: 'sbrinjal',
+    loadChildren: () => import('./sbrinjal/sbrinjal.module').then( m => m.SbrinjalPageModule)
   }
 ];
 
