@@ -20,4 +20,17 @@ export class CropsVarietiesPage implements OnInit {
     this.popover.event = e;
     this.isOpen = true;
   }
+
+  crop:string = null;
+  routerlink :string ="/detect/crop-cropvar/crops-varieties";
+
+  brinjalselect(){
+    this.crop="brinjal";
+  }
+
+  govariety(){
+
+    if(this.crop==="brinjal")
+      this.routerlink="/detect/crop-cropvar/crops-varieties/brinjal";
+  }
 }
