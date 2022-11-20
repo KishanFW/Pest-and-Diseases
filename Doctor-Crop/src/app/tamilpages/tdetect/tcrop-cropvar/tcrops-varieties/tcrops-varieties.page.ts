@@ -20,4 +20,14 @@ export class TcropsVarietiesPage implements OnInit {
     this.popover.event = e;
     this.isOpen = true;
   }
+  crop:string = null;
+  routerlink :string ="/tdetect/tcrop-cropvar/tcrops-varieties";
+ 
+     brinjalselect(){
+    this.crop="brinjal";
+}
+  govariety(){
+  if(this.crop==="brinjal")
+    this.routerlink="/tdetect/tcrop-cropvar/tcrops-varieties/tbrinjal";
+  }
 }

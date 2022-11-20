@@ -20,4 +20,14 @@ export class ScropsVarietiesPage implements OnInit {
     this.popover.event = e;
     this.isOpen = true;
   }
+  crop:string = null;
+  routerlink :string ="/sdetect/scrop-cropvar/scrops-varieties";
+  brinjalselect(){
+    this.crop="brinjal";
+  }
+  govariety(){
+    if(this.crop==="brinjal")
+      this.routerlink="/sdetect/scrop-cropvar/scrops-varieties/sbrinjal";
+  }
+
 }
