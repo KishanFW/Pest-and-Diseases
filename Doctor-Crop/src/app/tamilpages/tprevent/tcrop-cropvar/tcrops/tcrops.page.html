@@ -1,9 +1,80 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>tcrops</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>பயிர்கள்</ion-title>
+
+    <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
+      <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+    </ion-button>
+    <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
+      <ng-template >
+       <ion-content style="background-color: rgb(19, 1, 1);">
+
+        <ion-list style="background-color: rgb(19, 1, 1);">
+          <ion-radio-group value="english">
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">English</ion-label>
+              <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/prevent/crop-cropvar/crops"></ion-radio>
+            </ion-item>
+        
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">සිංහල</ion-label>
+              <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/sprevent/scrop-cropvar/scrops"></ion-radio>
+            </ion-item>
+        
+          </ion-radio-group>
+        </ion-list>
+        
+       </ion-content>
+      </ng-template>
+    </ion-popover>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content style="--background: rgb(19, 1, 1);">
+  <br>
+  <ion-item (click)="brinjalselect()"  style="--background: rgb(19, 1, 1);">
+    <img src="assets/bri.webp"><ion-label style="color: #5cf304; font-size: 20px;">Brinjal</ion-label>
+    <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
+  </ion-item>
+
+  <br>
+  <ion-item style="--background: rgb(19, 1, 1);">
+    <img src="assets/banana.png"><ion-label style="color: #5cf304; font-size: 20px;">Banana</ion-label>
+    <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
+  </ion-item>
+
+  <br>
+  <ion-item style="--background: rgb(19, 1, 1);">
+      <img  src="assets/bitterground.png"><ion-label style="color: #5cf304; font-size: 20px;">Bitter Gound</ion-label>
+      <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
+  </ion-item>
+
+  <br>
+  <ion-item style="--background: rgb(19, 1, 1);">   
+      <img src="assets/carrot.png"><ion-label style="color: #5cf304; font-size: 20px;">Carrot</ion-label>
+      <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
+  </ion-item>
+
+  <br>
+  <ion-item style="--background: rgb(19, 1, 1);">
+      <img src="assets/cassava.png"><ion-label  style="color: #5cf304; font-size: 20px;">Casava</ion-label>
+      <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
+  </ion-item>
 
 </ion-content>
+
+<ion-footer [translucent]="true">
+  <ion-toolbar>
+    <div id="footer" style="font-size: 10px;">
+      <ion-button routerLink="/thome"  fill="clear">
+        <ion-icon slot="icon-only" name="home" size="large"></ion-icon>
+      </ion-button>
+      <br><b>முகப்பு பக்கம்</b>
+    </div>
+  </ion-toolbar>
+</ion-footer>

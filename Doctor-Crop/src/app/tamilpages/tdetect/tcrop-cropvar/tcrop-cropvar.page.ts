@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild
+} from '@angular/core';
 
 @Component({
   selector: 'app-tcrop-cropvar',
@@ -12,4 +13,12 @@ export class TcropCropvarPage implements OnInit {
   ngOnInit() {
   }
 
+  @ViewChild('popover') popover;
+
+  isOpen = false;
+
+  private presentPopover(e: Event) {
+    this.popover.event = e;
+    this.isOpen = true;
+  }
 }
