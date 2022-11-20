@@ -5,7 +5,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   templateUrl: './thome.page.html',
   styleUrls: ['./thome.page.scss'],
 })
-export class ThomePage implements OnInit {
+export class ThomePage {
 
   constructor() { }
 
