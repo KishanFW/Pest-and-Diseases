@@ -2,7 +2,7 @@
   <ion-toolbar>
 
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button routerLink="/tsettings"></ion-back-button>
     </ion-buttons>
 
     <ion-title>App அமைப்புகள்</ion-title>
@@ -15,7 +15,7 @@
        <ion-content style="background-color: rgb(19, 1, 1);">
 
         <ion-list style="background-color: rgb(19, 1, 1);">
-          <ion-radio-group value="english">
+          <ion-radio-group value="tamil">
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">English</ion-label>
               <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/settings/appsettings"></ion-radio>
@@ -24,6 +24,11 @@
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">සිංහල</ion-label>
               <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/ssettings/sappsettings"></ion-radio>
+            </ion-item>
+
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">தமிழ்</ion-label>
+              <ion-radio slot="end" value="tamil" (click)="isOpen = false" routerLink="/tsettings/tappsettings"></ion-radio>
             </ion-item>
         
           </ion-radio-group>
@@ -55,7 +60,7 @@
      <ion-content style="background-color: rgb(19, 1, 1);">
 
       <ion-list style="background-color: rgb(19, 1, 1);">
-        <ion-radio-group value="english">
+        <ion-radio-group value="tamil">
           <ion-item color="rgb(19, 1, 1)">
             <ion-label color="light">English</ion-label>
             <ion-radio slot="end" value="english" (click)="isOpen2 = false" routerLink="/settings/appsettings"></ion-radio>

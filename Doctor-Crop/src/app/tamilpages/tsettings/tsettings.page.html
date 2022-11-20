@@ -2,7 +2,7 @@
   <ion-toolbar>
 
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button routerLink="/thome"></ion-back-button>
     </ion-buttons>
 
     <ion-title>அமைப்புகள்</ion-title>
@@ -15,7 +15,7 @@
        <ion-content style="background-color: rgb(19, 1, 1);">
 
         <ion-list style="background-color: rgb(19, 1, 1);">
-          <ion-radio-group value="english">
+          <ion-radio-group value="tamil">
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">English</ion-label>
               <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/settings"></ion-radio>
@@ -24,6 +24,11 @@
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">සිංහල</ion-label>
               <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/ssettings"></ion-radio>
+            </ion-item>
+
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">தமிழ்</ion-label>
+              <ion-radio slot="end" value="tamil" (click)="isOpen = false" routerLink="/tsettings"></ion-radio>
             </ion-item>
         
           </ion-radio-group>
@@ -41,7 +46,7 @@
     <strong style="color: #ffffff; font-size: 20px;">General</strong>
     <br><br>
   
-    <ion-item style="--background: rgb(19, 1, 1);" routerLink="/settings/appsettings">
+    <ion-item style="--background: rgb(19, 1, 1);" routerLink="/tsettings/tappsettings">
          <ion-icon slot="start" name="settings" style="color: #f70707;" size="large"></ion-icon>
          <p align="Left" style="color: #5cf304;">App Settings<br>
          <ion-text style="font-size: 14px; color: #ffffff;">Change Language, notifications, etc</ion-text>
@@ -60,7 +65,7 @@
     </ion-item >
     <br>
     
-    <ion-item style="--background: rgb(19, 1, 1);" routerLink="/settings/about">
+    <ion-item style="--background: rgb(19, 1, 1);" routerLink="/tsettings/tabout">
        <ion-icon slot="start" name="alert-circle-outline" style="color: #f7f307;" size="large"></ion-icon>
        <p align="left" style="color: #5cf304;">About</p>
     </ion-item>
