@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SvarietiesPageRoutingModule } from './svarieties-routing.module';
+import { TbrinjalPageRoutingModule } from './tbrinjal-routing.module';
 
-import { SvarietiesPage } from './svarieties.page';
+import { TbrinjalPage } from './tbrinjal.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SvarietiesPageRoutingModule
+    TbrinjalPageRoutingModule
   ],
-  declarations: [SvarietiesPage]
+  declarations: [TbrinjalPage]
 })
-export class SvarietiesPageModule {}
+export class TbrinjalPageModule {}
