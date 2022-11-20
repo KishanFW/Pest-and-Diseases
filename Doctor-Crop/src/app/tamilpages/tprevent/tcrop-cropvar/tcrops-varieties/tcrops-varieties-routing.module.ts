@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: TcropsVarietiesPage
+  },
+  {
+    path: 'tbrinjal',
+    loadChildren: () => import('./tbrinjal/tbrinjal.module').then( m => m.TbrinjalPageModule)
   }
 ];
 
