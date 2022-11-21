@@ -2,13 +2,13 @@
   <ion-toolbar  class="header-footer-background-color" >
 
     <ion-buttons slot="start">
-      <ion-back-button routerLink="/detect"></ion-back-button>
+      <ion-back-button routerLink="/detect" class="header-footer-component"></ion-back-button>
     </ion-buttons>
 
     <ion-title class="header-footer-component">Crop or Crop and Variety</ion-title>
 
-    <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
-      <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+    <ion-button (click)="presentPopover($event)" fill="clear" slot="end" >
+      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
     </ion-button>
     <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
       <ng-template >

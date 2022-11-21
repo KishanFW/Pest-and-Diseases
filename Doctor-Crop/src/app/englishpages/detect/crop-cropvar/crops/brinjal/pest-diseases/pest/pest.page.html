@@ -1,13 +1,13 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="header-footer-background-color">
     <ion-buttons slot="start">
-      <ion-back-button routerLink="/detect/crop-cropvar/crops/brinjal"></ion-back-button>
+      <ion-back-button routerLink="/detect/crop-cropvar/crops/brinjal"  class="header-footer-component"></ion-back-button>
     </ion-buttons>
 
-    <ion-title>Pest</ion-title>
+    <ion-title class="header-footer-component" >Pest</ion-title>
 
     <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
-      <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
     </ion-button>
     <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
       <ng-template >
@@ -39,12 +39,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content  style="--background: rgb(19, 1, 1);">
   <br>
-  <h5><b>Pest types</b></h5><br>
+  <h5><b style="font-size:24px; text-align:center; color: white;">Pest types</b></h5><br>
   
-  <ion-item>
-    <ion-button expand="full" (click)="slidedown1()" fill="clear">
+  <ion-item style="--background: rgb(19, 1, 1);">
+    <ion-button expand="full" (click)="slidedown1()" fill="clear" >
       <h6>1) Borer and fruit borer</h6>
       <ion-icon name="{{updownicon1}}" slot="end"></ion-icon>
     </ion-button>
@@ -105,7 +105,7 @@
   </div>
 
   <br>
-<ion-item>
+<ion-item style="--background: rgb(19, 1, 1);">
 <ion-button expand="full" (click)="slidedown2()" fill="clear">
   <h6>2) Leaf-shrinking caterpillar</h6>
   <ion-icon name="{{updownicon2}}" slot="end"></ion-icon>
@@ -148,7 +148,7 @@
 </div>
 
 <br>
-<ion-item >
+<ion-item  style="--background: rgb(19, 1, 1);">
 <ion-button expand="full" (click)="slidedown3()" fill="clear">
   <h6> 3) Leaf aphid</h6>
   <ion-icon name="{{updownicon3}}" slot="end"></ion-icon>
@@ -195,7 +195,7 @@
 
 <br>
 
-<ion-item>
+<ion-item style="--background: rgb(19, 1, 1);">
   <ion-button expand="full" (click)="slidedown4()" fill="clear">
     <h6>4) Mite damage </h6>
     <ion-icon name="{{updownicon4}}" slot="end"></ion-icon>
@@ -245,10 +245,10 @@
 </ion-content>
 
 <ion-footer [translucent]="true">
-  <ion-toolbar>
-    <div id="footer">
+  <ion-toolbar class="header-footer-background-color">
+    <div id="footer" class="header-footer-component">
       <ion-button routerLink="/home"  fill="clear">
-        <ion-icon slot="icon-only" name="home" size="large"></ion-icon>
+        <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
       </ion-button>
       <br><b>Home</b>
     </div>
