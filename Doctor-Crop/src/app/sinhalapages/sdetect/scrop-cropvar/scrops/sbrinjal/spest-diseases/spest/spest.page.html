@@ -1,13 +1,14 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar  class="header-footer-background-color"
+  >
     <ion-buttons slot="start">
-      <ion-back-button routerLink="/sdetect/scrop-cropvar/scrops/sbrinjal"></ion-back-button>
+      <ion-back-button routerLink="/sdetect/scrop-cropvar/scrops/sbrinjal" class="header-footer-component"></ion-back-button>
     </ion-buttons>
 
-    <ion-title>පළිබෝධ</ion-title>
+    <ion-title class="header-footer-component">පළිබෝධ</ion-title>
 
     <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
-      <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
     </ion-button>
     <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
       <ng-template >
@@ -39,21 +40,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content style="--background: rgb(19, 1, 1);">
     <br>
-    <h5><b>පළිබෝධ වර්ග</b></h5><br>
+    <h5><b style="font-size:24px; text-align:center; color: white;">පළිබෝධ වර්ග</b></h5><br>
     
-    <ion-item>
-      <ion-button expand="full" (click)="slidedown1()" fill="clear">
-        <h6>1) කරටි හා ගෙඩි විදින පණුවා</h6>
-        <ion-icon name="{{updownicon1}}" slot="end"></ion-icon>
+    <ion-item style="--background: rgb(19, 1, 1);">
+      <ion-button expand="full" (click)="slidedown1()" fill="clear" >
+        <h6 style="color: #5cf304; font-size: 16px;">1) කරටි හා ගෙඩි විදින පණුවා</h6>
+        <ion-icon name="{{updownicon1}}" slot="end" style="color: #5cf304; font-size: 16px;"></ion-icon>
       </ion-button>
     </ion-item>
     
     
     <div [hidden]=ishidden1>
-      <ion-card>
-        <ion-card-content>
+      <ion-card style="--background: rgb(19, 1, 1);">
+        <ion-card-content style="color: #ffffff; font-size: 17px;">
           <ion-text>
              <br> <br>
             
@@ -103,16 +104,16 @@
     </div>
 
     <br>
-<ion-item>
+<ion-item style="--background: rgb(19, 1, 1);">
   <ion-button expand="full" (click)="slidedown2()" fill="clear">
-    <h6>2) කොල හකුලන දළබුවා </h6>
-    <ion-icon name="{{updownicon2}}" slot="end"></ion-icon>
+    <h6 style="color: #5cf304; font-size: 16px;">2) කොල හකුලන දළබුවා </h6>
+    <ion-icon name="{{updownicon2}}" slot="end" style="color: #5cf304; font-size: 16px;"></ion-icon>
   </ion-button>
 </ion-item>
 
 <div [hidden]=ishidden2>
-  <ion-card>
-    <ion-card-content>
+  <ion-card style="--background: rgb(19, 1, 1);">
+    <ion-card-content style="color: #ffffff; font-size: 17px;">
       <ion-text>
         <b>Psara bipunctalis (Order-Lepidoptera, Family-Pyralidae)</b>  <br> <br>
         
@@ -147,16 +148,16 @@
 </div>
 
 <br>
-<ion-item >
+<ion-item style="--background: rgb(19, 1, 1);">
   <ion-button expand="full" (click)="slidedown3()" fill="clear">
-    <h6>3) පත්‍ර කීඩෑවා </h6>
-    <ion-icon name="{{updownicon3}}" slot="end"></ion-icon>
+    <h6 style="color: #5cf304; font-size: 16px;">3) පත්‍ර කීඩෑවා </h6>
+    <ion-icon name="{{updownicon3}}" slot="end" style="color: #5cf304; font-size: 16px;"></ion-icon>
   </ion-button>
 </ion-item>
 
 <div [hidden]=ishidden3>
-  <ion-card>
-    <ion-card-content>
+  <ion-card style="--background: rgb(19, 1, 1);">
+    <ion-card-content style="color: #ffffff; font-size: 17px;">
       <ion-text>
         <b>(Amrasca Spp.) (Order-Homoptera, Family-Cicadellidae)</b>  <br> <br>
         
@@ -193,16 +194,16 @@
 
 <br>
   
-  <ion-item>
+  <ion-item style="--background: rgb(19, 1, 1);">
     <ion-button expand="full" (click)="slidedown4()" fill="clear">
-      <h6>4) මයිටා හානිය</h6>
-      <ion-icon name="{{updownicon4}}" slot="end"></ion-icon>
+      <h6 style="color: #5cf304; font-size: 16px;">4) මයිටා හානිය</h6>
+      <ion-icon name="{{updownicon4}}" slot="end" style="color: #5cf304; font-size: 16px;"></ion-icon>
     </ion-button>
   </ion-item>
   
   <div [hidden]=ishidden4>
-    <ion-card>
-      <ion-card-content>
+    <ion-card style="--background: rgb(19, 1, 1);">
+      <ion-card-content style="color: #ffffff; font-size: 17px;">
         <ion-text>
           <br> <br>
           
@@ -239,10 +240,11 @@
 </ion-content>
 
 <ion-footer [translucent]="true">
-  <ion-toolbar>
-    <div id="footer">
+  <ion-toolbar  class="header-footer-background-color"
+  >
+    <div id="footer" class="header-footer-component">
       <ion-button routerLink="/shome"  fill="clear">
-        <ion-icon slot="icon-only" name="home" size="large"></ion-icon>
+        <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
       </ion-button>
       <br><b>මුල් පිටුව</b>
     </div>

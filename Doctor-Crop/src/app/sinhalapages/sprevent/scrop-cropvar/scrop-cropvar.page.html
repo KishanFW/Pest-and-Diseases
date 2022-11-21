@@ -1,14 +1,14 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="header-footer-background-color">
 
     <ion-buttons slot="start">
-      <ion-back-button routerLink="/sprevent"></ion-back-button>
+      <ion-back-button routerLink="/sprevent" class="header-footer-component"></ion-back-button>
     </ion-buttons>
 
-    <ion-title>බෝගය හෝ බෝගය සහ ප්‍රභේදය</ion-title>
+    <ion-title class="header-footer-component">බෝගය හෝ බෝගය සහ ප්‍රභේදය</ion-title>
 
     <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
-      <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
     </ion-button>
     <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
       <ng-template >
@@ -41,29 +41,29 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <p style="font-size:24px; text-align:center;"><b> බෝග හෝ බෝග සහ වර්ග තෝරන්න</b></p>
+<ion-content  style="--background: rgb(19, 1, 1);">
+  <p style="font-size:24px; text-align:center;color: white;"><b> බෝග හෝ බෝග සහ වර්ග තෝරන්න</b></p>
   <br>
   
-    <ion-item routerLink="/sprevent/scrop-cropvar/scrops">
+    <ion-item routerLink="/sprevent/scrop-cropvar/scrops" style="--background: rgb(19, 1, 1);">
       <img src="/assets/crops1.jpg" slot="start" style="height:50px;width:50px;">
-      <ion-text style="font-size:20px;">බෝග</ion-text>
-      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+      <ion-text style="font-size:20px;color: #5cf304;">බෝග</ion-text>
+      <ion-icon name="chevron-forward-outline" slot="end" style="color: #5cf304;"></ion-icon>
     </ion-item> <br>
   
-    <ion-item routerLink="/sprevent/scrop-cropvar/scrops-varieties">
+    <ion-item routerLink="/sprevent/scrop-cropvar/scrops-varieties" style="--background: rgb(19, 1, 1);">
       <img src="/assets/crop-varieties1.jpg" slot="start" style="height:50px;width:50px;">
-      <ion-text style="font-size:20px;">බෝග-වර්ග</ion-text>
-      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+      <ion-text style="font-size:20px;color: #5cf304;">බෝග-වර්ග</ion-text>
+      <ion-icon name="chevron-forward-outline" slot="end" style="color: #5cf304;"></ion-icon>
     </ion-item> 
 
 </ion-content>
 
 <ion-footer [translucent]="true">
-  <ion-toolbar>
-    <div id="footer">
+  <ion-toolbar class="header-footer-background-color">
+    <div id="footer"  class="header-footer-component">
       <ion-button routerLink="/shome"  fill="clear">
-        <ion-icon slot="icon-only" name="home" size="large"></ion-icon>
+        <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
       </ion-button>
       <br><b>මුල් පිටුව</b>
     </div>
