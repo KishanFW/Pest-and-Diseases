@@ -1,16 +1,16 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar class="header-footer-background-color">
 
     <ion-button routerLink="/tsettings"  fill="clear" slot="start">
-      <ion-icon slot="icon-only" name="menu"></ion-icon>
+      <ion-icon slot="icon-only" name="menu"  class="header-footer-component"></ion-icon>
     </ion-button>
 
-    <ion-title style="font-size: 14px;">
+    <ion-title style="font-size: 14px;" class="header-footer-component">
       <b>பூச்சி மற்றும் நோய்கள்</b>
     </ion-title>
 
     <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
-      <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
     </ion-button>
     <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false">
       <ng-template >
@@ -23,7 +23,7 @@
               <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/home"></ion-radio>
             </ion-item>
         
-            <ion-item color="rgb(19, 1, 1)">
+            <ion-item color="rgb(19, 1, 1)" >
               <ion-label color="light">සිංහල</ion-label>
               <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/shome"></ion-radio>
             </ion-item>
@@ -43,30 +43,30 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content style="--background: rgb(19, 1, 1);">
 
   <br><br>
-  <ion-item routerLink="/tdetect">
-  <ion-text style="font-size:25px"><b>கண்டறிய</b></ion-text>
+  <ion-item routerLink="/tdetect" style="--background: rgb(19, 1, 1);">
+  <ion-text style="font-size:25px;color: #5cf304;"><b>கண்டறிய</b></ion-text>
   <img src="/assets/detect1.jpg" slot="start" style="width:50px;height:50px;">
-  <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+  <ion-icon name="chevron-forward-outline" slot="end" style="color: #5cf304;"></ion-icon>
 </ion-item>
 <br><br>
 
 
-<ion-item routerLink="/tprevent">
+<ion-item routerLink="/tprevent" style="--background: rgb(19, 1, 1);">
   <img src="/assets/prevent1.jpg" slot="start" style="width:50px;height:50px;">
-  <ion-text style="font-size:25px"><b>தடுக்க</b></ion-text>
-  <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+  <ion-text style="font-size:25px;color: #5cf304;"><b>தடுக்க</b></ion-text>
+  <ion-icon name="chevron-forward-outline" slot="end" style="color: #5cf304;"></ion-icon>
 </ion-item>
 
 </ion-content>
 
 <ion-footer [translucent]="true">
-  <ion-toolbar>
-    <div id="footer" style="font-size: 10px;">
+  <ion-toolbar class="header-footer-background-color">
+    <div id="footer" style="font-size: 10px;" class="header-footer-component">
       <ion-button routerLink="/thome"  fill="clear">
-        <ion-icon slot="icon-only" name="home" size="large"></ion-icon>
+        <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
       </ion-button>
       <br><b>முகப்பு பக்கம்</b>
     </div>
