@@ -1,13 +1,13 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="header-footer-background-color">
     <ion-buttons slot="start">
-      <ion-back-button routerLink="/tdetect"></ion-back-button>
+      <ion-back-button routerLink="/tdetect" class="header-footer-component"></ion-back-button>
     </ion-buttons>
 
-    <ion-title>பயிர் அல்லது பயிர் மற்றும் பல்வேறு</ion-title>
+    <ion-title class="header-footer-component">பயிர் அல்லது பயிர் மற்றும் பல்வேறு</ion-title>
 
     <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
-      <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
     </ion-button>
     <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
       <ng-template >
@@ -39,31 +39,31 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content  style="--background: rgb(19, 1, 1);">
 
-  <p style="font-size:24px; text-align:center;"><b>பயிர்கள் அல்லது பயிர் மற்றும் வகைகளை தேர்ந்தெடு</b></p>
+  <p style="font-size:24px; text-align:center; color: #ffffff"><b>பயிர்கள் அல்லது பயிர் மற்றும் வகைகளை தேர்ந்தெடு</b></p>
 <br>
 
-  <ion-item routerLink="/tdetect/tcrop-cropvar/tcrops">
+  <ion-item routerLink="/tdetect/tcrop-cropvar/tcrops" style="--background: rgb(19, 1, 1);">
     <img src="/assets/crops1.jpg" slot="start" style="height:50px;width:50px;">
-    <ion-text style="font-size:20px;">பயிர்கள்</ion-text>
-    <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+    <ion-text style="font-size:20px; color: #5cf304;">பயிர்கள்</ion-text>
+    <ion-icon name="chevron-forward-outline" slot="end" style="color: #5cf304;"></ion-icon>
   </ion-item> <br>
 
-  <ion-item routerLink="/tdetect/tcrop-cropvar/tcrops-varieties">
+  <ion-item routerLink="/tdetect/tcrop-cropvar/tcrops-varieties" style="--background: rgb(19, 1, 1);">
     <img src="/assets/crop-varieties1.jpg" slot="start" style="height:50px;width:50px;">
-    <ion-text style="font-size:20px;">பயிர்கள்-வகைகள்</ion-text>
-    <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+    <ion-text style="font-size:20px; color: #5cf304;">பயிர்கள்-வகைகள்</ion-text>
+    <ion-icon name="chevron-forward-outline" slot="end" style="color: #5cf304;"></ion-icon>
   </ion-item> 
 
 
 </ion-content>
 
 <ion-footer [translucent]="true">
-  <ion-toolbar>
-    <div id="footer" style="font-size: 10px;">
+  <ion-toolbar class="header-footer-background-color">
+    <div id="footer" style="font-size: 10px;" class="header-footer-component">
       <ion-button routerLink="/thome"  fill="clear">
-        <ion-icon slot="icon-only" name="home" size="large"></ion-icon>
+        <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
       </ion-button>
       <br><b>முகப்பு பக்கம்</b>
     </div>
