@@ -1,13 +1,13 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="header-footer-background-color" >
     <ion-buttons slot="start">
-      <ion-back-button routerLink="/tdetect/tcrop-cropvar/tcrops/tbrinjal"></ion-back-button>
+      <ion-back-button routerLink="/tdetect/tcrop-cropvar/tcrops/tbrinjal" class="header-footer-component"></ion-back-button>
     </ion-buttons>
 
-    <ion-title>பூச்சிகள்</ion-title>
+    <ion-title class="header-footer-component">பூச்சிகள்</ion-title>
 
     <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
-      <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
     </ion-button>
     <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
       <ng-template >
@@ -39,21 +39,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content  style="--background: rgb(19, 1, 1);">
   <br>
-  <h5><b>பூச்சி வகைகள்</b></h5><br>
+  <h5 style="font-size:24px; text-align:center;color: #ffffff"><b>பூச்சி வகைகள்</b></h5><br>
   
-  <ion-item>
+  <ion-item style="--background: rgb(19, 1, 1);">
     <ion-button expand="full" (click)="slidedown1()" fill="clear">
-      <h6>1) துளைப்பான் மற்றும் பழம் துளைப்பான்</h6>
-      <ion-icon name="{{updownicon1}}" slot="end"></ion-icon>
+      <h6 style="color: #5cf304">1) துளைப்பான் மற்றும் பழம் துளைப்பான்</h6>
+      <ion-icon name="{{updownicon1}}" slot="end" style="color: #5cf304"></ion-icon>
     </ion-button>
   </ion-item>
   
   
   <div [hidden]=ishidden1>
-    <ion-card>
-      <ion-card-content>
+    <ion-card style="--background: rgb(19, 1, 1);">
+      <ion-card-content style="color: #ffffff; font-size: 17px;">
         <ion-text>
            <br> <br>
           
@@ -101,17 +101,18 @@
   </div>
 
   <br>
-<ion-item>
+<ion-item style="--background: rgb(19, 1, 1);">
 <ion-button expand="full" (click)="slidedown2()" fill="clear">
-  <h6>2) இலை சுருங்கும் கம்பளிப்பூச்சி
+  <h6 style="color: #5cf304">2) இலை சுருங்கும் கம்பளிப்பூச்சி
     </h6>
-  <ion-icon name="{{updownicon2}}" slot="end"></ion-icon>
+  <ion-icon name="{{updownicon2}}" slot="end" style="color: #5cf304"></ion-icon>
 </ion-button>
 </ion-item>
 
 <div [hidden]=ishidden2>
-<ion-card>
-  <ion-card-content>
+<ion-card  style="--background: rgb(19, 1, 1);">
+  
+  <ion-card-content style="color: #ffffff; font-size: 17px;">
     <ion-text>
       <b>Psara bipunctalis (Order-Lepidoptera, Family-Pyralidae)</b>  <br> <br>
       
@@ -145,17 +146,17 @@
 </div>
 
 <br>
-<ion-item >
+<ion-item style="--background: rgb(19, 1, 1);">
 <ion-button expand="full" (click)="slidedown3()" fill="clear">
-  <h6> 3) இலை அசுவினி
+  <h6 style="color: #5cf304"> 3) இலை அசுவினி
     </h6>
-  <ion-icon name="{{updownicon3}}" slot="end"></ion-icon>
+  <ion-icon name="{{updownicon3}}" slot="end" style="color: #5cf304"></ion-icon>
 </ion-button>
 </ion-item>
 
 <div [hidden]=ishidden3>
-<ion-card>
-  <ion-card-content>
+<ion-card style="--background: rgb(19, 1, 1);">
+  <ion-card-content style="color: #ffffff; font-size: 17px;">
     <ion-text>
       <b>(Amrasca Spp.) (Order-Homoptera, Family-Cicadellidae)</b>  <br> <br>
       
@@ -191,16 +192,16 @@
 
 <br>
 
-<ion-item>
+<ion-item style="--background: rgb(19, 1, 1);">
   <ion-button expand="full" (click)="slidedown4()" fill="clear">
-    <h6>4) பூச்சி சேதம் </h6>
-    <ion-icon name="{{updownicon4}}" slot="end"></ion-icon>
+    <h6 style="color: #5cf304">4) பூச்சி சேதம் </h6>
+    <ion-icon name="{{updownicon4}}" slot="end" style="color: #5cf304"></ion-icon>
   </ion-button>
 </ion-item>
 
 <div [hidden]=ishidden4>
-  <ion-card>
-    <ion-card-content>
+  <ion-card style="--background: rgb(19, 1, 1);">
+    <ion-card-content style="color: #ffffff; font-size: 17px;">
       <ion-text>
         <br><br>
         
@@ -238,10 +239,10 @@
 </ion-content>
 
 <ion-footer [translucent]="true">
-  <ion-toolbar>
-    <div id="footer" style="font-size: 10px;">
+  <ion-toolbar class="header-footer-background-color">
+    <div id="footer" style="font-size: 10px;" class="header-footer-component">
       <ion-button routerLink="/thome"  fill="clear">
-        <ion-icon slot="icon-only" name="home" size="large"></ion-icon>
+        <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
       </ion-button>
       <br><b>முகப்பு பக்கம்</b>
     </div>
