@@ -8,10 +8,7 @@ const routes: Routes = [
     path: '',
     component: SbrinjalPage
   },
-  {
-    path: 'spest-diseases',
-    loadChildren: () => import('./spest-diseases/spest-diseases.module').then( m => m.SpestDiseasesPageModule)
-  }
+
 ];
 
 @NgModule({

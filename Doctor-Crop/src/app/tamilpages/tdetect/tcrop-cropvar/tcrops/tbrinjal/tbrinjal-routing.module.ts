@@ -9,8 +9,12 @@ const routes: Routes = [
     component: TbrinjalPage
   },
   {
-    path: 'tpest-diseases',
-    loadChildren: () => import('./tpest-diseases/tpest-diseases.module').then( m => m.TpestDiseasesPageModule)
+    path: 'tpest',
+    loadChildren: () => import('./tpest/tpest.module').then( m => m.TpestPageModule)
+  },
+  {
+    path: 'tdiseases',
+    loadChildren: () => import('./tdiseases/tdiseases.module').then( m => m.TdiseasesPageModule)
   }
 ];
 

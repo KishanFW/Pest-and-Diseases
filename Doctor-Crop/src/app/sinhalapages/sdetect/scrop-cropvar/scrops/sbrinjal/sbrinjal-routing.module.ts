@@ -9,8 +9,12 @@ const routes: Routes = [
     component: SbrinjalPage
   },
   {
-    path: 'spest-diseases',
-    loadChildren: () => import('./spest-diseases/spest-diseases.module').then( m => m.SpestDiseasesPageModule)
+    path: 'spest',
+    loadChildren: () => import('./spest/spest.module').then( m => m.SpestPageModule)
+  },
+  {
+    path: 'sdiseases',
+    loadChildren: () => import('./sdiseases/sdiseases.module').then( m => m.SdiseasesPageModule)
   }
 ];
 

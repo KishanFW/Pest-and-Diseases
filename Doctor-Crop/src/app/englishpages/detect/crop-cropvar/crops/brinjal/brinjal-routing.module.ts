@@ -9,8 +9,12 @@ const routes: Routes = [
     component: BrinjalPage
   },
   {
-    path: 'pest-diseases',
-    loadChildren: () => import('./pest-diseases/pest-diseases.module').then( m => m.PestDiseasesPageModule)
+    path: 'pest',
+    loadChildren: () => import('./pest/pest.module').then( m => m.PestPageModule)
+  },
+  {
+    path: 'diseases',
+    loadChildren: () => import('./diseases/diseases.module').then( m => m.DiseasesPageModule)
   }
 ];
 

@@ -8,10 +8,6 @@ const routes: Routes = [
     path: '',
     component: TbrinjalPage
   },
-  {
-    path: 'tpest-diseases',
-    loadChildren: () => import('./tpest-diseases/tpest-diseases.module').then( m => m.TpestDiseasesPageModule)
-  }
 ];
 
 @NgModule({
