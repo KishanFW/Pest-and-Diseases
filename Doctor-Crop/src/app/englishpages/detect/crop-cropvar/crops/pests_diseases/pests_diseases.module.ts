@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { BrinjalPageRoutingModule } from './brinjal-routing.module';
+import { pests_diseasesPageRoutingModule } from './pests_diseases-routing.module';
 
-import { BrinjalPage } from './brinjal.page';
+import { pests_diseasesPage } from './pests_diseases.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BrinjalPageRoutingModule
+    pests_diseasesPageRoutingModule
   ],
-  declarations: [BrinjalPage]
+  declarations: [pests_diseasesPage]
 })
-export class BrinjalPageModule {}
+export class pests_diseasesPageModule {}

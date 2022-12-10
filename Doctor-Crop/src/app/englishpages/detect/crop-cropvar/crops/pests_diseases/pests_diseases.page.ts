@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-brinjal',
-  templateUrl: './brinjal.page.html',
-  styleUrls: ['./brinjal.page.scss'],
+  selector: 'app-pests_diseases',
+  templateUrl: './pests_diseases.page.html',
+  styleUrls: ['./pests_diseases.page.scss'],
 })
-export class BrinjalPage implements OnInit {
+export class pests_diseasesPage implements OnInit {
 
   constructor() { }
 
@@ -16,7 +16,7 @@ export class BrinjalPage implements OnInit {
 
   isOpen = false;
 
-  private presentPopover(e: Event) {
+  presentPopover(e: Event) {
     this.popover.event = e;
     this.isOpen = true;
   }

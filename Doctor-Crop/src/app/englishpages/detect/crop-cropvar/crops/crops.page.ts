@@ -16,7 +16,7 @@ export class CropsPage implements OnInit {
 
   isOpen = false;
 
-  private presentPopover(e: Event) {
+  presentPopover(e: Event) {
     this.popover.event = e;
     this.isOpen = true;
   }

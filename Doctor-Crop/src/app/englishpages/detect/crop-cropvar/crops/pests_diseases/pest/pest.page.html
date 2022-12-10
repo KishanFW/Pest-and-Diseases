@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar class="header-footer-background-color">
     <ion-buttons slot="start">
-      <ion-back-button routerLink="/detect/crop-cropvar/crops/brinjal"  class="header-footer-component"></ion-back-button>
+      <ion-back-button routerLink="/detect/crop-cropvar/crops/pests_diseases"  class="header-footer-component"></ion-back-button>
     </ion-buttons>
 
     <ion-title class="header-footer-component" >Pest</ion-title>
@@ -19,12 +19,12 @@
               <ion-label color="light">English</ion-label>
               <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/detect/crop-cropvar/crops/brinjal/pest"></ion-radio>
             </ion-item>
-        
+
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">සිංහල</ion-label>
               <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/sdetect/scrop-cropvar/scrops/sbrinjal/spest"></ion-radio>
             </ion-item>
-        
+
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">தமிழ்</ion-label>
               <ion-radio slot="end" value="tamil" (click)="isOpen = false" routerLink="/tdetect/tcrop-cropvar/tcrops/tbrinjal/tpest"></ion-radio>
@@ -32,7 +32,7 @@
 
           </ion-radio-group>
         </ion-list>
-        
+
        </ion-content>
       </ng-template>
     </ion-popover>
@@ -42,22 +42,22 @@
 <ion-content  style="--background: rgb(19, 1, 1);">
   <br>
   <h5><b style="font-size:18px; text-align:center; color: white;">Pest types</b></h5><br>
-  
+
   <ion-item style="--background: rgb(19, 1, 1);">
     <ion-button expand="full" (click)="slidedown1()" fill="clear" >
       <h6 style="color: #5cf304; font-size: 16px;">1) Borer and fruit borer</h6>
       <ion-icon name="{{updownicon1}}" slot="end" style="color: #5cf304; font-size: 16px;"></ion-icon>
     </ion-button>
   </ion-item>
-  
-  
+
+
   <div [hidden]=ishidden1>
     <ion-card style="--background: rgb(19, 1, 1);">
       <ion-card-content style="color: #ffffff; font-size: 17px;">
         <ion-text>
-          
+
           <b> symptoms:</b>
-         <ul> 
+         <ul>
           <li>Damage can be identified by drooping stems and black holes in the fruit.</li>
           <br>
           <li> The pores are filled with excretory material.</li>
@@ -67,16 +67,16 @@
           <li>Plant growth is stunted due to larval damage.</li>
           </ul>
         </ion-text>
-  
+
         <br>
           <img src="assets/crops/brinjal/detect/pest/Stem-and-Fruit-borer-in-Brinjal.jfif" class="img1">
           <br>
           <img src="assets/crops/brinjal/detect/pest/Brinjal-Shoot-Borer-and-Fruit-Borer.jfif" class="img1" style="margin-left: 0">
         <br><br>
-  
+
         <ion-text>
           <b> Management </b>
-         <ul> 
+         <ul>
           <li>Applying a live or non-living barrier (corn, sorghum or insect resistant net) around the brinjal field to a height of abo
             ut 2 m.</li>
           <br>
@@ -117,15 +117,15 @@
   <ion-card-content style="color: #ffffff; font-size: 17px;">
     <ion-text>
       <b>Psara bipunctalis (Order-Lepidoptera, Family-Pyralidae)</b>  <br> <br>
-      
+
       <b> symptoms:</b>
-     <ul> 
+     <ul>
       <li> A few leaves of the plant are bunched up and the larvae are fed in them. </li>
       <br>
       <li> Here the remaining parts are eaten except the leaf's veinal.</li>
       <br>
       <li> The growth of the plant is stunted due to the destruction of the apical leaves. </li>
-      </ul> 
+      </ul>
     </ion-text>
 
       <br>
@@ -134,7 +134,7 @@
 
       <ion-text>
       <b>  Management</b>
-    <ul> 
+    <ul>
       <li>Break up and destroy the tightly packed leaves.</li>
       <br>
       <li>Apply recommended agrochemicals as recommended</li>
@@ -160,9 +160,9 @@
   <ion-card-content style="color: #ffffff; font-size: 17px;">
     <ion-text>
       <b>(Amrasca Spp.) (Order-Homoptera, Family-Cicadellidae)</b>  <br> <br>
-      
+
       <b> symptoms:</b>
-    <ul> 
+    <ul>
       <li>The emerging adult is light green and both the emerging adult and the larva causes damage to the plant.</li>
       <br>
       <li>Sap sucking from the underside of the leaf causes leaf shrinkage, curling, and yellowing from the leaf edge to the mi
@@ -182,7 +182,7 @@
     <ion-text>
 
       <b>  Management</b>
-     <ul> 
+     <ul>
       <li>Good crop maintenance and in case of widespread damage, control with a recommended insecticide.</li>
       <br>
       <li>Apply recommended agrochemicals as recommended.</li>
@@ -206,9 +206,9 @@
   <ion-card style="--background: rgb(19, 1, 1);">
     <ion-card-content style="color: #ffffff; font-size: 17px;">
       <ion-text>
-        
+
         <b> symptoms:</b>
-      <ul> 
+      <ul>
         <li> Mites suck sap from leaves and fruits. When the juice is sucked from the fruit, the outer skin of the fruit becomes ro
           ugh and turns brown.</li>
         <br>
@@ -229,7 +229,7 @@
 
       <ion-text>
         <b> Management </b>
-     <ul> 
+     <ul>
         <li>Good crop maintenance and adequate irrigation (especially under dry weather conditions); water deficit crops are mo
           re susceptible to damage.</li>
         <br>

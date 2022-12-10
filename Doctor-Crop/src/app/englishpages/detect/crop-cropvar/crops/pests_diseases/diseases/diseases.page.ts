@@ -24,7 +24,7 @@ export class DiseasesPage implements OnInit {
   updownicon6: String = "caret-down-outline"
   updownicon7: String = "caret-down-outline"
   updownicon8: String = "caret-down-outline"
-  
+
   constructor() { }
 
   ngOnInit() {
@@ -132,7 +132,7 @@ export class DiseasesPage implements OnInit {
 
   isOpen = false;
 
-  private presentPopover(e: Event) {
+  presentPopover(e: Event) {
     this.popover.event = e;
     this.isOpen = true;
   }

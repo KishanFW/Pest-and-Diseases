@@ -9,8 +9,8 @@ const routes: Routes = [
     component: CropsPage
   },
   {
-    path: 'brinjal',
-    loadChildren: () => import('./brinjal/brinjal.module').then( m => m.BrinjalPageModule)
+    path: 'pests_diseases',
+    loadChildren: () => import('./pests_diseases/pests_diseases.module').then( m => m.pests_diseasesPageModule)
   }
 ];
 
