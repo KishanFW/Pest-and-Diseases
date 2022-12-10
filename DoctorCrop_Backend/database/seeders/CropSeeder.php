@@ -15,24 +15,24 @@ class CropSeeder extends Seeder
     public function run()
     {
         Crop::create([
-            'Crop_Name'=>'Banana',
-            'Img_Path'=>'/assets/crops/banana.png'
+            'crop_name'=>'Banana',
+            'img_path'=>'/assets/crops/banana.png'
         ]);
         Crop::create([
-            'Crop_Name'=>'Bitter Gound',
-            'Img_Path'=>'/assets/crops/bitterground.png'
+            'crop_name'=>'Bitter Gound',
+            'img_path'=>'/assets/crops/bitterground.png'
         ]);
         Crop::create([
-            'Crop_Name'=>'Brinjal',
-            'Img_Path'=>'/assets/crops/bri.webp'
+            'crop_name'=>'Brinjal',
+            'img_path'=>'/assets/crops/bri.webp'
         ]);
         Crop::create([
-            'Crop_Name'=>'Carrot',
-            'Img_Path'=>'/assets/crops/carrot.png'
+            'crop_name'=>'Carrot',
+            'img_path'=>'/assets/crops/carrot.png'
         ]);
         Crop::create([
-            'Crop_Name'=>'Cassava',
-            'Img_Path'=>'/assets/crops/cassava.png'
+            'crop_name'=>'Cassava',
+            'img_path'=>'/assets/crops/cassava.png'
         ]);
     }
 }
