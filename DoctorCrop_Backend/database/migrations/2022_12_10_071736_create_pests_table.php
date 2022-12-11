@@ -14,6 +14,7 @@ class CreatePestsTable extends Migration
     public function up()
     {
         Schema::create('pests', function (Blueprint $table) {
+
             $table->smallInteger('pest_id')->autoIncrement();
             $table->smallInteger('crop_id');
             $table->foreign('crop_id')->references('crop_id')->on('crops');
