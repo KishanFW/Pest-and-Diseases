@@ -7,10 +7,6 @@ const routes: Routes = [
   {
     path: '',
     component: CropsPage
-  },
-  {
-    path: 'pests_diseases',
-    loadChildren: () => import('./pests_diseases/pests_diseases.module').then( m => m.pests_diseasesPageModule)
   }
 ];
 

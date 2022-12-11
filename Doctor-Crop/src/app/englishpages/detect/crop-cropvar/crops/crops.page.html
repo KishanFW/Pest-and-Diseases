@@ -43,9 +43,9 @@
 
 <ion-content style="--background: rgb(19, 1, 1);">
   <br>
-  <div  *ngFor="let crops of crops$|async">
-    <ion-item style="--background: rgb(19, 1, 1);">
-      <img src="{{crops.img_path}}"><ion-label style="color: #5cf304; font-size: 20px;">{{crops.crop_name}}</ion-label>
+  <div  *ngFor="let crop of crops$|async">
+    <ion-item style="--background: rgb(19, 1, 1);" (click)="openPests_diseasesModal(crop)">
+      <img src="{{crop.img_path}}"><ion-label style="color: #5cf304; font-size: 20px;">{{crop.crop_name}}</ion-label>
       <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
     </ion-item>
     <br>
