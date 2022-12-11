@@ -1,10 +1,11 @@
 <ion-header>
   <ion-toolbar class="header-footer-background-color">
-    <ion-buttons slot="start">
-      <ion-back-button routerLink="/detect/crop-cropvar/crops"  class="header-footer-component"></ion-back-button>
+
+    <ion-buttons slot="start" routerLink="/detect/crop-cropvar/crops" (click)="closeModal()">
+      <ion-icon slot="icon-only" name="arrow-back-outline" class="header-footer-component"></ion-icon>
     </ion-buttons>
 
-    <ion-title class="header-footer-component">Crop Name</ion-title>
+    <ion-title class="header-footer-component">{{crop.crop_name}}</ion-title>
 
     <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
       <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
@@ -45,13 +46,13 @@
   <p style="font-size:24px; text-align:center; color: white;"><b>Choose pest or diseases</b></p>
   <br>
 
-    <ion-item  routerLink="/detect/crop-cropvar/crops/pests_diseases/pest" style= "--background: rgb(19, 1, 1);">
+    <ion-item style= "--background: rgb(19, 1, 1);">
       <img src="/assets/pest.jpg" slot="start" style="width:50px;height:50px;">
       <ion-text style="font-size:20px;color: #5cf304;">Pest</ion-text>
       <ion-icon name="chevron-forward-outline" slot="end" style="color: #5cf304;"></ion-icon>
     </ion-item> <br>
 
-    <ion-item routerLink="/detect/crop-cropvar/crops/pests_diseases/diseases"  style= "--background: rgb(19, 1, 1);">
+    <ion-item style= "--background: rgb(19, 1, 1);">
       <img src="/assets/diseases.jpg" slot="start" style="width:50px;height:50px;">
       <ion-text style="font-size:20px;color: #5cf304;">Diseases</ion-text>
       <ion-icon name="chevron-forward-outline" slot="end" style="color: #5cf304;"></ion-icon>
@@ -64,7 +65,7 @@
 <ion-footer [translucent]="true">
   <ion-toolbar  class="header-footer-background-color">
     <div id="footer" class="header-footer-component">
-      <ion-button routerLink="/home"  fill="clear">
+      <ion-button routerLink="/home"  fill="clear" (click)="closeModal()">
         <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
       </ion-button>
       <br><b>Home</b>
