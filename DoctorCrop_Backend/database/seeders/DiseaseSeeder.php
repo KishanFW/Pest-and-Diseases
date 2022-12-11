@@ -16,7 +16,6 @@ class DiseaseSeeder extends Seeder
     {
         Disease::create([
             'crop_id'=>3,
-            'variety_name'=>'',
             'disease_name'=>'Damping-Off',
             'disease_type'=>'Fungal Diseases',
             'causal_organism'=>'Pythium spp.,  Phytophthora spp., Fusarium spp.,  Rhizoctonia spp. and  Sclerotium rolfsii',
@@ -32,7 +31,6 @@ class DiseaseSeeder extends Seeder
 
         Disease::create([
             'crop_id'=>3,
-            'variety_name'=>'',
             'disease_name'=>'Collar rot',
             'disease_type'=>'Fungal Diseases',
             'causal_organism'=>'Sclerotium rolfsii',
@@ -49,7 +47,6 @@ class DiseaseSeeder extends Seeder
 
         Disease::create([
             'crop_id'=>3,
-            'variety_name'=>'',
             'disease_name'=>'Fusarium wilt',
             'disease_type'=>'Fungal Diseases',
             'causal_organism'=>'Fusarium oxysporum f.sp lycopersici',
@@ -66,7 +63,6 @@ class DiseaseSeeder extends Seeder
 
         Disease::create([
             'crop_id'=>3,
-            'variety_name'=>'',
             'disease_name'=>'Powdery mildew',
             'disease_type'=>'Fungal Diseases',
             'causal_organism'=>'Podosphaera xanthii',
@@ -81,7 +77,6 @@ class DiseaseSeeder extends Seeder
 
         Disease::create([
             'crop_id'=>3,
-            'variety_name'=>'',
             'disease_name'=>'Anthracnose',
             'disease_type'=>'Fungal Diseases',
             'causal_organism'=>'Colletotrichum gloeosporioides',
@@ -97,7 +92,6 @@ class DiseaseSeeder extends Seeder
 
         Disease::create([
             'crop_id'=>3,
-            'variety_name'=>'',
             'disease_name'=>'Phomopsis blight',
             'disease_type'=>'Fungal Diseases',
             'causal_organism'=>'Phomopsis vexans',
@@ -110,7 +104,6 @@ class DiseaseSeeder extends Seeder
 
         Disease::create([
             'crop_id'=>3,
-            'variety_name'=>'',
             'disease_name'=>'Bacterial wilt',
             'disease_type'=>'Bacterial diseases',
             'causal_organism'=>'Ralstonia solanacearum',
@@ -126,7 +119,6 @@ class DiseaseSeeder extends Seeder
 
         Disease::create([
             'crop_id'=>3,
-            'variety_name'=>'',
             'disease_name'=>'Little leaf disease',
             'disease_type'=>'Phytoplasma disease',
             'causal_organism'=>'Phytoplasma The disease is transmitted by a leaf hopper(Hishimonus phycitiy)',

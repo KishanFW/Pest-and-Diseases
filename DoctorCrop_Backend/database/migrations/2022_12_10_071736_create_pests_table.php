@@ -14,13 +14,13 @@ class CreatePestsTable extends Migration
     public function up()
     {
         Schema::create('pests', function (Blueprint $table) {
-            $table->SmallIntiger('pest_id')->autoIncrement();
+            $table->smallInteger('pest_id')->autoIncrement();
             $table->smallInteger('crop_id');
             $table->foreign('crop_id')->references('crop_id')->on('crops');
-            $table->string('variety_name')->nullable;
-            $table->foreign('variety_name')->references('variety_name')->on('varieties')->nullable;
+            $table->string('variety_name')->nullable();
+            $table->foreign('variety_name')->references('variety_name')->on('varieties');
             $table->String('pest_name');
-            $table->String('management');
+            $table->longText('management');
             $table->timestamps();
         });
     }

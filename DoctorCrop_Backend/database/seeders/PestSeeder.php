@@ -39,7 +39,7 @@ class PestSeeder extends Seeder
             <li>Chemical suppression
               <ul>Apply recommended agrochemicals as recommended</ul>
               </li>
-          </ul>'      
+          </ul>'
         ]);
 
         Pest::create([
@@ -52,7 +52,7 @@ class PestSeeder extends Seeder
             <br>
             <li>Harvest only after at least 7-10 days of applying a recommended insecticide.</li>
           </ul>'
-        ]);+
+        ]);
 
         Pest::create([
             'crop_id'=>3,
@@ -62,7 +62,7 @@ class PestSeeder extends Seeder
             <br>
             <li>Apply recommended agrochemicals as recommended.</li>
           </ul>'
-            
+
         ]);
 
         Pest::create([
