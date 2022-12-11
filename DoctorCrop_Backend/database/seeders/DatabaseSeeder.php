@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             CropSeeder::class,
-            VarietySeeder::class
+            VarietySeeder::class,
+            PestImgPathSeeder::class
     ]);
 
     }
