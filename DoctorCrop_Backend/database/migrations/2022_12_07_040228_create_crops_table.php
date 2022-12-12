@@ -14,7 +14,7 @@ class CreateCropsTable extends Migration
     public function up()
     {
         Schema::create('crops', function (Blueprint $table) {
-            $table->string('crop_name',25)->primary();
+            $table->string('crop_name')->primary();
             $table->string('img_path');
             $table->timestamps();
         });

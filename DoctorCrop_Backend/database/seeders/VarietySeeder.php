@@ -16,38 +16,38 @@ class VarietySeeder extends Seeder
     {
         Variety::create([
             'variety_name'=>'Amanda F1',
-            'crop_id'=>3,
+            'crop_name'=>'Brinjal',
             'img_path'=>'assets/crops/brinjal/brinjalvarieties/amanda.jpg'
         ]);
 
         Variety::create([
             'variety_name'=>'Anjalee-F1',
-            'crop_id'=>3,
+            'crop_name'=>'Brinjal',
             'img_path'=>'assets/crops/brinjal/brinjalvarieties/anjalee.jpg'
         ]);
 
 
         Variety::create([
             'variety_name'=>'HORDI Lenairi 1',
-            'crop_id'=>3,
+            'crop_name'=>'Brinjal',
             'img_path'=>'assets/crops/brinjal/brinjalvarieties/hordi.jpg'
         ]);
 
         Variety::create([
             'variety_name'=>'Thinnaweli purple',
-            'crop_id'=>3,
+            'crop_name'=>'Brinjal',
             'img_path'=>'assets/crops/brinjal/brinjalvarieties/thinnawely.png'
         ]);
 
         Variety::create([
             'variety_name'=>'padagoda(BW-11)',
-            'crop_id'=>3,
+            'crop_name'=>'Brinjal',
             'img_path'=>'assets/crops/brinjal/brinjalvarieties/padagoda.png'
         ]);
 
         Variety::create([
             'variety_name'=>'SM-164',
-            'crop_id'=>3,
+            'crop_name'=>'Brinjal',
             'img_path'=>'assets/crops/brinjal/brinjalvarieties/SM.png'
         ]);
 

@@ -15,7 +15,6 @@ class PestSeeder extends Seeder
     public function run()
     {
         Pest::create([
-            'crop_id'=>3,
             'pest_name'=>'Borer and fruit borer',
             'management'=>' <ul>
             <li>Applying a live or non-living barrier (corn, sorghum or insect resistant net) around the brinjal field to a height of abo
@@ -43,7 +42,6 @@ class PestSeeder extends Seeder
         ]);
 
         Pest::create([
-            'crop_id'=>3,
             'pest_name'=>'Leaf-shrinking caterpillar',
             'management'=>' <ul>
             <li>Break up and destroy the tightly packed leaves.</li>
@@ -55,7 +53,6 @@ class PestSeeder extends Seeder
         ]);
 
         Pest::create([
-            'crop_id'=>3,
             'pest_name'=>'Leaf aphid',
             'management'=>' <ul>
             <li>Good crop maintenance and in case of widespread damage, control with a recommended insecticide.</li>
@@ -66,7 +63,6 @@ class PestSeeder extends Seeder
         ]);
 
         Pest::create([
-            'crop_id'=>3,
             'pest_Name'=>'Mite damage',
             'management'=>' <ul>
             <li>Good crop maintenance and adequate irrigation (especially under dry weather conditions); water deficit crops are mo

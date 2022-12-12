@@ -16,7 +16,7 @@ class PestsymptomSeeder extends Seeder
     public function run()
     {
         Pestsymptom::create([
-            'pest_id'=>1,
+            'pest_name'=>'Borer and fruit borer',
             'symptoms'=>'<ul>
             <li>Damage can be identified by drooping stems and black holes in the fruit.</li>
             <br>
@@ -30,7 +30,7 @@ class PestsymptomSeeder extends Seeder
         ]);
 
         Pestsymptom::create([
-            'pest_id'=>2,
+            'pest_name'=>'Leaf-shrinking caterpillar',
             'symptoms'=>"<ul>
             <li> A few leaves of the plant are bunched up and the larvae are fed in them. </li>
             <br>
@@ -41,7 +41,7 @@ class PestsymptomSeeder extends Seeder
         ]);
 
         Pestsymptom::create([
-            'pest_id'=>3,
+            'pest_name'=>'Leaf aphid',
             'symptoms'=>'<ul>
             <li>The emerging adult is light green and both the emerging adult and the larva causes damage to the plant.</li>
             <br>
@@ -56,7 +56,7 @@ class PestsymptomSeeder extends Seeder
         ]);
 
         Pestsymptom::create([
-            'pest_id'=>4,
+            'pest_Name'=>'Mite damage',
             'symptoms'=>'<ul>
             <li> Mites suck sap from leaves and fruits. When the juice is sucked from the fruit, the outer skin of the fruit becomes ro
               ugh and turns brown.</li>

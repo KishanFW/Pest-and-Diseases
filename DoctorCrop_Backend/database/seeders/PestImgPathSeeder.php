@@ -15,32 +15,32 @@ class PestImgPathSeeder extends Seeder
     public function run()
     {
         Pestimgpath::create([
-            'pest_id'=>1,
+            'pest_name'=>'Borer and fruit borer',
             'img_path'=>'assets/crops/brinjal/detect/pest/Stem-and-Fruit-borer-in-Brinjal.jfif'
         ]);
 
         Pestimgpath::create([
-            'pest_id'=>1,
+            'pest_name'=>'Borer and fruit borer',
             'img_path'=>'assets/crops/brinjal/detect/pest/Brinjal-Shoot-Borer-and-Fruit-Borer.jfif'
         ]);
 
         Pestimgpath::create([
-            'pest_id'=>2,
+            'pest_name'=>'Leaf-shrinking caterpillar',
             'img_path'=>'assets/crops/brinjal/detect/pest/Eggplant-caterpillar-Leaf-rolling-catepillar.jfif'
         ]);
 
         Pestimgpath::create([
-            'pest_id'=>3,
+            'pest_name'=>'Leaf aphid',
             'img_path'=>'assets/crops/brinjal/detect/pest/Tiny-Leafhopper-insect(Cicadellidae,Homoptera)on-a-leaf-in-the-garden.jpg'
         ]);
 
         Pestimgpath::create([
-            'pest_id'=>4,
+            'pest_Name'=>'Mite damage',
             'img_path'=>'assets/crops/brinjal/detect/pest/Spidaer-mites-injury-to-eggplant.jpg'
         ]);
 
         Pestimgpath::create([
-            'pest_id'=>4,
+            'pest_Name'=>'Mite damage',
             'img_path'=>'assets/crops/brinjal/detect/pest/red-spider-mites.jpg'
         ]);
     }
