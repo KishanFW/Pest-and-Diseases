@@ -14,8 +14,8 @@ class CreatePestImgPathsTable extends Migration
     public function up()
     {
         Schema::create('pest_img_paths', function (Blueprint $table) {
-            $table->smallInteger('pest_id');
-            $table->foreign('pest_id')->references('pest_id')->on('pests');
+            $table->string('pest_name');
+            $table->foreign('pest_name')->references('pest_name')->on('pests');
             $table->String('img_path');
             $table->timestamps();
         });

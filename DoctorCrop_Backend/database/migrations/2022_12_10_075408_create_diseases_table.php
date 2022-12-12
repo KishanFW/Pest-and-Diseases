@@ -14,12 +14,7 @@ class CreateDiseasesTable extends Migration
     public function up()
     {
         Schema::create('diseases', function (Blueprint $table) {
-            $table->smallInteger('disease_id')->autoIncrement();
-            $table->smallInteger('crop_id');
-            $table->foreign('crop_id')->references('crop_id')->on('crops');
-            $table->string('variety_name')->nullable();
-            $table->foreign('variety_name')->references('variety_name')->on('varieties');
-            $table->string('disease_name')->unique();
+            $table->string('disease_name')->primary();
             $table->string('disease_type')->nullable();
             $table->string('causal_organism');
             $table->longText('management');

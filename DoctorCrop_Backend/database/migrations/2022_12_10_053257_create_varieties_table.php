@@ -15,8 +15,8 @@ class CreateVarietiesTable extends Migration
     {
         Schema::create('varieties', function (Blueprint $table) {
             $table->string('variety_name')->unique();
-            $table->smallInteger('crop_id');
-            $table->foreign('crop_id')->references('crop_id')->on('crops');
+            $table->smallInteger('crop_name');
+            $table->foreign('crop_name')->references('crop_name')->on('crops');
             $table->string('img_path');
             $table->timestamps();
         });

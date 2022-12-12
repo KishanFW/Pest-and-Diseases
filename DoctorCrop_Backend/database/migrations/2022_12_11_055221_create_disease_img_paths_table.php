@@ -14,8 +14,8 @@ class CreateDiseaseImgPathsTable extends Migration
     public function up()
     {
         Schema::create('disease_img_paths', function (Blueprint $table) {
-            $table->smallInteger('disease_id');
-            $table->foreign('disease_id')->references('disease_id')->on('diseases');
+            $table->string('disease_name');
+            $table->foreign('disease_name')->references('disease_name')->on('diseases');
             $table->string('img_path')->nullable();
             $table->timestamps();
         });

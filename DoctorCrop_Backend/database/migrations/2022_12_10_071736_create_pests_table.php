@@ -15,12 +15,7 @@ class CreatePestsTable extends Migration
     {
         Schema::create('pests', function (Blueprint $table) {
 
-            $table->smallInteger('pest_id')->autoIncrement();
-            $table->smallInteger('crop_id');
-            $table->foreign('crop_id')->references('crop_id')->on('crops');
-            $table->string('variety_name')->nullable();
-            $table->foreign('variety_name')->references('variety_name')->on('varieties');
-            $table->String('pest_name');
+            $table->String('pest_name')->primary();
             $table->longText('management');
             $table->timestamps();
         });
