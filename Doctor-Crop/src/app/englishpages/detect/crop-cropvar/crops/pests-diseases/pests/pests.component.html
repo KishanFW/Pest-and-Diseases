@@ -41,11 +41,11 @@
 
 <ion-content  style="--background: rgb(19, 1, 1);">
   <br>
-  <h5><b style="font-size:18px; text-align:center; color: white;">Pest types</b></h5><br>
+  <h5><b style="font-size:18px; text-align:center; color: white;">Pest Types</b></h5><br>
 
   <div *ngFor="let pest of pests$|async">
   <ion-item style="--background: rgb(19, 1, 1);">
-    <ion-button expand="full" (click)="slidedown()" fill="clear" >
+    <ion-button expand="full" (click)="slidedown()" fill="clear">
       <h6 style="color: #5cf304; font-size: 16px;">{{ pest.pest_name }}</h6>
       <ion-icon name="{{updownicon}}" slot="end" style="color: #5cf304; font-size: 16px;"></ion-icon>
     </ion-button>
@@ -84,145 +84,6 @@
   </div>
   </div>
 
-  <!--
-  <br>
-<ion-item style="--background: rgb(19, 1, 1);">
-<ion-button expand="full" (click)="slidedown2()" fill="clear">
-  <h6 style="color: #5cf304; font-size: 16px;">2) Leaf-shrinking caterpillar</h6>
-  <ion-icon name="{{updownicon2}}" slot="end" style="color: #5cf304; font-size: 16px;"></ion-icon>
-</ion-button>
-</ion-item>
-
-<div [hidden]=ishidden2>
-<ion-card style="--background: rgb(19, 1, 1);">
-  <ion-card-content style="color: #ffffff; font-size: 17px;">
-    <ion-text>
-      <b>Psara bipunctalis (Order-Lepidoptera, Family-Pyralidae)</b>  <br> <br>
-
-      <b> symptoms:</b>
-     <ul>
-      <li> A few leaves of the plant are bunched up and the larvae are fed in them. </li>
-      <br>
-      <li> Here the remaining parts are eaten except the leaf's veinal.</li>
-      <br>
-      <li> The growth of the plant is stunted due to the destruction of the apical leaves. </li>
-      </ul>
-    </ion-text>
-
-      <br>
-        <img src="assets/crops/brinjal/detect/pest/Eggplant-caterpillar-Leaf-rolling-catepillar.jfif" class="img2">
-     <br><br>
-
-      <ion-text>
-      <b>  Management</b>
-    <ul>
-      <li>Break up and destroy the tightly packed leaves.</li>
-      <br>
-      <li>Apply recommended agrochemicals as recommended</li>
-      <br>
-      <li>Harvest only after at least 7-10 days of applying a recommended insecticide.</li>
-    </ul>
-
-    </ion-text>
-  </ion-card-content>
-</ion-card>
-</div>
-
-<br>
-<ion-item  style="--background: rgb(19, 1, 1);">
-<ion-button expand="full" (click)="slidedown3()" fill="clear">
-  <h6 style="color: #5cf304; font-size: 16px;"> 3) Leaf aphid</h6>
-  <ion-icon name="{{updownicon3}}" slot="end" style="color: #5cf304; font-size: 16px;"></ion-icon>
-</ion-button>
-</ion-item>
-
-<div [hidden]=ishidden3>
-<ion-card style="--background: rgb(19, 1, 1);">
-  <ion-card-content style="color: #ffffff; font-size: 17px;">
-    <ion-text>
-      <b>(Amrasca Spp.) (Order-Homoptera, Family-Cicadellidae)</b>  <br> <br>
-
-      <b> symptoms:</b>
-    <ul>
-      <li>The emerging adult is light green and both the emerging adult and the larva causes damage to the plant.</li>
-      <br>
-      <li>Sap sucking from the underside of the leaf causes leaf shrinkage, curling, and yellowing from the leaf edge to the mi
-        ddle.
-        Therefore, th</li>
-      <br>
-      <li>Therefore, the growth of the plant is weak. </li>
-      <br>
-      <li>It also acts as the vector of phytoplasma (small leaf blight) which infects the brinjal crop.</li>
-      </ul> <br>
-    </ion-text>
-
-    <br>
-      <img src="assets/crops/brinjal/detect/pest/Tiny-Leafhopper-insect(Cicadellidae,Homoptera)on-a-leaf-in-the-garden.jpg" class="img1">
-    <br> <br>
-
-    <ion-text>
-
-      <b>  Management</b>
-     <ul>
-      <li>Good crop maintenance and in case of widespread damage, control with a recommended insecticide.</li>
-      <br>
-      <li>Apply recommended agrochemicals as recommended.</li>
-    </ul>
-
-    </ion-text>
-  </ion-card-content>
-</ion-card>
-</div>
-
-<br>
-
-<ion-item style="--background: rgb(19, 1, 1);">
-  <ion-button expand="full" (click)="slidedown4()" fill="clear">
-    <h6 style="color: #5cf304; font-size: 16px;">4) Mite damage </h6>
-    <ion-icon name="{{updownicon4}}" slot="end" style="color: #5cf304; font-size: 16px;"></ion-icon>
-  </ion-button>
-</ion-item>
-
-<div [hidden]=ishidden4>
-  <ion-card style="--background: rgb(19, 1, 1);">
-    <ion-card-content style="color: #ffffff; font-size: 17px;">
-      <ion-text>
-
-        <b> symptoms:</b>
-      <ul>
-        <li> Mites suck sap from leaves and fruits. When the juice is sucked from the fruit, the outer skin of the fruit becomes ro
-          ugh and turns brown.</li>
-        <br>
-        <li>The fruits are distorted.</li>
-        <br>
-        <li>When damaging the leaves, the mites are more common on the underside, and leaf rolling, browning, and dry diebac
-          k are seen. </li>
-        <br>
-        <li>In the early stages of leaf damage caused by spider mites, the surface of the leaves may turn yellow in places.</li>
-        </ul>
-      </ion-text>
-
-      <br>
-        <img src="assets/crops/brinjal/detect/pest/Spidaer-mites-injury-to-eggplant.jpg" class="img1">
-        <br>
-        <img src="assets/crops/brinjal/detect/pest/red-spider-mites.jpg" class="img1" style="margin-left:0">
-      <br><br>
-
-      <ion-text>
-        <b> Management </b>
-     <ul>
-        <li>Good crop maintenance and adequate irrigation (especially under dry weather conditions); water deficit crops are mo
-          re susceptible to damage.</li>
-        <br>
-        <li>Spray irrigation can reduce the mite population in the crop.</li>
-        <br>
-        <li>If damage spreads, control with a recommended insecticide.</li>
-      </ul>
-      </ion-text>
-    </ion-card-content>
-  </ion-card>
-</div>
--->
 </ion-content>
 
 <ion-footer [translucent]="true">
