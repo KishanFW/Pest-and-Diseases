@@ -1,6 +1,12 @@
-import { ModalController } from '@ionic/angular';
+import { ModalController, LoadingController } from '@ionic/angular';
 import { Crop } from './../crop.model';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { PestsComponent } from './pests/pests.component';
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
 
 
 @Component({
@@ -12,9 +18,19 @@ export class PestsDiseasesComponent implements OnInit {
 
   @Input() crop: Crop;
 
-  constructor(private modalCtrl: ModalController) { }
+  constructor(
+    private modalCtrl: ModalController
+    ) { }
 
   ngOnInit() {}
+
+  async openPestModal(crop: Crop){
+    const modal = await this.modalCtrl.create({
+      component: PestsComponent,
+      componentProps: {crop},
+    });
+      modal.present();
+  }
 
   closeModal(){
       this.modalCtrl.dismiss();
