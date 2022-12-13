@@ -14,8 +14,12 @@ class CreateDiseaseSymptomsTable extends Migration
     public function up()
     {
         Schema::create('disease_symptoms', function (Blueprint $table) {
-            $table->id();
+            $table->String('disease_name');
+            $table->foreign('disease_name')->references('disease_name')->on('diseases');
+            $table->longtext('symptom');
             $table->timestamps();
+        
+
         });
     }
 
