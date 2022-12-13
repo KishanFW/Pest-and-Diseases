@@ -17,9 +17,9 @@ export class PestsComponent implements OnInit {
   cropname: string;
 
   pests$: Observable<Pest[]>;
+
   ishidden: boolean = true;
   updownicon: String = "caret-down-outline"
-
 
   constructor(
     private pestsofcropService: PestsofcropService,
@@ -29,23 +29,21 @@ export class PestsComponent implements OnInit {
     ) { }
 
   async ngOnInit() {
-    this.cropname = this.crop.crop_name;
-    console.log(this.cropname);
-
    const loading = await this.loadingCtrl.create({message: 'Loading ...'});
     loading.present();
 
-    this.pests$ = this.pestsofcropService.getPests(this.cropname).pipe(
+    this.pests$ = this.pestsofcropService.getPests(this.crop.crop_name).pipe(
       tap((pests) => {
         loading.dismiss();
         return pests;
         })
     );
+
   }
 
   closeModal(){
-    this.modalCtrl.dismiss();
     this.pestdisease.closeModal();
+    this.modalCtrl.dismiss();
   }
 
 @ViewChild('popover') popover;
