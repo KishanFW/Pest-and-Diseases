@@ -1,0 +1,9 @@
+{
+    "HOME": {
+      "header": "Pest and Diseases",
+      "title": "Choose Detect or Prevent to proceed with pest and diseases",
+      "option1": "Detect ",
+      "option2": "Prevent",
+      "footer": "Home"
+    }
+  }
