@@ -1,4 +1,10 @@
+import { PestsDiseasesComponent } from './pests-diseases/pests-diseases.component';
+import { CropsService } from './../../../../services/crops.service';
+import { Crop } from './crop.model';
+import { Observable } from 'rxjs';
+import { tap } from "rxjs/operators";
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { LoadingController, ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-crops',
@@ -6,10 +12,33 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./crops.page.scss'],
 })
 export class CropsPage implements OnInit {
+  crops$: Observable<Crop[]>;
 
-  constructor() { }
+  constructor(
+    private cropsService: CropsService,
+    private loadingCtrl: LoadingController,
+    private modalCtrl: ModalController
+  ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    const loading = await this.loadingCtrl.create({message: 'Loading ...'});
+    loading.present();
+
+    this.crops$ = this.cropsService.getCrops().pipe(
+      tap((crops) => {
+        loading.dismiss();
+        return crops;
+      })
+    );
+  }
+
+  async openPests_diseasesModal(crop: Crop){
+    const modal = await this.modalCtrl.create({
+      component: PestsDiseasesComponent,
+      componentProps: {crop},
+    });
+
+      modal.present();
   }
 
   @ViewChild('popover') popover;

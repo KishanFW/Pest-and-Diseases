@@ -15,40 +15,40 @@ class VarietySeeder extends Seeder
     public function run()
     {
         Variety::create([
-            'Variety_Name'=>'Amanda F1',
-            'Crop_Id'=>3,
-            'Img_Path'=>'assets/crops/brinjal/brinjalvarieties/amanda.jpg'
+            'variety_name'=>'Amanda F1',
+            'crop_name'=>'Brinjal',
+            'img_path'=>'assets/crops/brinjal/brinjalvarieties/amanda.jpg'
         ]);
 
         Variety::create([
-            'Variety_Name'=>'Anjalee-F1',
-            'Crop_Id'=>3,
-            'Img_Path'=>'assets/crops/brinjal/brinjalvarieties/anjalee.jpg'
+            'variety_name'=>'Anjalee-F1',
+            'crop_name'=>'Brinjal',
+            'img_path'=>'assets/crops/brinjal/brinjalvarieties/anjalee.jpg'
         ]);
 
 
         Variety::create([
-            'Variety_Name'=>'HORDI Lenairi 1',
-            'Crop_Id'=>3,
-            'Img_Path'=>'assets/crops/brinjal/brinjalvarieties/hordi.jpg'
+            'variety_name'=>'HORDI Lenairi 1',
+            'crop_name'=>'Brinjal',
+            'img_path'=>'assets/crops/brinjal/brinjalvarieties/hordi.jpg'
         ]);
 
         Variety::create([
-            'Variety_Name'=>'Thinnaweli purple',
-            'Crop_Id'=>3,
-            'Img_Path'=>'assets/crops/brinjal/brinjalvarieties/thinnawely.png'
+            'variety_name'=>'Thinnaweli purple',
+            'crop_name'=>'Brinjal',
+            'img_path'=>'assets/crops/brinjal/brinjalvarieties/thinnawely.png'
         ]);
 
         Variety::create([
-            'Variety_Name'=>'padagoda(BW-11)',
-            'Crop_Id'=>3,
-            'Img_Path'=>'assets/crops/brinjal/brinjalvarieties/padagoda.png'
+            'variety_name'=>'padagoda(BW-11)',
+            'crop_name'=>'Brinjal',
+            'img_path'=>'assets/crops/brinjal/brinjalvarieties/padagoda.png'
         ]);
 
         Variety::create([
-            'Variety_Name'=>'SM-164',
-            'Crop_Id'=>3,
-            'Img_Path'=>'assets/crops/brinjal/brinjalvarieties/SM.png'
+            'variety_name'=>'SM-164',
+            'crop_name'=>'Brinjal',
+            'img_path'=>'assets/crops/brinjal/brinjalvarieties/SM.png'
         ]);
 
 

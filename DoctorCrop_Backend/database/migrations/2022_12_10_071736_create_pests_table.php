@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVarietiesTable extends Migration
+class CreatePestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateVarietiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('varieties', function (Blueprint $table) {
-            $table->string('variety_name')->primary();
-            $table->string('crop_name');
-            $table->foreign('crop_name')->references('crop_name')->on('crops');
-            $table->string('img_path');
+        Schema::create('pests', function (Blueprint $table) {
+
+            $table->String('pest_name')->primary();
+            $table->longText('management');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateVarietiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('varieties');
+        Schema::dropIfExists('pests');
     }
 }

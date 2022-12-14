@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar class="header-footer-background-color">
+    <ion-buttons slot="start" (click)="closeModal()">
+      <ion-icon slot="icon-only" name="arrow-back-outline" class="header-footer-component"></ion-icon>
+    </ion-buttons>
+
+    <ion-title class="header-footer-component">{{ crop.crop_name }} Pest</ion-title>
+
+    <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
+      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
+    </ion-button>
+    <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
+      <ng-template >
+       <ion-content style="background-color: rgb(19, 1, 1);">
+
+        <ion-list style="background-color: rgb(19, 1, 1);">
+          <ion-radio-group value="english">
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">English</ion-label>
+              <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/detect/crop-cropvar/crops/brinjal/pest"></ion-radio>
+            </ion-item>
+
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">සිංහල</ion-label>
+              <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/sdetect/scrop-cropvar/scrops/sbrinjal/spest"></ion-radio>
+            </ion-item>
+
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">தமிழ்</ion-label>
+              <ion-radio slot="end" value="tamil" (click)="isOpen = false" routerLink="/tdetect/tcrop-cropvar/tcrops/tbrinjal/tpest"></ion-radio>
+            </ion-item>
+
+          </ion-radio-group>
+        </ion-list>
+
+       </ion-content>
+      </ng-template>
+    </ion-popover>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  style="--background: rgb(19, 1, 1);">
+  <br>
+  <h5><b style="font-size:18px; text-align:center; color: white;">Pest Types</b></h5><br>
+
+  <div *ngFor="let pest of pests$|async">
+  <ion-item style="--background: rgb(19, 1, 1);">
+    <ion-button expand="full" (click)="slidedown()" fill="clear">
+      <h6 style="color: #5cf304; font-size: 16px;">{{ pest.pest_name }}</h6>
+      <ion-icon name="{{updownicon}}" slot="end" style="color: #5cf304; font-size: 16px;"></ion-icon>
+    </ion-button>
+  </ion-item>
+
+
+  <div [hidden]=ishidden>
+    <ion-card style="--background: rgb(19, 1, 1);">
+      <ion-card-content style="color: #ffffff; font-size: 17px;">
+        <ion-text>
+
+          <b> symptoms:</b>
+         <ul>
+          <li>Damage can be identified by drooping stems and black holes in the fruit.</li>
+          <br>
+          <li> The pores are filled with excretory material.</li>
+          <br>
+          <li>Larvae can be seen when damaged pods and fruit are cut. </li>
+          <br>
+          <li>Plant growth is stunted due to larval damage.</li>
+          </ul>
+        </ion-text>
+
+        <br>
+          <img src="assets/crops/brinjal/detect/pest/Stem-and-Fruit-borer-in-Brinjal.jfif" class="img1">
+          <br>
+          <img src="assets/crops/brinjal/detect/pest/Brinjal-Shoot-Borer-and-Fruit-Borer.jfif" class="img1" style="margin-left: 0">
+        <br><br>
+
+        <ion-text>
+          <b> Management </b>
+          {{ pest.management }}
+        </ion-text>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  </div>
+
+</ion-content>
+
+<ion-footer [translucent]="true">
+  <ion-toolbar class="header-footer-background-color">
+    <div id="footer" class="header-footer-component">
+      <ion-button routerLink="/home"  fill="clear" (click)="closeModal()">
+        <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
+      </ion-button>
+      <br><b>Home</b>
+    </div>
+  </ion-toolbar>
+</ion-footer>
