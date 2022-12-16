@@ -1,7 +1,10 @@
+import { PestImg, PestSymptom } from './../pests-diseases.model';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Crop } from '../../crop.model';
 import { ModalController, LoadingController } from '@ionic/angular';
 import { PestsofcropService } from 'src/app/services/pestsofcrop.service';
+import { ImgsofpestService } from 'src/app/services/imgsofpest.service';
+import { SymptomsofpestService } from 'src/app/services/symptomsofpest.service';
 import { Observable } from 'rxjs';
 import { tap } from "rxjs/operators";
 import { Pest } from '../pests-diseases.model';
@@ -14,15 +17,15 @@ import { PestsDiseasesComponent } from '../pests-diseases.component';
 })
 export class PestsComponent implements OnInit {
   @Input() crop: Crop;
-  cropname: string;
 
   pests$: Observable<Pest[]>;
-
-  ishidden: boolean = true;
-  updownicon: String = "caret-down-outline"
+  imgs$: Observable<PestImg[]>;
+  symptoms$: Observable<PestSymptom[]>
 
   constructor(
     private pestsofcropService: PestsofcropService,
+    private imgsofpestService: ImgsofpestService,
+    private symptomsofpestService: SymptomsofpestService,
     private loadingCtrl: LoadingController,
     private modalCtrl: ModalController,
     private pestdisease: PestsDiseasesComponent
@@ -34,10 +37,22 @@ export class PestsComponent implements OnInit {
 
     this.pests$ = this.pestsofcropService.getPests(this.crop.crop_name).pipe(
       tap((pests) => {
-        loading.dismiss();
         return pests;
         })
     );
+
+    this.symptoms$ = this.symptomsofpestService.getpestsymptoms().pipe(
+        tap((symptoms)=>{
+          return symptoms;
+        })
+    );
+
+    this.imgs$ = this.imgsofpestService.getpestimgs().pipe(
+      tap((imgs)=>{
+        loading.dismiss();
+        return imgs;
+      })
+    )
 
   }
 
@@ -55,16 +70,9 @@ export class PestsComponent implements OnInit {
     this.isOpen = true;
   }
 
-  slidedown(){
-
-    if(this.ishidden === true){
-      this.ishidden = false;
-      this.updownicon = "caret-up-outline"
-    }else if(this.ishidden === false){
-
-      this.ishidden = true;
-      this.updownicon = "caret-down-outline"
-    }
+  scroll(id: string){
+    let el = document.getElementById(id);
+    el.scrollIntoView();
   }
 
 

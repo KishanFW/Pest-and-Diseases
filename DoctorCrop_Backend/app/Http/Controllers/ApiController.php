@@ -19,8 +19,13 @@ class ApiController extends Controller
         return response()->json($pestsdetails);
     }
 
-    public function pestsimgpaths($pest){
-        $imgpaths = DB::select("select pest_name, img_path from pest_img_paths where pest_name = ? ",[$pest]);
+    public function pestimgs(){
+        $imgpaths = DB::select("select pest_name, img_path from pest_img_paths");
         return response()->json($imgpaths);
+    }
+
+    public function pestsymptoms(){
+        $symtoms = DB::select("select pest_name, symptom from pest_symptoms");
+        return response()->json($symtoms);
     }
 }
