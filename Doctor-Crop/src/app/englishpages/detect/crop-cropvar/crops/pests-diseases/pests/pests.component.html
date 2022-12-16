@@ -40,15 +40,19 @@
 </ion-header>
 
 <ion-content  style="--background: rgb(19, 1, 1);">
-  <ion-text id="top"></ion-text>
+  <div id="top"></div>
   <br>
 
   <div>
-    <ion-text color="light">Click on a pest name to see details</ion-text>
+    <ion-text color="light">Click on a pest name to see details or scroll</ion-text>
     <br><br>
-    <ion-item *ngFor="let pest of pests$|async" style="--background: rgb(19, 1, 1);">
-      <ion-text style="color: #5cf304; font-size: 16px;" (click)="scroll(pest.pest_name)">{{ pest.pest_name }}</ion-text>
-    </ion-item>
+
+    <div *ngFor="let pest of pests$|async">
+      <ion-item (click)="scroll(pest.pest_name)" style="--background: rgb(19, 1, 1);">
+        <ion-text style="color: #5cf304; font-size: 16px;">{{ pest.pest_name }}</ion-text>
+     </ion-item>
+    </div>
+
   </div>
   <br>
   <ion-button size="small" expand="full" color="light" disabled></ion-button>
@@ -85,7 +89,7 @@
   </div>
 
   <ion-button (click)="scroll('top')" style="--background:  #5cf304;" size="small">
-    <ion-text style="color: #000000;">See pest list</ion-text>
+    <ion-text style="color: #000000;">See pests list</ion-text>
   </ion-button>
 
   </div>

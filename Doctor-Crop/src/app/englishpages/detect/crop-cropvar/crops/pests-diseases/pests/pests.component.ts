@@ -32,7 +32,7 @@ export class PestsComponent implements OnInit {
     ) { }
 
   async ngOnInit() {
-   const loading = await this.loadingCtrl.create({message: 'Loading ...'});
+   const loading = await this.loadingCtrl.create({message: 'Please Wait ...'});
     loading.present();
 
     this.pests$ = this.pestsofcropService.getPests(this.crop.crop_name).pipe(
@@ -41,7 +41,7 @@ export class PestsComponent implements OnInit {
         })
     );
 
-    this.symptoms$ = this.symptomsofpestService.getpestsymptoms().pipe(
+   this.symptoms$ = this.symptomsofpestService.getpestsymptoms().pipe(
         tap((symptoms)=>{
           return symptoms;
         })
@@ -52,12 +52,11 @@ export class PestsComponent implements OnInit {
         loading.dismiss();
         return imgs;
       })
-    )
+    );
 
   }
 
   closeModal(){
-    this.pestdisease.closeModal();
     this.modalCtrl.dismiss();
   }
 
