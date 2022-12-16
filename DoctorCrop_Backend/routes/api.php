@@ -18,4 +18,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('crops',[ApiController::class,'crops']);
 Route::get('pestsofcrop/{crop}',[ApiController::class,'pestsofcrop']);
-Route::get('pestimgpaths/{pest}',[ApiController::class,'pestsimgpaths']);
+Route::get('pestimgs',[ApiController::class,'pestimgs']);
+Route::get('pestsymptoms',[ApiController::class,'pestsymptoms']);

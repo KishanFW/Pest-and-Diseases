@@ -55,9 +55,7 @@
 
   <div *ngFor="let pest of pests$|async">
   <ion-text id="{{ pest.pest_name }}"></ion-text><br>
-  <ion-item style="--background: rgb(19, 1, 1);">
-    <ion-text style="color: #5cf304; font-size: 16px;">{{ pest.pest_name }}</ion-text>
-  </ion-item>
+  <h4 style="color: #5cf304; margin-left: 10px;">{{ pest.pest_name }}</h4>
 
   <div>
     <ion-card style="--background: rgb(19, 1, 1);">
@@ -66,20 +64,16 @@
 
           <b> symptoms:</b>
          <ul>
-          <li>Damage can be identified by drooping stems and black holes in the fruit.</li>
-          <br>
-          <li> The pores are filled with excretory material.</li>
-          <br>
-          <li>Larvae can be seen when damaged pods and fruit are cut. </li>
-          <br>
-          <li>Plant growth is stunted due to larval damage.</li>
+          <div *ngFor="let symptom of symptoms$|async">
+            <li *ngIf="pest.pest_name == symptom.pest_name">{{ symptom.symptom }}</li>
+            <br *ngIf="pest.pest_name == symptom.pest_name">
+          </div>
           </ul>
         </ion-text>
 
-        <br>
-          <img src="assets/crops/brinjal/detect/pest/Stem-and-Fruit-borer-in-Brinjal.jfif" class="img1">
-          <br>
-          <img src="assets/crops/brinjal/detect/pest/Brinjal-Shoot-Borer-and-Fruit-Borer.jfif" class="img1" style="margin-left: 0">
+        <div *ngFor="let img of imgs$|async">
+          <img *ngIf="pest.pest_name == img.pest_name" src="{{ img.img_path }}" class="img1">
+        </div>
         <br><br>
 
         <ion-text>
@@ -89,10 +83,13 @@
       </ion-card-content>
     </ion-card>
   </div>
+
   <ion-button (click)="scroll('top')" style="--background:  #5cf304;" size="small">
     <ion-text style="color: #000000;">See pest list</ion-text>
   </ion-button>
+
   </div>
+  <br>
 
 </ion-content>
 
