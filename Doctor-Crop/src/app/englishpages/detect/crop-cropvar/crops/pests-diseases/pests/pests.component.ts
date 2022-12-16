@@ -18,9 +18,6 @@ export class PestsComponent implements OnInit {
 
   pests$: Observable<Pest[]>;
 
-  ishidden: boolean = true;
-  updownicon: String = "caret-down-outline"
-
   constructor(
     private pestsofcropService: PestsofcropService,
     private loadingCtrl: LoadingController,
@@ -55,16 +52,9 @@ export class PestsComponent implements OnInit {
     this.isOpen = true;
   }
 
-  slidedown(){
-
-    if(this.ishidden === true){
-      this.ishidden = false;
-      this.updownicon = "caret-up-outline"
-    }else if(this.ishidden === false){
-
-      this.ishidden = true;
-      this.updownicon = "caret-down-outline"
-    }
+  scroll(id: string){
+    let el = document.getElementById(id);
+    el.scrollIntoView();
   }
 
 
