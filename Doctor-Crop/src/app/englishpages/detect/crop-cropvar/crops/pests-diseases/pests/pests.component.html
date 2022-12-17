@@ -4,7 +4,7 @@
       <ion-icon slot="icon-only" name="arrow-back-outline" class="header-footer-component"></ion-icon>
     </ion-buttons>
 
-    <ion-title class="header-footer-component">{{ crop.crop_name }} - Pest</ion-title>
+    <ion-title class="header-footer-component">{{ crop.crop_name }} - Pests</ion-title>
 
     <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
       <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
@@ -58,7 +58,7 @@
   <ion-button size="small" expand="full" color="light" disabled></ion-button>
 
   <div *ngFor="let pest of pests$|async">
-  <ion-text id="{{ pest.pest_name }}"></ion-text><br>
+  <div id="{{ pest.pest_name }}"></div><br>
   <h4 style="color: #5cf304; margin-left: 10px;">{{ pest.pest_name }}</h4>
 
   <div>

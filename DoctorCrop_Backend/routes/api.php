@@ -20,3 +20,7 @@ Route::get('crops',[ApiController::class,'crops']);
 Route::get('pestsofcrop/{crop}',[ApiController::class,'pestsofcrop']);
 Route::get('pestimgs',[ApiController::class,'pestimgs']);
 Route::get('pestsymptoms',[ApiController::class,'pestsymptoms']);
+Route::get('diseasesofcrop/{crop}',[ApiController::class,'diseasesofcrop']);
+Route::get('diseasetypes', [ApiController::class, 'diseasetypes']);
+Route::get('diseaseimgs',[ApiController::class,'diseaseimgs']);
+Route::get('diseasesymptoms',[ApiController::class,'diseasesymptoms']);

@@ -35,12 +35,6 @@ export class PestsComponent implements OnInit {
    const loading = await this.loadingCtrl.create({message: 'Please Wait ...'});
     loading.present();
 
-    this.pests$ = this.pestsofcropService.getPests(this.crop.crop_name).pipe(
-      tap((pests) => {
-        return pests;
-        })
-    );
-
    this.symptoms$ = this.symptomsofpestService.getpestsymptoms().pipe(
         tap((symptoms)=>{
           return symptoms;
@@ -49,9 +43,15 @@ export class PestsComponent implements OnInit {
 
     this.imgs$ = this.imgsofpestService.getpestimgs().pipe(
       tap((imgs)=>{
-        loading.dismiss();
         return imgs;
       })
+    );
+
+    this.pests$ = this.pestsofcropService.getPests(this.crop.crop_name).pipe(
+      tap((pests) => {
+        loading.dismiss();
+        return pests;
+        })
     );
 
   }
@@ -73,6 +73,5 @@ export class PestsComponent implements OnInit {
     let el = document.getElementById(id);
     el.scrollIntoView();
   }
-
 
 }

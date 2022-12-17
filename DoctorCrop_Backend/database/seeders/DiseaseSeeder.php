@@ -111,7 +111,7 @@ class DiseaseSeeder extends Seeder
 
         Disease::create([
             'disease_name'=>'Little leaf disease',
-            'disease_type'=>'Phytoplasma disease',
+            'disease_type'=>'Phytoplasma diseases',
             'causal_organism'=>'Phytoplasma The disease is transmitted by a leaf hopper(Hishimonus phycitiy)',
             'management'=>' <ul>
             <li>Remove and burn infected plants. </li>
