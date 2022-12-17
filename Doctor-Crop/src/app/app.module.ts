@@ -1,4 +1,5 @@
 import { PestsComponent } from './englishpages/detect/crop-cropvar/crops/pests-diseases/pests/pests.component';
+import { DiseasesComponent } from './englishpages/detect/crop-cropvar/crops/pests-diseases/diseases/diseases.component';
 import { PestsDiseasesComponent } from './englishpages/detect/crop-cropvar/crops/pests-diseases/pests-diseases.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,7 +21,7 @@ export function createTranslateLoader(http: HttpClient) {
 
 
 @NgModule({
-  declarations: [AppComponent, PestsDiseasesComponent, PestsComponent],
+  declarations: [AppComponent, PestsDiseasesComponent, PestsComponent, DiseasesComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
     TranslateModule.forRoot({
       loader: {

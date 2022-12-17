@@ -28,4 +28,25 @@ class ApiController extends Controller
         $symtoms = DB::select("select pest_name, symptom from pest_symptoms");
         return response()->json($symtoms);
     }
+
+    public function diseasesofcrop($crop){
+        $diseasesdetails = DB::select("select disease_name, disease_type, causal_organism, management from diseases where disease_name in
+                                    (select disease_name from crops_diseases where crop_name = ?)",[$crop]);
+        return response()->json($diseasesdetails);
+    }
+
+    public function diseasetypes(){
+        $diseasetypes = DB::select("select distinct disease_type from diseases");
+        return response()->json($diseasetypes);
+    }
+
+    public function diseaseimgs(){
+        $diseaseimgs = DB::select("select disease_name, img_path from disease_img_paths");
+        return response()->json($diseaseimgs);
+    }
+
+    public function diseasesymptoms(){
+        $diseasesymptoms = DB::select("select disease_name, symptom from disease_symptoms");
+        return response()->json($diseasesymptoms);
+    }
 }

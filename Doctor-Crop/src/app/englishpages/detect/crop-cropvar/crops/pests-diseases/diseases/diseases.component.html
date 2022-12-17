@@ -1,0 +1,127 @@
+<ion-header>
+  <ion-toolbar class="header-footer-background-color">
+    <ion-buttons slot="start" (click)="closeModal()">
+      <ion-icon slot="icon-only" name="arrow-back-outline" class="header-footer-component"></ion-icon>
+    </ion-buttons>
+
+    <ion-title class="header-footer-component">{{ crop.crop_name }} - Diseases</ion-title>
+
+    <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
+      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
+    </ion-button>
+    <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
+      <ng-template >
+       <ion-content style="background-color: rgb(19, 1, 1);">
+
+        <ion-list style="background-color: rgb(19, 1, 1);">
+          <ion-radio-group value="english">
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">English</ion-label>
+              <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/detect/crop-cropvar/crops/brinjal/pest-diseases/diseases"></ion-radio>
+            </ion-item>
+
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">සිංහල</ion-label>
+              <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/sdetect/scrop-cropvar/scrops/sbrinjal/sdiseases"></ion-radio>
+            </ion-item>
+
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">தமிழ்</ion-label>
+              <ion-radio slot="end" value="tamil" (click)="isOpen = false" routerLink="/tdetect/tcrop-cropvar/tcrops/tbrinjal/tdiseases"></ion-radio>
+            </ion-item>
+
+          </ion-radio-group>
+        </ion-list>
+
+       </ion-content>
+      </ng-template>
+    </ion-popover>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="--background: rgb(19, 1, 1);">
+  <div id="top"></div>
+  <br>
+
+  <div>
+    <ion-text color="light">Click on a Disease Type or name to see details or scroll</ion-text>
+    <br><br>
+
+    <div *ngFor="let diseasetype of diseasetypes$|async">
+      <ion-item (click)="scroll(diseasetype.disease_type)" style="--background: rgb(19, 1, 1);">
+        <h3 style="color: #ffffff; font-size: 20px;"><b>{{ diseasetype.disease_type }}</b></h3><br>
+      </ion-item>
+      <div *ngFor="let disease of diseases$|async">
+        <div *ngIf="diseasetype.disease_type == disease.disease_type">
+          <ion-item (click)="scroll(disease.disease_name)" style="--background: rgb(19, 1, 1);">
+             <ion-text style="color: #5cf304; font-size: 16px;">{{ disease.disease_name }}</ion-text>
+           </ion-item>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <br>
+  <ion-button size="small" expand="full" color="light" disabled></ion-button>
+
+  <div *ngFor="let diseasetype of diseasetypes$|async">
+    <div id="{{ diseasetype.disease_type }}"></div><br>
+    <h3 style="color: #ffffff; font-size: 20px;"><b>{{ diseasetype.disease_type }}</b></h3>
+
+  <div *ngFor="let disease of diseases$|async">
+  <div *ngIf="diseasetype.disease_type == disease.disease_type">
+    <div id="{{ disease.disease_name }}"></div><br>
+    <h4 style="color: #5cf304; margin-left: 10px;">{{ disease.disease_name }}</h4>
+
+  <div>
+    <ion-card style="--background: rgb(19, 1, 1);">
+      <ion-card-content style="color: #ffffff; font-size: 17px;">
+        <ion-text>
+          <b>Causal Organism:</b>  {{ disease.causal_organism }}<br> <br>
+
+          <b> Symptoms:</b>
+  ,       <ul>
+            <div *ngFor="let symptom of symptoms$|async">
+             <li *ngIf="disease.disease_name == symptom.disease_name">{{ symptom.symptom }}</li>
+             <br *ngIf="disease.disease_name == symptom.disease_name">
+            </div>
+          </ul>
+        </ion-text>
+
+        <div *ngFor="let img of imgs$|async">
+          <img *ngIf="disease.disease_name == img.disease_name" src="{{ img.img_path }}" class="img">
+        </div>
+        <br>
+
+        <ion-text>
+          <b> Management </b>
+  ,       {{ disease.management }}
+        </ion-text>
+      </ion-card-content>
+    </ion-card>
+  </div>
+    <ion-button (click)="scroll('top')" style="--background:  #5cf304;" size="small">
+     <ion-text style="color: #000000;">See Diseases list</ion-text>
+    </ion-button>
+  </div>
+  </div>
+
+    <ion-button size="small" expand="full" color="light" disabled></ion-button>
+  </div>
+
+  </ion-content>
+
+
+
+
+  <ion-footer [translucent]="true">
+    <ion-toolbar class="header-footer-background-color">
+      <div id="footer" class="header-footer-component">
+        <ion-button routerLink="/home"  fill="clear" (click)="closeModal()">
+          <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
+        </ion-button>
+        <br><b>Home</b>
+      </div>
+    </ion-toolbar>
+  </ion-footer>
+

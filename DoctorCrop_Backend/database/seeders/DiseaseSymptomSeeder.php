@@ -15,19 +15,19 @@ class DiseaseSymptomSeeder extends Seeder
     public function run()
     {
         Disease_symptom::create([
-            'disease_name'=>'Fungal Diseases',
+            'disease_name'=>'Damping-Off',
             'symptom'=>'Sudden collapsing seedlings at the base of the stem'
         ]);
 
 
         Disease_symptom::create([
-            'disease_name'=>'Fungal Diseases',
+            'disease_name'=>'Damping-Off',
             'symptom'=>'Root rot and seedling death'
         ]);
 
 
         Disease_symptom::create([
-            'disease_name'=>'Fungal Diseases',
+            'disease_name'=>'Damping-Off',
             'symptom'=>'Brownish black discoloration at the base due to Rhizoctonia spp'
         ]);
 
@@ -71,6 +71,16 @@ class DiseaseSymptomSeeder extends Seeder
         Disease_symptom::create([
             'disease_name'=>'Powdery mildew',
             'symptom'=>'White powdery residue on the upper leaf surface.'
+        ]);
+
+        Disease_symptom::create([
+            'disease_name'=>'Anthracnose',
+            'symptom'=>'Sunken circular lesions with tan to orange to black concentric rings in their center.'
+        ]);
+
+        Disease_symptom::create([
+            'disease_name'=>'Anthracnose',
+            'symptom'=>'Fruiting bodies with pink masses of conidia may ooze from lesions.'
         ]);
 
         Disease_symptom::create([
