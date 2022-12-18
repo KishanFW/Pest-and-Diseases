@@ -21,7 +21,7 @@ export class CropsPage implements OnInit {
   ) { }
 
   async ngOnInit() {
-    const loading = await this.loadingCtrl.create({message: 'Loading ...'});
+    const loading = await this.loadingCtrl.create({message: 'Please Wait ...'});
     loading.present();
 
     this.crops$ = this.cropsService.getCrops().pipe(

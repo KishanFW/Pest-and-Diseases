@@ -24,3 +24,4 @@ Route::get('diseasesofcrop/{crop}',[ApiController::class,'diseasesofcrop']);
 Route::get('diseasetypes', [ApiController::class, 'diseasetypes']);
 Route::get('diseaseimgs',[ApiController::class,'diseaseimgs']);
 Route::get('diseasesymptoms',[ApiController::class,'diseasesymptoms']);
+Route::get('varietiesofcrop/{crop}',[ApiController::class,'varietiesofcrop']);

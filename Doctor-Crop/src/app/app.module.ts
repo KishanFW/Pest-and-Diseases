@@ -1,6 +1,8 @@
+import { SelectCropComponent } from './englishpages/detect/crop-cropvar/crops-varieties/select-crop/select-crop.component';
 import { PestsComponent } from './englishpages/detect/crop-cropvar/crops/pests-diseases/pests/pests.component';
 import { DiseasesComponent } from './englishpages/detect/crop-cropvar/crops/pests-diseases/diseases/diseases.component';
 import { PestsDiseasesComponent } from './englishpages/detect/crop-cropvar/crops/pests-diseases/pests-diseases.component';
+import { VarietiesComponent } from './englishpages/detect/crop-cropvar/crops-varieties/varieties/varieties.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -21,7 +23,12 @@ export function createTranslateLoader(http: HttpClient) {
 
 
 @NgModule({
-  declarations: [AppComponent, PestsDiseasesComponent, PestsComponent, DiseasesComponent],
+  declarations: [AppComponent,
+                 PestsDiseasesComponent,
+                 PestsComponent,
+                 DiseasesComponent,
+                 VarietiesComponent,
+                 SelectCropComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
     TranslateModule.forRoot({
       loader: {

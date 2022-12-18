@@ -1,11 +1,11 @@
 <ion-header>
   <ion-toolbar  class="header-footer-background-color">
 
-    <ion-buttons slot="start"  class="header-footer-component">
-      <ion-back-button routerLink="/detect/crop-cropvar"></ion-back-button>
+    <ion-buttons slot="start" routerLink="/detect/crop-cropvar" (click)="closeModal()">
+      <ion-icon slot="icon-only" name="arrow-back-outline" class="header-footer-component"></ion-icon>
     </ion-buttons>
 
-    <ion-title class="header-footer-component">Crops</ion-title>
+    <ion-title class="header-footer-component"></ion-title>
 
     <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
       <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
@@ -45,34 +45,31 @@
 
   <ion-segment value="default">
 
-    <ion-segment-button routerLink="/detect/crop-cropvar/crops-varieties" value="default">
+    <ion-segment-button (click)="closeModal()">
       <ion-label style="color: #ffffff; font-size: 18px;">Crops</ion-label>
     </ion-segment-button>
 
-    <ion-segment-button (click)="govariety()">
+    <ion-segment-button  value="default">
       <ion-label style="color: #ffffff; font-size: 18px;">Varieties</ion-label>
     </ion-segment-button>
 
   </ion-segment>
 
   <br>
-  <h4 style="color: #ffffff;">Click on a crop to see varieties</h4>
-  <br>
+  <h5 style="color: #ffffff; text-align: center;">Crop is not selected</h5>
 
-  <div *ngFor="let crop of crops$|async">
-    <ion-item style="--background: rgb(19, 1, 1);" (click)="openvarietiesModal(crop); cropselect(crop)">
-      <img src="{{crop.img_path}}"><ion-label style="color: #5cf304; font-size: 20px;">{{crop.crop_name}}</ion-label>
-      <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
-    </ion-item>
-    <br>
-  </div>
+  <p style="text-align: center;">
+    <ion-button shape="round" style="--background: #5cf304; width: 200px;" (click)="closeModal()">
+      <h6 style="color: #ffffff;">Select Crop</h6>
+    </ion-button>
+  </p>
 
 </ion-content>
 
 <ion-footer [translucent]="true">
   <ion-toolbar  class="header-footer-background-color">
     <div id="footer" class="header-footer-component">
-      <ion-button routerLink="/home"  fill="clear">
+      <ion-button routerLink="/home"  fill="clear" (click)="closeModal()">
         <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
       </ion-button>
       <br><b>Home</b>
