@@ -8,7 +8,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 export class DetectPage implements OnInit {
 
   constructor() { }
-  
+
   ngOnInit() {
   }
 
@@ -16,7 +16,7 @@ export class DetectPage implements OnInit {
 
   isOpen = false;
 
-  private presentPopover(e: Event) {
+  presentPopover(e: Event) {
     this.popover.event = e;
     this.isOpen = true;
   }
