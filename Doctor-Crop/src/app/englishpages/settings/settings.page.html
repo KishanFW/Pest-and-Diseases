@@ -5,8 +5,8 @@
       <ion-back-button routerLink="/home" class="header-footer-component"></ion-back-button>
     </ion-buttons>
 
-    <ion-title class="header-footer-component"><b>Settings</b></ion-title>
-    
+    <ion-title class="header-footer-component"><b>{{'SETTINGS.header' | translate }}</b></ion-title>
+
     <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
       <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
     </ion-button>
@@ -15,25 +15,25 @@
        <ion-content style="background-color: rgb(19, 1, 1);">
 
         <ion-list style="background-color: rgb(19, 1, 1);">
-          <ion-radio-group value="english">
+          <ion-radio-group value="en" [(ngModel)]='language' (ionChange)='languageChange()'>
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">English</ion-label>
-              <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/settings"></ion-radio>
+              <ion-radio slot="end" value='en' (click)="isOpen = false"></ion-radio>
             </ion-item>
-        
+
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">සිංහල</ion-label>
-              <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/ssettings"></ion-radio>
+              <ion-radio slot="end" value='si' (click)="isOpen = false"></ion-radio>
             </ion-item>
 
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">தமிழ்</ion-label>
-              <ion-radio slot="end" value="tamil" (click)="isOpen = false" routerLink="/tsettings"></ion-radio>
+              <ion-radio slot="end" value='ta' (click)="isOpen = false"></ion-radio>
             </ion-item>
-        
+
           </ion-radio-group>
         </ion-list>
-        
+
        </ion-content>
       </ng-template>
     </ion-popover>
@@ -42,31 +42,31 @@
 
 <ion-content style="--background: rgb(19, 1, 1);">
   <br>
-  <strong style="color: #ffffff; font-size: 20px;">General</strong>
+  <strong style="color: #ffffff; font-size: 20px;">{{'SETTINGS.label1' | translate }}</strong>
   <br><br>
 
   <ion-item style="--background: rgb(19, 1, 1);" routerLink="/settings/appsettings">
        <ion-icon slot="start" name="settings" style="color: #f70707;" size="large"></ion-icon>
-       <p align="Left" style="color: #5cf304;">App Settings<br>
-       <ion-text style="font-size: 14px; color: #ffffff;">Change Language, notifications, etc</ion-text>
+       <p align="Left" style="color: #5cf304;">{{'SETTINGS.option1' | translate }}<br>
+       <ion-text style="font-size: 14px; color: #ffffff;">{{'SETTINGS.subtitle1' | translate }}</ion-text>
        </p>
   </ion-item>
-  
+
   <br><br>
-  <strong style="color: #ffffff; font-size: 20px;">Other</strong>
+  <strong style="color: #ffffff; font-size: 20px;">{{'SETTINGS.label2' | translate }}</strong>
   <br><br>
 
   <ion-item style="--background: rgb(19, 1, 1);">
        <ion-icon slot="start" name="paper-plane" style="color: #14f8e5;" size="large"></ion-icon>
-       <p align="Left" style="color: #5cf304;">Welcome Tour<br>
-       <ion-text style="font-size: 14px; color: #ffffff;">The ease of use Doctor-Crop</ion-text>
+       <p align="Left" style="color: #5cf304;">{{'SETTINGS.option2' | translate }}<br>
+       <ion-text style="font-size: 14px; color: #ffffff;">{{'SETTINGS.subtitle2' | translate }}</ion-text>
        </p>
   </ion-item >
   <br>
-  
+
   <ion-item style="--background: rgb(19, 1, 1);" routerLink="/settings/about">
      <ion-icon slot="start" name="alert-circle-outline" style="color: #f7f307;" size="large"></ion-icon>
-     <p align="left" style="color: #5cf304;">About</p>
+     <p align="left" style="color: #5cf304;">{{'SETTINGS.option3' | translate }}</p>
   </ion-item>
 
 </ion-content>
@@ -77,7 +77,7 @@
       <ion-button routerLink="/home"  fill="clear">
         <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
       </ion-button>
-      <br><b>Home</b>
+      <br><b>{{'SETTINGS.footer' | translate }}</b>
     </div>
   </ion-toolbar>
 </ion-footer>

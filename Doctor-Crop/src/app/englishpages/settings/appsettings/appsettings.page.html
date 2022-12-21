@@ -5,7 +5,7 @@
       <ion-back-button routerLink="/settings" class="header-footer-component"></ion-back-button>
     </ion-buttons>
 
-    <ion-title class="header-footer-component"><b>App Settings</b></ion-title>
+    <ion-title class="header-footer-component"><b>{{ 'APPSETTINGS.header' | translate }}</b></ion-title>
 
     <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
       <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
@@ -15,25 +15,25 @@
        <ion-content style="background-color: rgb(19, 1, 1);">
 
         <ion-list style="background-color: rgb(19, 1, 1);">
-          <ion-radio-group value="english">
+          <ion-radio-group value="en" [(ngModel)]='language' (ionChange)='languageChange()'>
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">English</ion-label>
-              <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/settings/appsettings"></ion-radio>
+              <ion-radio slot="end" value="en" (click)="isOpen = false"></ion-radio>
             </ion-item>
-        
+
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">සිංහල</ion-label>
-              <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/ssettings/sappsettings"></ion-radio>
+              <ion-radio slot="end" value="si" (click)="isOpen = false"></ion-radio>
             </ion-item>
 
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">தமிழ்</ion-label>
-              <ion-radio slot="end" value="tamil" (click)="isOpen = false" routerLink="/tsettings/tappsettings"></ion-radio>
+              <ion-radio slot="end" value="ta" (click)="isOpen = false"></ion-radio>
             </ion-item>
-        
+
           </ion-radio-group>
         </ion-list>
-        
+
        </ion-content>
       </ng-template>
     </ion-popover>
@@ -43,13 +43,13 @@
 <ion-content  style="--background: rgb(19, 1, 1);">
   <br><br>
 
-  <strong style="color: #ffffff; font-size: 20px;">General</strong>
+  <strong style="color: #ffffff; font-size: 20px;">{{ 'APPSETTINGS.label' | translate }}</strong>
   <br>
   <br>
 
    <ion-item style="--background: rgb(19, 1, 1);" (click)="presentPopover2($event)">
       <ion-icon slot="start" name="settings" style="color: #f70707;" size="large"></ion-icon>
-      <strong align="center" style="color: #5cf304; font-size: 18px;">App Language</strong>
+      <strong align="center" style="color: #5cf304; font-size: 18px;">{{ 'APPSETTINGS.option' | translate }}</strong>
       <strong slot="end" style="color: #ffffff; font-size: 16px;">English</strong>
    </ion-item>
 
@@ -58,25 +58,25 @@
      <ion-content style="background-color: rgb(19, 1, 1);">
 
       <ion-list style="background-color: rgb(19, 1, 1);">
-        <ion-radio-group value="english">
+        <ion-radio-group value="en" [(ngModel)]='language' (ionChange)='languageChange()'>
           <ion-item color="rgb(19, 1, 1)">
             <ion-label color="light">English</ion-label>
-            <ion-radio slot="end" value="english" (click)="isOpen2 = false" routerLink="/settings/appsettings"></ion-radio>
+            <ion-radio slot="end" value="en" (click)="isOpen2 = false"></ion-radio>
           </ion-item>
-      
+
           <ion-item color="rgb(19, 1, 1)">
             <ion-label color="light">සිංහල</ion-label>
-            <ion-radio slot="end" value="sinhala" (click)="isOpen2 = false" routerLink="/ssettings/sappsettings"></ion-radio>
+            <ion-radio slot="end" value="si" (click)="isOpen2 = false"></ion-radio>
           </ion-item>
 
           <ion-item color="rgb(19, 1, 1)">
             <ion-label color="light">தமிழ்</ion-label>
-            <ion-radio slot="end" value="tamil" (click)="isOpen = false" routerLink="/tsettings/tappsettings"></ion-radio>
+            <ion-radio slot="end" value="ta" (click)="isOpen = false"></ion-radio>
           </ion-item>
-      
+
         </ion-radio-group>
       </ion-list>
-      
+
      </ion-content>
     </ng-template>
   </ion-popover>
@@ -88,7 +88,7 @@
       <ion-button routerLink="/home"  fill="clear">
         <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
       </ion-button>
-      <br><b>Home</b>
+      <br><b>{{ 'APPSETTINGS.footer' | translate }}</b>
     </div>
   </ion-toolbar>
 </ion-footer>
