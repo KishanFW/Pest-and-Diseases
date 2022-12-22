@@ -95,7 +95,9 @@
 
         <ion-text>
           <b> Management </b>
-  ,       {{ disease.management }}
+          <div [innerHTML]="disease.management">
+  ,         {{ disease.management }}
+          </div>
         </ion-text>
       </ion-card-content>
     </ion-card>

@@ -36,7 +36,7 @@ class PestSeeder extends Seeder
             <li>Be aware of pre-harvest timing when applying insecticides at harvest.</li>
             <br>
             <li>Chemical suppression
-              <ul>Apply recommended agrochemicals as recommended</ul>
+              <ul><li>Apply recommended agrochemicals as recommended</li></ul>
               </li>
           </ul>'
         ]);

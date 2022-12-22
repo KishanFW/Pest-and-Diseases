@@ -82,7 +82,9 @@
 
         <ion-text>
           <b> Management </b>
-          {{ pest.management }}
+          <div [innerHtml]="pest.management">
+            {{ pest.management }}
+          </div>
         </ion-text>
       </ion-card-content>
     </ion-card>
