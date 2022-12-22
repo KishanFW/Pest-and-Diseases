@@ -30,5 +30,31 @@
       "header": "About",
       "content": "Doctor-crop is a crop disease detection, prevention, and treatment recommendations advisor. Real-life dataset is used to make a prediction and give description, examples, and advice on treatment only for known pests and diseases. The user should have the internet on the device to get a diagnosis. This app has been designed to be an easy-to-use in-field practical aid to home gardeners.",
       "footer": "Home"
+    },
+
+    "DETECT": {
+      "header": "Detect",
+      "option1": "Select crop or crop and variety to read about pest and diseases ",
+      "option2": "Answer the questions to detect pest and diseases",
+      "option3": "Take a picture to detect pest and diseases",
+      "footer": "Home"
+    },
+
+    "PREVENT": {
+      "header": "Prevent",
+      "option1": "Select crop or crop and variety to read about pest and diseases ",
+      "option2": "Answer the questions to prevent pest and diseases",
+      "footer": "Home"
+    },
+
+    "CROP-CROPVAR": {
+      "header": "Crops or Crops and Varieties",
+      "title": "Choose crops or crops and varieties",
+      "option1": "Select only the crop",
+      "option2": "Select crops and varieties",
+      "footer": "Home"
     }
+
+
+
   }
