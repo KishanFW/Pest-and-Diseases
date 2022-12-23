@@ -17,21 +17,21 @@
        <ion-content style="background-color: rgb(19, 1, 1);">
 
         <ion-list style="background-color: rgb(19, 1, 1);">
-          <ion-radio-group value="english">
+          <ion-radio-group value="en" [(ngModel)]='language' (ionChange)='languageChange()'>
 
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">English</ion-label>
-              <ion-radio slot="end" value="english" (click)="isOpen = false"></ion-radio>
+              <ion-radio slot="end" value='en' (click)="isOpen = false"></ion-radio>
             </ion-item>
 
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">සිංහල</ion-label>
-              <ion-radio slot="end" value="sinhala" (click)="isOpen = false"></ion-radio>
+              <ion-radio slot="end" value='si' (click)="isOpen = false"></ion-radio>
             </ion-item>
 
             <ion-item color="rgb(19, 1, 1)">
               <ion-label color="light">தமிழ்</ion-label>
-              <ion-radio slot="end" value="tamil" (click)="isOpen = false"></ion-radio>
+              <ion-radio slot="end" value='ta' (click)="isOpen = false"></ion-radio>
             </ion-item>
 
           </ion-radio-group>
@@ -47,12 +47,12 @@
 
 <ion-content [fullscreen]="true" style="--background: rgb(19, 1, 1);">
 <br>
-<p style="color: white; font-size: 24px; text-align: center;">Choose Detect or Prevent to proceed with pest and diseases</p>
+<p style="color: white; font-size: 24px; text-align: center;">{{ 'HOME.title' | translate }}</p>
 <br><br>
 
 
 <ion-item style="--background: rgb(19, 1, 1);" routerLink="/detect">
-  <ion-text style="font-size:25px; color: #5cf304;">Detect</ion-text>
+  <ion-text style="font-size:25px; color: #5cf304;">{{ 'HOME.option1' | translate }}</ion-text>
   <img src="/assets/detect1.jpg" slot="start" style="width:50px;height:50px;">
   <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
 </ion-item>
@@ -61,7 +61,7 @@
 
 <ion-item style="--background: rgb(19, 1, 1);" routerLink="/prevent">
   <img src="/assets/preventnew.png" slot="start" style="width:50px;height:50px;">
-  <ion-text style="font-size:25px; color: #5cf304;">Prevent</ion-text>
+  <ion-text style="font-size:25px; color: #5cf304;">{{ 'HOME.option2' | translate }}</ion-text>
   <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
 </ion-item>
 
@@ -74,7 +74,7 @@
       <ion-button routerLink="/home"  fill="clear">
         <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
       </ion-button>
-      <br><b>Home</b>
+      <br><b>{{ 'HOME.footer' | translate }}</b>
     </div>
   </ion-toolbar>
 </ion-footer>
