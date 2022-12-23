@@ -1,4 +1,4 @@
-import { ModalController, LoadingController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 import { Crop } from './../crop.model';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { PestsComponent } from './pests/pests.component';
