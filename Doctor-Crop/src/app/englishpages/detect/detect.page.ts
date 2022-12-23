@@ -14,7 +14,6 @@ export class DetectPage implements OnInit {
     this.translateService.use(this.language);  // add this
   }  // add this
 
-
   ngOnInit() {
   }
 
@@ -22,7 +21,7 @@ export class DetectPage implements OnInit {
 
   isOpen = false;
 
-  private presentPopover(e: Event) {
+  presentPopover(e: Event) {
     this.popover.event = e;
     this.isOpen = true;
   }

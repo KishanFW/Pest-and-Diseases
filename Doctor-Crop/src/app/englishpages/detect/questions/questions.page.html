@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar  class="header-footer-background-color">
+
+    <ion-buttons slot="start">
+      <ion-back-button routerLink="/detect" class="header-footer-component"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="header-footer-component"><b>Answer the questions to detect</b></ion-title>
+
+    <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
+      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
+    </ion-button>
+    <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
+      <ng-template >
+       <ion-content style="background-color: rgb(19, 1, 1);">
+
+        <ion-list style="background-color: rgb(19, 1, 1);">
+          <ion-radio-group value="english">
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">English</ion-label>
+              <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/detect"></ion-radio>
+            </ion-item>
+
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">සිංහල</ion-label>
+              <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/sdetect"></ion-radio>
+            </ion-item>
+
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label color="light">தமிழ்</ion-label>
+              <ion-radio slot="end" value="tamil" (click)="isOpen = false" routerLink="/tdetect"></ion-radio>
+            </ion-item>
+
+          </ion-radio-group>
+        </ion-list>
+
+       </ion-content>
+      </ng-template>
+    </ion-popover>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="--background: rgb(19, 1, 1);">
+  <br><br>
+
+  <ion-list name="crops" style="--background: rgb(19, 1, 1);">
+    <ion-item style="--background: rgb(19, 1, 1);">
+      <ion-label style="color: #ffffff; font-size: 16px;">What is the crop? </ion-label>
+
+      <ion-select [(ngModel)]="cropname" (ngModelChange)="variety();" placeholder="Click to select" style="color: #ffffff; --placeholder-color: #ffffff; --placeholder-opacity: 1;" okText="Choose Crop">
+
+      <div *ngFor="let crop of crops$|async">
+        <ion-select-option value="{{ crop.crop_name }}">
+          {{ crop.crop_name }}
+        </ion-select-option>
+      </div>
+
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <br>
+
+  <ion-list name="crops" style="--background: rgb(19, 1, 1);">
+    <ion-item style="--background: rgb(19, 1, 1);">
+      <ion-label style="color: #ffffff; font-size: 16px;">What is the variety? </ion-label>
+      <ion-text *ngIf="cropname == null"  (click)="nocropselected()" style="color: #ffffff;">Click to select</ion-text>
+
+      <ion-select *ngIf="cropname != null" [(ngModel)]="varietyname" placeholder="Click to select" style="color: #ffffff; --placeholder-color: #ffffff; --placeholder-opacity: 1;" okText="Choose Variety">
+
+      <div *ngFor="let variety of varieties$|async">
+        <ion-select-option value="{{ variety.variety_name }}">
+          {{  variety.variety_name  }}
+        </ion-select-option>
+      </div>
+
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer [translucent]="true">
+  <ion-toolbar  class="header-footer-background-color">
+    <div id="footer" class="header-footer-component">
+      <ion-button routerLink="/home"  fill="clear">
+        <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
+      </ion-button>
+      <br><b>Home</b>
+    </div>
+  </ion-toolbar>
+</ion-footer>

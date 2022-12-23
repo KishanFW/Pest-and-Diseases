@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'crop-cropvar',
     loadChildren: () => import('./crop-cropvar/crop-cropvar.module').then( m => m.CropCropvarPageModule)
+  },
+  {
+    path: 'questions',
+    loadChildren: () => import('./questions/questions.module').then( m => m.QuestionsPageModule)
   }
 ];
 
