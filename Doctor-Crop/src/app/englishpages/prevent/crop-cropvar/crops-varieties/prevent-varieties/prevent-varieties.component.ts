@@ -1,17 +1,17 @@
-import { Variety } from './../variety.model';
-import { Crop } from '../../crops/crop.model';
 import { Observable } from 'rxjs';
 import { tap } from "rxjs/operators";
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { LoadingController, ModalController } from '@ionic/angular';
 import { VarietiesService } from 'src/app/services/varieties.service';
+import { Crop } from 'src/app/englishpages/detect/crop-cropvar/crops/crop.model';
+import { Variety } from 'src/app/englishpages/detect/crop-cropvar/crops-varieties/variety.model';
 
 @Component({
-  selector: 'app-varieties',
-  templateUrl: './varieties.component.html',
-  styleUrls: ['./varieties.component.scss'],
+  selector: 'app-prevent-varieties',
+  templateUrl: './prevent-varieties.component.html',
+  styleUrls: ['./prevent-varieties.component.scss'],
 })
-export class VarietiesComponent implements OnInit {
+export class PreventVarietiesComponent implements OnInit {
   @Input() crop:Crop;
 
   varieties$: Observable<Variety[]>;
@@ -36,7 +36,7 @@ export class VarietiesComponent implements OnInit {
 
   closeModal(){
     this.modalCtrl.dismiss();
-}
+  }
 
   @ViewChild('popover') popover;
 

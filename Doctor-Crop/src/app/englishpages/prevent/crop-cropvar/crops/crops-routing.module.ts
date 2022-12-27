@@ -7,10 +7,6 @@ const routes: Routes = [
   {
     path: '',
     component: CropsPage
-  },
-  {
-    path: 'brinjal',
-    loadChildren: () => import('./brinjal/brinjal.module').then( m => m.BrinjalPageModule)
   }
 ];
 
