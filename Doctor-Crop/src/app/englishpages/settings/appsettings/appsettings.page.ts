@@ -25,12 +25,12 @@ export class AppsettingsPage implements OnInit {
   isOpen2 = false;
 
 
-  private presentPopover(e: Event) {
+  presentPopover(e: Event) {
     this.popover.event = e;
     this.isOpen = true;
   }
 
-  private presentPopover2(e: Event) {
+  presentPopover2(e: Event) {
     this.popover.event = e;
     this.isOpen2 = true;
   }
