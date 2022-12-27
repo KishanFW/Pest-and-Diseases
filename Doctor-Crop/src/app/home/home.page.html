@@ -6,7 +6,7 @@
     </ion-button>
 
     <ion-title class="header-footer-component">
-      <b> {{ 'HOME.header' | translate }}</b>
+      {{ 'HOME.header' | translate }}
     </ion-title>
 
     <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
@@ -20,17 +20,17 @@
           <ion-radio-group value="en" [(ngModel)]='language' (ionChange)='languageChange()'>
 
             <ion-item color="rgb(19, 1, 1)">
-              <ion-label color="light">English</ion-label>
+              <ion-label style="color: #ffffff;">English</ion-label>
               <ion-radio slot="end" value='en' (click)="isOpen = false"></ion-radio>
             </ion-item>
 
             <ion-item color="rgb(19, 1, 1)">
-              <ion-label color="light">සිංහල</ion-label>
+              <ion-label style="color: #ffffff;">සිංහල</ion-label>
               <ion-radio slot="end" value='si' (click)="isOpen = false"></ion-radio>
             </ion-item>
 
             <ion-item color="rgb(19, 1, 1)">
-              <ion-label color="light">தமிழ்</ion-label>
+              <ion-label style="color: #ffffff;">தமிழ்</ion-label>
               <ion-radio slot="end" value='ta' (click)="isOpen = false"></ion-radio>
             </ion-item>
 
@@ -52,7 +52,7 @@
 
 
 <ion-item style="--background: rgb(19, 1, 1);" routerLink="/detect">
-  <ion-text style="font-size:25px; color: #5cf304;">{{ 'HOME.option1' | translate }}</ion-text>
+  <ion-text style="font-size:25px; color: #ffffff;">{{ 'HOME.option1' | translate }}</ion-text>
   <img src="/assets/detect1.jpg" slot="start" style="width:50px;height:50px;">
   <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
 </ion-item>
@@ -61,7 +61,7 @@
 
 <ion-item style="--background: rgb(19, 1, 1);" routerLink="/prevent">
   <img src="/assets/preventnew.png" slot="start" style="width:50px;height:50px;">
-  <ion-text style="font-size:25px; color: #5cf304;">{{ 'HOME.option2' | translate }}</ion-text>
+  <ion-text style="font-size:25px; color: #ffffff;">{{ 'HOME.option2' | translate }}</ion-text>
   <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
 </ion-item>
 

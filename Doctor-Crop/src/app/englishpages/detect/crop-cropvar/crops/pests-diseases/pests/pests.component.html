@@ -16,17 +16,17 @@
         <ion-list style="background-color: rgb(19, 1, 1);">
           <ion-radio-group value="english">
             <ion-item color="rgb(19, 1, 1)">
-              <ion-label color="light">English</ion-label>
+              <ion-label style="color: #ffffff;">English</ion-label>
               <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/detect/crop-cropvar/crops/brinjal/pest"></ion-radio>
             </ion-item>
 
             <ion-item color="rgb(19, 1, 1)">
-              <ion-label color="light">සිංහල</ion-label>
+              <ion-label style="color: #ffffff;">සිංහල</ion-label>
               <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/sdetect/scrop-cropvar/scrops/sbrinjal/spest"></ion-radio>
             </ion-item>
 
             <ion-item color="rgb(19, 1, 1)">
-              <ion-label color="light">தமிழ்</ion-label>
+              <ion-label style="color: #ffffff;">தமிழ்</ion-label>
               <ion-radio slot="end" value="tamil" (click)="isOpen = false" routerLink="/tdetect/tcrop-cropvar/tcrops/tbrinjal/tpest"></ion-radio>
             </ion-item>
 
@@ -44,7 +44,7 @@
   <br>
 
   <div>
-    <ion-text color="light">Click on a pest name to see details or scroll</ion-text>
+    <ion-text style="color: #ffffff;">Click on a pest name to see details or scroll</ion-text>
     <br><br>
 
     <div *ngFor="let pest of pests$|async">
