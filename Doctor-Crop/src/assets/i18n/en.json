@@ -23,6 +23,7 @@
       "header": "App settings",
       "label": "General",
       "option": "App Language",
+      "lang-name": "English",
       "footer": "Home"
     },
 

@@ -17,17 +17,17 @@
         <ion-list style="background-color: rgb(19, 1, 1);">
           <ion-radio-group value="english">
             <ion-item color="rgb(19, 1, 1)">
-              <ion-label color="light">English</ion-label>
+              <ion-label style="color: #ffffff;">English</ion-label>
               <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/detect/crop-cropvar/crops/pests_diseases"></ion-radio>
             </ion-item>
 
             <ion-item color="rgb(19, 1, 1)">
-              <ion-label color="light">සිංහල</ion-label>
+              <ion-label style="color: #ffffff;">සිංහල</ion-label>
               <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/sdetect/scrop-cropvar/scrops/sbrinjal"></ion-radio>
             </ion-item>
 
             <ion-item color="rgb(19, 1, 1)">
-              <ion-label color="light">தமிழ்</ion-label>
+              <ion-label style="color: #ffffff;">தமிழ்</ion-label>
               <ion-radio slot="end" value="tamil" (click)="isOpen = false" routerLink="/tdetect/tcrop-cropvar/tcrops/tbrinjal"></ion-radio>
             </ion-item>
 
@@ -48,13 +48,13 @@
 
     <ion-item style= "--background: rgb(19, 1, 1);">
       <img src="/assets/pest.jpg" slot="start" style="width:50px;height:50px;">
-      <ion-text style="font-size:20px;color: #5cf304;">Pest</ion-text>
+      <ion-text style="font-size:20px;color: #ffffff;">Pest</ion-text>
       <ion-icon name="chevron-forward-outline" slot="end" style="color: #5cf304;"></ion-icon>
     </ion-item> <br>
 
     <ion-item style= "--background: rgb(19, 1, 1);">
       <img src="/assets/diseases.jpg" slot="start" style="width:50px;height:50px;">
-      <ion-text style="font-size:20px;color: #5cf304;">Diseases</ion-text>
+      <ion-text style="font-size:20px;color: #ffffff;">Diseases</ion-text>
       <ion-icon name="chevron-forward-outline" slot="end" style="color: #5cf304;"></ion-icon>
     </ion-item>
 
@@ -68,7 +68,7 @@
       <ion-button routerLink="/home"  fill="clear" (click)="closeModal()">
         <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
       </ion-button>
-      <br><b>Home</b>
+      <br>Home
     </div>
   </ion-toolbar>
 </ion-footer>
