@@ -1,3 +1,5 @@
+
+import { VPestsDiseasesComponent } from './englishpages/detect/crop-cropvar/crops-varieties/varieties/v-pests-diseases/v-pests-diseases.component';
 import { PreventSelectCropComponent } from './englishpages/prevent/crop-cropvar/crops-varieties/prevent-select-crop/prevent-select-crop.component';
 import { PreventVarietiesComponent } from './englishpages/prevent/crop-cropvar/crops-varieties/prevent-varieties/prevent-varieties.component';
 import { PreventPestsDiseasesComponent } from './englishpages/prevent/crop-cropvar/crops/prevent-pests-diseases/prevent-pests-diseases.component';
@@ -19,6 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { PVPestsDiseasesComponent } from './englishpages/prevent/crop-cropvar/crops-varieties/prevent-varieties/p-v-pests-diseases/p-v-pests-diseases.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -34,7 +37,9 @@ export function createTranslateLoader(http: HttpClient) {
                  SelectCropComponent,
                  PreventPestsDiseasesComponent,
                  PreventVarietiesComponent,
-                 PreventSelectCropComponent],
+                 PreventSelectCropComponent,
+                 VPestsDiseasesComponent,
+                 PVPestsDiseasesComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
     TranslateModule.forRoot({
       loader: {

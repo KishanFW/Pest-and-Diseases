@@ -1,3 +1,4 @@
+import { VPestsDiseasesComponent } from './v-pests-diseases/v-pests-diseases.component';
 import { Variety } from './../variety.model';
 import { Crop } from '../../crops/crop.model';
 import { Observable } from 'rxjs';
@@ -34,9 +35,18 @@ export class VarietiesComponent implements OnInit {
     )
   }
 
+  async openPests_diseasesModal(variety: Variety){
+    const modal = await this.modalCtrl.create({
+      component: VPestsDiseasesComponent,
+      componentProps: {variety},
+    });
+
+      modal.present();
+  }
+
   closeModal(){
     this.modalCtrl.dismiss();
-}
+  }
 
   @ViewChild('popover') popover;
 

@@ -5,6 +5,7 @@ import { LoadingController, ModalController } from '@ionic/angular';
 import { VarietiesService } from 'src/app/services/varieties.service';
 import { Crop } from 'src/app/englishpages/detect/crop-cropvar/crops/crop.model';
 import { Variety } from 'src/app/englishpages/detect/crop-cropvar/crops-varieties/variety.model';
+import { PVPestsDiseasesComponent } from './p-v-pests-diseases/p-v-pests-diseases.component';
 
 @Component({
   selector: 'app-prevent-varieties',
@@ -32,6 +33,15 @@ export class PreventVarietiesComponent implements OnInit {
         return varieties;
       })
     )
+  }
+
+  async openPests_diseasesModal(variety: Variety){
+    const modal = await this.modalCtrl.create({
+      component: PVPestsDiseasesComponent,
+      componentProps: {variety},
+    });
+
+      modal.present();
   }
 
   closeModal(){

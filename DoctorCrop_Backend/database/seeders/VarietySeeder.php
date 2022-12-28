@@ -40,7 +40,7 @@ class VarietySeeder extends Seeder
         ]);
 
         Variety::create([
-            'variety_name'=>'padagoda(BW-11)',
+            'variety_name'=>'Padagoda(BW-11)',
             'crop_name'=>'Brinjal',
             'img_path'=>'assets/crops/brinjal/brinjalvarieties/padagoda.png'
         ]);

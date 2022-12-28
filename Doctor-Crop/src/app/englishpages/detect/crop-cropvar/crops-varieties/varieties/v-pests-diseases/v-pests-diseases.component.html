@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar class="header-footer-background-color">
+
+    <ion-buttons slot="start" (click)="closeModal()">
+      <ion-icon slot="icon-only" name="arrow-back-outline" class="header-footer-component"></ion-icon>
+    </ion-buttons>
+
+    <ion-title class="header-footer-component">{{variety.variety_name}}</ion-title>
+
+    <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
+      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
+    </ion-button>
+    <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
+      <ng-template >
+       <ion-content style="background-color: rgb(19, 1, 1);">
+
+        <ion-list style="background-color: rgb(19, 1, 1);">
+          <ion-radio-group value="english">
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label style="color: #ffffff;">English</ion-label>
+              <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/detect/crop-cropvar/crops/pests_diseases"></ion-radio>
+            </ion-item>
+
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label style="color: #ffffff;">සිංහල</ion-label>
+              <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/sdetect/scrop-cropvar/scrops/sbrinjal"></ion-radio>
+            </ion-item>
+
+            <ion-item style="color: #ffffff;">
+              <ion-label color="light">தமிழ்</ion-label>
+              <ion-radio slot="end" value="tamil" (click)="isOpen = false" routerLink="/tdetect/tcrop-cropvar/tcrops/tbrinjal"></ion-radio>
+            </ion-item>
+
+          </ion-radio-group>
+        </ion-list>
+
+       </ion-content>
+      </ng-template>
+    </ion-popover>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="--background: rgb(19, 1, 1);" >
+
+  <p style="font-size:24px; text-align:center; color: white;"><b>Choose pest or diseases</b></p>
+  <br>
+
+    <ion-item style= "--background: rgb(19, 1, 1);">
+      <img src="/assets/pest.jpg" slot="start" style="width:50px;height:50px;">
+      <ion-text style="font-size:20px;color: #ffffff;">Pests</ion-text>
+      <ion-icon name="chevron-forward-outline" slot="end" style="color: #5cf304;"></ion-icon>
+    </ion-item> <br>
+
+    <ion-item style= "--background: rgb(19, 1, 1);">
+      <img src="/assets/diseases.jpg" slot="start" style="width:50px;height:50px;">
+      <ion-text style="font-size:20px;color: #ffffff;">Diseases</ion-text>
+      <ion-icon name="chevron-forward-outline" slot="end" style="color: #5cf304;"></ion-icon>
+    </ion-item>
+
+
+
+</ion-content>
+
+<ion-footer [translucent]="true">
+  <ion-toolbar  class="header-footer-background-color">
+    <div id="footer" class="header-footer-component">
+      <ion-button routerLink="/home"  fill="clear" (click)="closeModal()">
+        <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
+      </ion-button>
+      <br>Home
+    </div>
+  </ion-toolbar>
+</ion-footer>

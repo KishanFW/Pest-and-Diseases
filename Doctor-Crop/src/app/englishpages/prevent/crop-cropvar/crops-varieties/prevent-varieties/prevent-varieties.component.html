@@ -59,7 +59,7 @@
   <br>
 
   <div *ngFor="let variety of varieties$|async">
-    <ion-item style="--background: rgb(19, 1, 1);">
+    <ion-item style="--background: rgb(19, 1, 1);" (click)="openPests_diseasesModal(variety)">
       <img src="{{variety.img_path}}"><ion-label style="color: #ffffff; font-size: 20px;">{{variety.variety_name}}</ion-label>
       <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
     </ion-item>
