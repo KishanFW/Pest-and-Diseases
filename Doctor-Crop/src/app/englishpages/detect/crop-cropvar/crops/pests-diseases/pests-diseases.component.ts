@@ -39,6 +39,10 @@ export class PestsDiseasesComponent implements OnInit {
       componentProps: {crop},
     });
       modal.present();
+
+      await modal.onDidDismiss().then(
+        () => this.modalCtrl.dismiss()
+      );
   }
 
   closeModal(){

@@ -1,3 +1,4 @@
+import { PestsDiseasesComponent } from './../pests-diseases.component';
 import { PestImg, PestSymptom } from './../pests-diseases.model';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Crop } from '../../crop.model';
@@ -8,7 +9,6 @@ import { SymptomsofpestService } from 'src/app/services/symptomsofpest.service';
 import { Observable } from 'rxjs';
 import { tap } from "rxjs/operators";
 import { Pest } from '../pests-diseases.model';
-import { PestsDiseasesComponent } from '../pests-diseases.component';
 
 @Component({
   selector: 'app-pests',
@@ -28,8 +28,10 @@ export class PestsComponent implements OnInit {
     private symptomsofpestService: SymptomsofpestService,
     private loadingCtrl: LoadingController,
     private modalCtrl: ModalController,
-    private pestdisease: PestsDiseasesComponent
+    private pestsdiseases: PestsDiseasesComponent
     ) { }
+
+
 
   async ngOnInit() {
    const loading = await this.loadingCtrl.create({message: 'Please Wait ...'});
