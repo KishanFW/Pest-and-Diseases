@@ -31,6 +31,7 @@ export class PestsDiseasesComponent implements OnInit {
       componentProps: {crop},
     });
       modal.present();
+
   }
 
   async openDiseaseModal(crop: Crop){
@@ -40,9 +41,6 @@ export class PestsDiseasesComponent implements OnInit {
     });
       modal.present();
 
-      await modal.onDidDismiss().then(
-        () => this.modalCtrl.dismiss()
-      );
   }
 
   closeModal(){
