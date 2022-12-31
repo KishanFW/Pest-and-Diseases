@@ -14,4 +14,8 @@ export class SymptomsofpestService {
   getpestsymptoms(): Observable<PestSymptom[]>{
     return this.http.get<PestSymptom[]>(this.apiUrl+'/pestsymptoms');
   }
+
+  getpestsymptomsofcrop(crop: string): Observable<PestSymptom[]>{
+    return this.http.get<PestSymptom[]>(this.apiUrl+'/pestsymptmsofcrop/'+crop);
+  }
 }

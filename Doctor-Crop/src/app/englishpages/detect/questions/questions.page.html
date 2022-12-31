@@ -5,7 +5,7 @@
       <ion-back-button routerLink="/detect" class="header-footer-component"></ion-back-button>
     </ion-buttons>
 
-    <ion-title class="header-footer-component">Answer the questions to detect</ion-title>
+    <ion-title class="header-footer-component">Answer to detect</ion-title>
 
     <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
       <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
@@ -43,39 +43,71 @@
 <ion-content style="--background: rgb(19, 1, 1);">
   <br><br>
 
-  <ion-list name="crops" style="--background: rgb(19, 1, 1);">
     <ion-item style="--background: rgb(19, 1, 1);">
       <ion-label style="color: #ffffff; font-size: 16px;">What is the crop? </ion-label>
-
       <ion-select [(ngModel)]="cropname" (ngModelChange)="variety();" placeholder="Click to select" style="color: #ffffff; --placeholder-color: #ffffff; --placeholder-opacity: 1;" okText="Choose Crop">
-
       <div *ngFor="let crop of crops$|async">
         <ion-select-option value="{{ crop.crop_name }}">
           {{ crop.crop_name }}
         </ion-select-option>
       </div>
-
       </ion-select>
     </ion-item>
-  </ion-list>
-  <br>
+  <br><br>
 
-  <ion-list name="crops" style="--background: rgb(19, 1, 1);">
     <ion-item style="--background: rgb(19, 1, 1);">
       <ion-label style="color: #ffffff; font-size: 16px;">What is the variety? </ion-label>
-      <ion-text *ngIf="cropname == null"  (click)="nocropselected()" style="color: #ffffff;">Click to select</ion-text>
-
+      <ion-text *ngIf="cropname == null"  (click)="alertcropselect()" style="color: #ffffff;">Click to select</ion-text>
       <ion-select *ngIf="cropname != null" [(ngModel)]="varietyname" placeholder="Click to select" style="color: #ffffff; --placeholder-color: #ffffff; --placeholder-opacity: 1;" okText="Choose Variety">
-
       <div *ngFor="let variety of varieties$|async">
         <ion-select-option value="{{ variety.variety_name }}">
           {{  variety.variety_name  }}
         </ion-select-option>
       </div>
-
       </ion-select>
     </ion-item>
-  </ion-list>
+    <br><br>
+
+    <ion-item style="--background: rgb(19, 1, 1);">
+      <ion-label style="color: #ffffff; font-size: 16px;">Pests or Diseases? </ion-label>
+      <ion-text *ngIf="cropname == null"  (click)="alertcropselect()" style="color: #ffffff;">Click to select</ion-text>
+      <ion-select *ngIf="cropname != null" [(ngModel)]="pestsordiseases" (ngModelChange)="symptom();" (ngModelChange)="test();" placeholder="Click to select" style="color: #ffffff; --placeholder-color: #ffffff; --placeholder-opacity: 1;" okText="Choose">
+        <ion-select-option value="pests">Pests</ion-select-option>
+        <ion-select-option value="diseases">Diseases</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br><br>
+
+    <ion-item style="--background: rgb(19, 1, 1);">
+      <ion-label style="color: #ffffff; font-size: 16px;">What is/are symptoms? </ion-label>
+      <ion-text *ngIf="pestsordiseases == null"  (click)="alertpestdiseaseselect()" style="color: #ffffff;">Click to select</ion-text>
+
+      <ion-text *ngIf="pestsordiseases == 'pests'"  (click)="showpestsymptom()" style="color: #ffffff;">Click to select</ion-text>
+      <ion-icon *ngIf="pestsordiseases == 'pests'" name="{{pestupdownicon}}" slot="end" style="color: #5cf304;"></ion-icon>
+
+      <ion-text *ngIf="pestsordiseases == 'diseases'"  (click)="showdiseasesymptom()" style="color: #ffffff;">Click to select</ion-text>
+      <ion-icon *ngIf="pestsordiseases == 'diseases'" name="{{diseaseupdownicon}}" slot="end" style="color: #5cf304;"></ion-icon>
+    </ion-item><br>
+
+      <div *ngIf="pestsordiseases == 'pests'" [hidden]=pesthidden>
+        <form name="pestsymptoms">
+          <div *ngFor="let symptoms of pestsymptoms$|async">
+           <input type="checkbox" name="{{ symptoms.symptom }}" id="{{ symptoms.symptom }}" value="{{ symptoms.symptom }}" style="width:20px; height:20px; margin-left: 5%;">
+           <label for="{{ symptoms.symptom }}" style="color: #ffffff;"> {{ symptoms.symptom }}</label><br><br>
+          </div>
+          <input type="reset" value="Reset Symptoms Selection">
+        </form>
+      </div>
+
+      <div *ngIf="pestsordiseases == 'diseases'" [hidden]=diseasehidden>
+        <form name="diseasesymptoms">
+          <div *ngFor="let symptoms of diseasesymptoms$|async">
+           <input type="checkbox" name="{{ symptoms.symptom }}" id="{{ symptoms.symptom }}" value="{{ symptoms.symptom }}" style="width:20px; height:20px; margin-left: 5%;">
+           <label for="{{ symptoms.symptom }}" style="color: #ffffff;"> {{ symptoms.symptom }}</label><br><br>
+          </div>
+          <input type="reset" value="Reset Symptoms Selection">
+        </form>
+      </div>
 
 </ion-content>
 
