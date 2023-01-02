@@ -61,6 +61,9 @@ export class QuestionsPage implements OnInit {
         return varieties;
       })
     )
+
+    this.varietyname = null;
+    this.pestsordiseases = null;
   }
 
   async symptom(){
@@ -128,6 +131,12 @@ export class QuestionsPage implements OnInit {
       this.diseasehidden = true;
       this.diseaseupdownicon = "caret-down-outline"
     }
+  }
+
+  resetall(){
+    this.cropname = null;
+    this.varietyname = null;
+    this.pestsordiseases = null;
   }
 
   @ViewChild('popover') popover;

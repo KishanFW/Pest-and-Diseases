@@ -91,23 +91,54 @@
 
       <div *ngIf="pestsordiseases == 'pests'" [hidden]=pesthidden>
         <form name="pestsymptoms">
-          <div *ngFor="let symptoms of pestsymptoms$|async">
-           <input type="checkbox" name="{{ symptoms.symptom }}" id="{{ symptoms.symptom }}" value="{{ symptoms.symptom }}" style="width:20px; height:20px; margin-left: 5%;">
-           <label for="{{ symptoms.symptom }}" style="color: #ffffff;"> {{ symptoms.symptom }}</label><br><br>
-          </div>
-          <input type="reset" value="Reset Symptoms Selection">
+          <table>
+            <div *ngFor="let symptoms of pestsymptoms$|async">
+              <ion-item style="--background: rgb(19, 1, 1);">
+              <tr>
+                <td style="margin-top: 5%;">
+                  <input type="checkbox" name="{{ symptoms.symptom }}" id="{{ symptoms.symptom }}" value="{{ symptoms.symptom }}" style="width:25px; height:25px; margin-left: 5%;">
+                </td>
+                <td>
+                  <label for="{{ symptoms.symptom }}" style="color: #ffffff; font-size: 16px;">: {{ symptoms.symptom }}</label>
+                </td>
+              </tr>
+            </ion-item><br>
+            </div><br>
+              <tr>
+                <td>
+                  <input type="reset" value="Reset Symptoms Selection">
+                </td>
+              </tr>
+          </table>
         </form>
-      </div>
+      </div><br>
 
       <div *ngIf="pestsordiseases == 'diseases'" [hidden]=diseasehidden>
         <form name="diseasesymptoms">
-          <div *ngFor="let symptoms of diseasesymptoms$|async">
-           <input type="checkbox" name="{{ symptoms.symptom }}" id="{{ symptoms.symptom }}" value="{{ symptoms.symptom }}" style="width:20px; height:20px; margin-left: 5%;">
-           <label for="{{ symptoms.symptom }}" style="color: #ffffff;"> {{ symptoms.symptom }}</label><br><br>
-          </div>
-          <input type="reset" value="Reset Symptoms Selection">
+          <table>
+            <div *ngFor="let symptoms of diseasesymptoms$|async">
+              <ion-item style="--background: rgb(19, 1, 1);">
+                <tr>
+                  <td style="margin-top: 5%;">
+                    <input type="checkbox" name="{{ symptoms.symptom }}" id="{{ symptoms.symptom }}" value="{{ symptoms.symptom }}" style="width:25px; height:25px; margin-left: 5%;">
+                  </td>
+                  <td>
+                    <label for="{{ symptoms.symptom }}" style="color: #ffffff; font-size: 16px;">: {{ symptoms.symptom }}</label>
+                  </td>
+                </tr>
+              </ion-item><br>
+            </div><br>
+            <tr>
+              <td>
+                <input type="reset" value="Reset Symptoms">
+              </td>
+            </tr>
+          </table>
         </form>
-      </div>
+      </div><br>
+
+      <ion-button class="resetall" size="medium" (click)="resetall();" style="margin-left: 5%;">Reset All</ion-button>
+      <br><br>
 
 </ion-content>
 
