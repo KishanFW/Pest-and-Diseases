@@ -5,3 +5,16 @@ ion-select::part(text){
 ion-select::part(icon) {
    color: #5cf304;
 }
+
+input[type=reset]{
+  background-color: #04f37b8a;
+  color:#ffffff;
+  height: 40px;
+  border: none;
+  margin-left: 5%;
+}
+
+.resetall{
+  --background: #0cf3048a;
+  --color:#ffffff;
+}

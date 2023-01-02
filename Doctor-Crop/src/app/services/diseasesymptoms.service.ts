@@ -14,4 +14,8 @@ export class DiseasesymptomsService {
   getDiseasesymptoms(): Observable<DiseaseSymptom[]>{
     return this.http.get<DiseaseSymptom[]>(this.apiUrl+'/diseasesymptoms');
   }
+
+  getdiseasesymptomsofcrop(crop: string): Observable<DiseaseSymptom[]>{
+    return this.http.get<DiseaseSymptom[]>(this.apiUrl+'/diseasesymptmsofcrop/'+crop);
+  }
 }

@@ -28,7 +28,7 @@ class DiseaseSymptomSeeder extends Seeder
 
         Disease_symptom::create([
             'disease_name'=>'Damping-Off',
-            'symptom'=>'Brownish black discoloration at the base due to Rhizoctonia spp'
+            'symptom'=>'Brownish black discoloration at the base'
         ]);
 
 
