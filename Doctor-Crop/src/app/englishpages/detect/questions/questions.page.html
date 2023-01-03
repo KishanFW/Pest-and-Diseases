@@ -71,7 +71,7 @@
     <ion-item style="--background: rgb(19, 1, 1);">
       <ion-label style="color: #ffffff; font-size: 16px;">Pests or Diseases? </ion-label>
       <ion-text *ngIf="cropname == null"  (click)="alertcropselect()" style="color: #ffffff;">Click to select</ion-text>
-      <ion-select *ngIf="cropname != null" [(ngModel)]="pestsordiseases" (ngModelChange)="symptom();" (ngModelChange)="test();" placeholder="Click to select" style="color: #ffffff; --placeholder-color: #ffffff; --placeholder-opacity: 1;" okText="Choose">
+      <ion-select *ngIf="cropname != null" [(ngModel)]="pestsordiseases" (ngModelChange)="symptom(); unselect();" placeholder="Click to select" style="color: #ffffff; --placeholder-color: #ffffff; --placeholder-opacity: 1;" okText="Choose">
         <ion-select-option value="pests">Pests</ion-select-option>
         <ion-select-option value="diseases">Diseases</ion-select-option>
       </ion-select>
@@ -96,7 +96,7 @@
               <ion-item style="--background: rgb(19, 1, 1);">
               <tr>
                 <td style="margin-top: 5%;">
-                  <input type="checkbox" name="{{ symptoms.symptom }}" id="{{ symptoms.symptom }}" value="{{ symptoms.symptom }}" style="width:25px; height:25px; margin-left: 5%;">
+                  <input type="checkbox" [(ngModel)]="symptomslist[symptoms.symptom]" id="{{ symptoms.symptom }}" value="{{ symptoms.symptom }}" [ngModelOptions]="{standalone: true}" style="width:25px; height:25px; margin-left: 5%;">
                 </td>
                 <td>
                   <label for="{{ symptoms.symptom }}" style="color: #ffffff; font-size: 16px;">: {{ symptoms.symptom }}</label>
@@ -106,7 +106,8 @@
             </div><br>
               <tr>
                 <td>
-                  <input type="reset" value="Reset Symptoms Selection">
+                  <ion-button class="secondarybuttons" size="medium" (click)="unselect()">Unselect <br> Symptoms</ion-button>
+                  <ion-button class="secondarybuttons" size="medium" (click)="showpestsymptom()">Close <br> Symptoms</ion-button>
                 </td>
               </tr>
           </table>
@@ -120,7 +121,7 @@
               <ion-item style="--background: rgb(19, 1, 1);">
                 <tr>
                   <td style="margin-top: 5%;">
-                    <input type="checkbox" name="{{ symptoms.symptom }}" id="{{ symptoms.symptom }}" value="{{ symptoms.symptom }}" style="width:25px; height:25px; margin-left: 5%;">
+                    <input type="checkbox" [(ngModel)]="symptomslist[symptoms.symptom]" id="{{ symptoms.symptom }}" value="{{ symptoms.symptom }}" [ngModelOptions]="{standalone: true}" style="width:25px; height:25px; margin-left: 5%;">
                   </td>
                   <td>
                     <label for="{{ symptoms.symptom }}" style="color: #ffffff; font-size: 16px;">: {{ symptoms.symptom }}</label>
@@ -128,16 +129,18 @@
                 </tr>
               </ion-item><br>
             </div><br>
-            <tr>
-              <td>
-                <input type="reset" value="Reset Symptoms">
-              </td>
-            </tr>
+                <tr>
+                  <td>
+                    <ion-button class="secondarybuttons" size="medium" (click)="unselect()">Unselect <br> Symptoms</ion-button>
+                    <ion-button class="secondarybuttons" size="medium" (click)="showdiseasesymptom()">Close <br> Symptoms</ion-button>
+                  </td>
+                </tr>
           </table>
         </form>
       </div><br>
 
-      <ion-button class="resetall" size="medium" (click)="resetall();" style="margin-left: 5%;">Reset All</ion-button>
+      <ion-button class="mainbuttons" size="medium" (click)="resetall();" style="margin-left: 5%;">Reset All</ion-button>
+      <ion-button class="mainbuttons" size="medium" style="margin-left: 5%;">Detect</ion-button>
       <br><br>
 
 </ion-content>

@@ -20,6 +20,8 @@ export class QuestionsPage implements OnInit {
   cropname: string = null;
   varietyname: string = null;
   pestsordiseases: string = null;
+  symptomslist: any[] = [];
+
   crops$: Observable<Crop[]>;
   varieties$: Observable<Variety[]>;
   pestsymptoms$: Observable<PestSymptom[]>;
@@ -82,7 +84,6 @@ export class QuestionsPage implements OnInit {
       this.diseasesymptoms$ = this.diseaseSymptomService.getdiseasesymptomsofcrop(this.cropname).pipe(
         tap((diseasesymptoms)=>{
           loading.dismiss();
-          console.log(diseasesymptoms);
           return diseasesymptoms;
         })
       );
@@ -139,6 +140,10 @@ export class QuestionsPage implements OnInit {
     this.pestsordiseases = null;
   }
 
+  unselect(){
+    this.symptomslist = [];
+  }
+
   @ViewChild('popover') popover;
 
   isOpen = false;
@@ -149,7 +154,7 @@ export class QuestionsPage implements OnInit {
   }
 
   test(){
-    console.log(this.pestsordiseases);
+    console.log(this.symptomslist);
   }
 
 }

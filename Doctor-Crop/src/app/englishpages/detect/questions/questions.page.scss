@@ -11,10 +11,16 @@ input[type=reset]{
   color:#ffffff;
   height: 40px;
   border: none;
-  margin-left: 5%;
 }
 
-.resetall{
+.mainbuttons{
   --background: #0cf3048a;
   --color:#ffffff;
+}
+
+.secondarybuttons{
+  --color:#ffffff;
+  --background: #04f37b8a;
+  margin-left: 5%;
+  margin-right: 5%;
 }
