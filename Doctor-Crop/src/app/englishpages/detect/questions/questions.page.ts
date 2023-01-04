@@ -1,7 +1,7 @@
 import { VarietiesService } from 'src/app/services/varieties.service';
 import { Variety } from './../crop-cropvar/crops-varieties/variety.model';
 import { Observable } from 'rxjs';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Crop } from '../crop-cropvar/crops/crop.model';
 import { CropsService } from 'src/app/services/crops.service';
 import { LoadingController } from '@ionic/angular';

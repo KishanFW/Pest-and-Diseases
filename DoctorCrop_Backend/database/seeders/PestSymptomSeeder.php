@@ -17,7 +17,7 @@ class PestSymptomSeeder extends Seeder
     {
       Pest_symptom::create([
         'pest_name'=>'Borer and fruit borer',
-        'symptom'=>'Drooping stems and black holes in the fruit'
+        'symptom'=>'Droping stems and black holes in the fruit'
       ]);
 
       Pest_symptom::create([
@@ -75,7 +75,12 @@ class PestSymptomSeeder extends Seeder
 
       Pest_symptom::create([
         'pest_name'=>'Mite damage',
-        'symptom'=>'Mites are more common on the underside, and leaf rolling, browning, and dry diebak are seen'
+        'symptom'=>'Mites are more common on the underside'
+      ]);
+
+      Pest_symptom::create([
+        'pest_name'=>'Mite damage',
+        'symptom'=>'Leaf rolling, browning, and dry diebak are seen'
       ]);
 
       Pest_symptom::create([
