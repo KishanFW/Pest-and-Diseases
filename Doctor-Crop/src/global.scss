@@ -69,3 +69,22 @@
 
     transform: rotate(45deg);
   }
+
+  .select-interface-option .alert-radio-label,
+  .select-interface-option .alert-checkbox-label {
+    white-space: normal !important;
+    color: #ffffff !important;
+  }
+
+  .select-interface-option{
+    background-color: rgb(19, 1, 1) !important;
+    height: 70px !important;
+  }
+
+  .alert-head{
+    background-color: #49bd06c0 !important;
+  }
+
+  .alert-footer{
+    background-color: #49bd06c0 !important;
+  }

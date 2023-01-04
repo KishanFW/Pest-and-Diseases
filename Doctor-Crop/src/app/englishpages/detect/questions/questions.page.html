@@ -82,65 +82,26 @@
       <ion-label style="color: #ffffff; font-size: 16px;">What is/are symptoms? </ion-label>
       <ion-text *ngIf="pestsordiseases == null"  (click)="alertpestdiseaseselect()" style="color: #ffffff;">Click to select</ion-text>
 
-      <ion-text *ngIf="pestsordiseases == 'pests'"  (click)="showpestsymptom()" style="color: #ffffff;">Click to select</ion-text>
-      <ion-icon *ngIf="pestsordiseases == 'pests'" name="{{pestupdownicon}}" slot="end" style="color: #5cf304;"></ion-icon>
+      <ion-select *ngIf="pestsordiseases == 'pests'" [(ngModel)]="symptomslist" placeholder="Click to select" style="color: #ffffff; --placeholder-color: #ffffff; --placeholder-opacity: 1;" okText="Choose Symptoms" multiple="true">
+        <div *ngFor="let symptoms of pestsymptoms$|async">
+          <ion-select-option value="{{ symptoms.symptom }}">
+            {{  symptoms.symptom   }}
+          </ion-select-option><br>
+        </div>
+      </ion-select>
 
-      <ion-text *ngIf="pestsordiseases == 'diseases'"  (click)="showdiseasesymptom()" style="color: #ffffff;">Click to select</ion-text>
-      <ion-icon *ngIf="pestsordiseases == 'diseases'" name="{{diseaseupdownicon}}" slot="end" style="color: #5cf304;"></ion-icon>
+      <ion-select *ngIf="pestsordiseases == 'diseases'" [(ngModel)]="symptomslist" placeholder="Click to select" style="color: #ffffff; --placeholder-color: #ffffff; --placeholder-opacity: 1;" okText="Choose Symptoms" multiple="true">
+        <div *ngFor="let symptoms of diseasesymptoms$|async">
+          <ion-select-option value="{{ symptoms.symptom }}">
+            {{  symptoms.symptom   }}
+          </ion-select-option><br>
+        </div>
+      </ion-select>
+
     </ion-item><br>
 
-      <div *ngIf="pestsordiseases == 'pests'" [hidden]=pesthidden>
-        <form name="pestsymptoms">
-          <table>
-            <div *ngFor="let symptoms of pestsymptoms$|async">
-              <ion-item style="--background: rgb(19, 1, 1);">
-              <tr>
-                <td style="margin-top: 5%;">
-                  <input type="checkbox" [(ngModel)]="symptomslist[symptoms.symptom]" id="{{ symptoms.symptom }}" value="{{ symptoms.symptom }}" [ngModelOptions]="{standalone: true}" style="width:25px; height:25px; margin-left: 5%;">
-                </td>
-                <td>
-                  <label for="{{ symptoms.symptom }}" style="color: #ffffff; font-size: 16px;">: {{ symptoms.symptom }}</label>
-                </td>
-              </tr>
-            </ion-item><br>
-            </div><br>
-              <tr>
-                <td>
-                  <ion-button class="secondarybuttons" size="medium" (click)="unselect()">Unselect <br> Symptoms</ion-button>
-                  <ion-button class="secondarybuttons" size="medium" (click)="showpestsymptom()">Close <br> Symptoms</ion-button>
-                </td>
-              </tr>
-          </table>
-        </form>
-      </div><br>
-
-      <div *ngIf="pestsordiseases == 'diseases'" [hidden]=diseasehidden>
-        <form name="diseasesymptoms">
-          <table>
-            <div *ngFor="let symptoms of diseasesymptoms$|async">
-              <ion-item style="--background: rgb(19, 1, 1);">
-                <tr>
-                  <td style="margin-top: 5%;">
-                    <input type="checkbox" [(ngModel)]="symptomslist[symptoms.symptom]" id="{{ symptoms.symptom }}" value="{{ symptoms.symptom }}" [ngModelOptions]="{standalone: true}" style="width:25px; height:25px; margin-left: 5%;">
-                  </td>
-                  <td>
-                    <label for="{{ symptoms.symptom }}" style="color: #ffffff; font-size: 16px;">: {{ symptoms.symptom }}</label>
-                  </td>
-                </tr>
-              </ion-item><br>
-            </div><br>
-                <tr>
-                  <td>
-                    <ion-button class="secondarybuttons" size="medium" (click)="unselect()">Unselect <br> Symptoms</ion-button>
-                    <ion-button class="secondarybuttons" size="medium" (click)="showdiseasesymptom()">Close <br> Symptoms</ion-button>
-                  </td>
-                </tr>
-          </table>
-        </form>
-      </div><br>
-
       <ion-button class="mainbuttons" size="medium" (click)="resetall();" style="margin-left: 5%;">Reset</ion-button>
-      <ion-button class="mainbuttons" size="medium" style="margin-left: 5%;">Detect</ion-button>
+      <ion-button class="mainbuttons" size="medium" style="margin-left: 5%;" (click)="test()">Detect</ion-button>
       <br><br>
 
 </ion-content>
