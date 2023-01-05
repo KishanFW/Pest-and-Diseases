@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePestSymptomsTable extends Migration
+class CreateSymptomsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreatePestSymptomsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pest_symptoms', function (Blueprint $table) {
-            $table->string('pest_name');
-            $table->foreign('pest_name')->references('pest_name')->on('pests');
-            $table->string('symptom');
-            $table->foreign('symptom')->references('symptom')->on('symptoms');
+        Schema::create('symptoms', function (Blueprint $table) {
+            $table->string('symptom')->primary();
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ class CreatePestSymptomsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pest_symptoms');
+        Schema::dropIfExists('symptoms');
     }
 }

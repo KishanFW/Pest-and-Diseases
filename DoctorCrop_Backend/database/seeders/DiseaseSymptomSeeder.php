@@ -124,7 +124,7 @@ class DiseaseSymptomSeeder extends Seeder
 
         Disease_symptom::create([
             'disease_name'=>'Little leaf disease',
-            'symptom'=>'leaves are narrow, soft, smooth and yellow'
+            'symptom'=>'Leaves are narrow, soft, smooth and yellow'
         ]);
 
         Disease_symptom::create([
@@ -140,7 +140,7 @@ class DiseaseSymptomSeeder extends Seeder
 
         Disease_symptom::create([
             'disease_name'=>'Little leaf disease',
-            'symptom'=>'flowers remain green/ no flowering'
+            'symptom'=>'Flowers remain green/ no flowering'
         ]);
 
         Disease_symptom::create([
