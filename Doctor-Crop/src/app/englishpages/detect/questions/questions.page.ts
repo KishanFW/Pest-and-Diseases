@@ -140,7 +140,7 @@ export class QuestionsPage implements OnInit {
   }
 
   test(){
-    console.log(this.cropname);
+    console.log(this.symptomslist);
   }
 
 }
