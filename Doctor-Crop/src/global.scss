@@ -81,10 +81,22 @@
     height: 70px !important;
   }
 
-  .alert-head{
-    background-color: #49bd06c0 !important;
+  .alert-head, .alert-button-group, .alert-radio-inner, .alert-checkbox-inner{
+    background-color: #348804da !important;
   }
 
-  .alert-footer{
-    background-color: #49bd06c0 !important;
+  .alert-button{
+    background-color: clear !important;
+    color: #ffffff !important;
+    border-radius: 10px !important;
   }
+
+  .alert-radio-icon, .alert-checkbox-icon{
+    border-color: #348804da !important;
+  }
+
+  .alert-title{
+    color: #ffffff !important;
+  }
+
+

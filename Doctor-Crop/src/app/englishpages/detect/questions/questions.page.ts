@@ -17,9 +17,9 @@ import { DiseaseSymptom, PestSymptom } from '../crop-cropvar/crops/pests-disease
   styleUrls: ['./questions.page.scss'],
 })
 export class QuestionsPage implements OnInit {
-  cropname: string = null;
-  varietyname: string = null;
-  pestsordiseases: string = null;
+  cropname: string = undefined;
+  varietyname: string = undefined;
+  pestsordiseases: string = undefined;
   symptomslist: any[] = [];
 
   crops$: Observable<Crop[]>;
@@ -54,39 +54,45 @@ export class QuestionsPage implements OnInit {
   }
 
   async variety(){
-    const loading = await this.loadingCtrl.create({message: 'Please Wait ...'});
-    loading.present();
+    if(this.cropname != undefined){
+      const loading = await this.loadingCtrl.create({message: 'Please Wait ...'});
+      loading.present();
 
-    this.varieties$ = this.varietiesService.getvarietiesofcrop(this.cropname).pipe(
-      tap((varieties)=>{
-        loading.dismiss();
-        return varieties;
-      })
-    )
-
-    this.varietyname = null;
-    this.pestsordiseases = null;
+      this.varieties$ = this.varietiesService.getvarietiesofcrop(this.cropname).pipe(
+        tap((varieties)=>{
+          loading.dismiss();
+          return varieties;
+        })
+      )
+    }
+    this.varietyname = undefined;
+    this.pestsordiseases = undefined;
   }
 
   async symptom(){
-    const loading = await this.loadingCtrl.create({message: 'Please Wait ...'});
-    loading.present();
+    if(this.pestsordiseases != undefined){
+      const loading = await this.loadingCtrl.create({message: 'Please Wait ...'});
+      loading.present();
 
-    if(this.pestsordiseases == "pests"){
-      this.pestsymptoms$ = this.pestSymptomService.getpestsymptomsofcrop(this.cropname).pipe(
-        tap((pestsymptoms)=>{
-          loading.dismiss();
-          return pestsymptoms;
-        })
-      );
-    }
-    else if(this.pestsordiseases == "diseases"){
-      this.diseasesymptoms$ = this.diseaseSymptomService.getdiseasesymptomsofcrop(this.cropname).pipe(
-        tap((diseasesymptoms)=>{
-          loading.dismiss();
-          return diseasesymptoms;
-        })
-      );
+      if(this.pestsordiseases == "pests"){
+        this.pestsymptoms$ = this.pestSymptomService.getpestsymptomsofcrop(this.cropname).pipe(
+          tap((pestsymptoms)=>{
+            loading.dismiss();
+            return pestsymptoms;
+          })
+        );
+      }
+      else if(this.pestsordiseases == "diseases"){
+        this.diseasesymptoms$ = this.diseaseSymptomService.getdiseasesymptomsofcrop(this.cropname).pipe(
+          tap((diseasesymptoms)=>{
+            loading.dismiss();
+            return diseasesymptoms;
+          })
+        );
+      }
+      else if(this.pestsordiseases == "not identified"){
+        loading.dismiss();
+      }
     }
   }
 
@@ -114,26 +120,6 @@ export class QuestionsPage implements OnInit {
     }
   }
 
-  showpestsymptom(){
-    if(this.pesthidden === true){
-      this.pesthidden = false;
-      this.pestupdownicon = "caret-up-outline"
-    }else if(this.pesthidden === false){
-      this.pesthidden = true;
-      this.pestupdownicon = "caret-down-outline"
-    }
-  }
-
-  showdiseasesymptom(){
-    if(this.diseasehidden === true){
-      this.diseasehidden = false;
-      this.diseaseupdownicon = "caret-up-outline"
-    }else if(this.diseasehidden === false){
-      this.diseasehidden = true;
-      this.diseaseupdownicon = "caret-down-outline"
-    }
-  }
-
   resetall(){
     this.cropname = null;
     this.varietyname = null;
@@ -154,7 +140,7 @@ export class QuestionsPage implements OnInit {
   }
 
   test(){
-    console.log(this.symptomslist);
+    console.log(this.cropname);
   }
 
 }

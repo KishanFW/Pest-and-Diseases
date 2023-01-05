@@ -44,9 +44,9 @@
   <br><br>
 
     <ion-item style="--background: rgb(19, 1, 1);">
-      <ion-label style="color: #ffffff; font-size: 16px;">What is the crop? </ion-label>
-      <ion-select [(ngModel)]="cropname" (ngModelChange)="variety();" placeholder="Click to select" style="color: #ffffff; --placeholder-color: #ffffff; --placeholder-opacity: 1;" okText="Choose Crop">
-      <div *ngFor="let crop of crops$|async">
+      <ion-label style="color: #ffffff; font-size: 16px;">What is your crop? </ion-label>
+      <ion-select [(ngModel)]="cropname" (ngModelChange)="variety();" placeholder="Click to select" style="color: #ffffff; --placeholder-color: #ffffff; --placeholder-opacity: 1;" okText="Choose My Crop">
+        <div *ngFor="let crop of crops$|async">
         <ion-select-option value="{{ crop.crop_name }}">
           {{ crop.crop_name }}
         </ion-select-option>
@@ -56,10 +56,11 @@
   <br><br>
 
     <ion-item style="--background: rgb(19, 1, 1);">
-      <ion-label style="color: #ffffff; font-size: 16px;">What is the variety? </ion-label>
-      <ion-text *ngIf="cropname == null"  (click)="alertcropselect()" style="color: #ffffff;">Click to select</ion-text>
-      <ion-select *ngIf="cropname != null" [(ngModel)]="varietyname" placeholder="Click to select" style="color: #ffffff; --placeholder-color: #ffffff; --placeholder-opacity: 1;" okText="Choose Variety">
-      <div *ngFor="let variety of varieties$|async">
+      <ion-label style="color: #ffffff; font-size: 16px;">What is your variety? </ion-label>
+      <ion-text *ngIf="cropname == undefined"  (click)="alertcropselect()" style="color: #ffffff;">Click to select</ion-text>
+      <ion-select *ngIf="cropname != undefined" [(ngModel)]="varietyname" placeholder="Click to select" style="color: #ffffff; --placeholder-color: #ffffff; --placeholder-opacity: 1;" okText="Choose My Variety">
+        <ion-select-option value = "not identified">Not Identified</ion-select-option>
+        <div *ngFor="let variety of varieties$|async">
         <ion-select-option value="{{ variety.variety_name }}">
           {{  variety.variety_name  }}
         </ion-select-option>
@@ -70,8 +71,9 @@
 
     <ion-item style="--background: rgb(19, 1, 1);">
       <ion-label style="color: #ffffff; font-size: 16px;">Pests or Diseases? </ion-label>
-      <ion-text *ngIf="cropname == null"  (click)="alertcropselect()" style="color: #ffffff;">Click to select</ion-text>
-      <ion-select *ngIf="cropname != null" [(ngModel)]="pestsordiseases" (ngModelChange)="symptom(); unselect();" placeholder="Click to select" style="color: #ffffff; --placeholder-color: #ffffff; --placeholder-opacity: 1;" okText="Choose">
+      <ion-text *ngIf="cropname == undefined"  (click)="alertcropselect()" style="color: #ffffff;">Click to select</ion-text>
+      <ion-select *ngIf="cropname != undefined" [(ngModel)]="pestsordiseases" (ngModelChange)="symptom(); unselect();" placeholder="Click to select" style="color: #ffffff; --placeholder-color: #ffffff; --placeholder-opacity: 1;" okText="Choose Option">
+        <ion-select-option value = "not identified">Not Identified</ion-select-option>
         <ion-select-option value="pests">Pests</ion-select-option>
         <ion-select-option value="diseases">Diseases</ion-select-option>
       </ion-select>
@@ -80,7 +82,7 @@
 
     <ion-item style="--background: rgb(19, 1, 1);">
       <ion-label style="color: #ffffff; font-size: 16px;">What is/are symptoms? </ion-label>
-      <ion-text *ngIf="pestsordiseases == null"  (click)="alertpestdiseaseselect()" style="color: #ffffff;">Click to select</ion-text>
+      <ion-text *ngIf="pestsordiseases == undefined"  (click)="alertpestdiseaseselect()" style="color: #ffffff;">Click to select</ion-text>
 
       <ion-select *ngIf="pestsordiseases == 'pests'" [(ngModel)]="symptomslist" placeholder="Click to select" style="color: #ffffff; --placeholder-color: #ffffff; --placeholder-opacity: 1;" okText="Choose Symptoms" multiple="true">
         <div *ngFor="let symptoms of pestsymptoms$|async">
