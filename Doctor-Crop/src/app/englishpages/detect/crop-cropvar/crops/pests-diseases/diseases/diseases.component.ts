@@ -1,6 +1,5 @@
-import { DiseasesymptomsService } from './../../../../../../services/diseasesymptoms.service';
-import { DiseaseimgsService } from './../../../../../../services/diseaseimgs.service';
-import { DiseaseType, DiseaseImg, DiseaseSymptom } from './../pests-diseases.model';
+import { DiseasedetailsComponent } from './diseasedetails/diseasedetails.component';
+import { DiseaseType } from './../pests-diseases.model';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Crop } from '../../crop.model';
 import { ModalController, LoadingController } from '@ionic/angular';
@@ -19,15 +18,11 @@ export class DiseasesComponent implements OnInit {
 
   diseases$: Observable<Disease[]>;
   diseasetypes$: Observable<DiseaseType[]>;
-  imgs$: Observable<DiseaseImg[]>;
-  symptoms$: Observable<DiseaseSymptom[]>;
 
   constructor(
     private loadingCtrl: LoadingController,
     private modalCtrl: ModalController,
-    private diseasesofcropService: DiseasesofcropService,
-    private diseaseimgsService: DiseaseimgsService,
-    private diseasesymptomsService: DiseasesymptomsService
+    private diseasesofcropService: DiseasesofcropService
   ) { }
 
   async ngOnInit() {
@@ -40,24 +35,13 @@ export class DiseasesComponent implements OnInit {
       })
     );
 
-    this.imgs$ = this.diseaseimgsService.getDiseaseimgs().pipe(
-      tap((imgs)=>{
-        return imgs;
-      })
-    );
-
-    this.symptoms$ = this.diseasesymptomsService.getDiseasesymptoms().pipe(
-      tap((symptoms)=>{
-        return symptoms;
-      })
-    );
-
     this.diseases$ = this.diseasesofcropService.getDiseases(this.crop.crop_name).pipe(
       tap((diseases)=>{
         loading.dismiss();
         return diseases;
       })
     );
+
   }
 
   closeModal(){
@@ -73,9 +57,16 @@ export class DiseasesComponent implements OnInit {
     this.isOpen = true;
   }
 
-  scroll(id: string){
-    let el = document.getElementById(id);
-    el.scrollIntoView();
+  async openDiseaseDetailsModal(disease: Disease){
+    const modal = await this.modalCtrl.create({
+      component: DiseasedetailsComponent,
+      componentProps: {disease},
+    });
+      modal.present();
+  }
+
+  nothing(){
+
   }
 
 }

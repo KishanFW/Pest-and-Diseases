@@ -4,7 +4,7 @@
       <ion-icon slot="icon-only" name="arrow-back-outline" class="header-footer-component"></ion-icon>
     </ion-buttons>
 
-    <ion-title class="header-footer-component">{{ crop.crop_name }} - Pests</ion-title>
+    <ion-title class="header-footer-component">{{ pest.pest_name }}</ion-title>
 
     <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
       <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
@@ -40,19 +40,39 @@
 </ion-header>
 
 <ion-content  style="--background: rgb(19, 1, 1);">
-  <br>
+
+  <h4 style="color: #5cf304; margin-left: 10px;">{{ pest.pest_name }}</h4>
+
   <div>
-    <ion-text style="color: #ffffff;">Click on a pest name to see details</ion-text>
-    <br><br>
+    <ion-card style="--background: rgb(19, 1, 1);">
+      <ion-card-content style="color: #ffffff; font-size: 17px;">
+        <ion-text>
 
-    <div *ngFor="let pest of pests$|async">
-      <ion-item (click)="openPestDetailsModal(pest)" style="--background: rgb(19, 1, 1);">
-        <ion-text style="color: #5cf304; font-size: 16px;">{{ pest.pest_name }}</ion-text>
-     </ion-item>
-    </div>
+          <b> symptoms:</b>
+         <ul>
+          <div *ngFor="let symptom of symptoms$|async">
+            <li *ngIf="pest.pest_name == symptom.pest_name">{{ symptom.symptom }}</li>
+            <br *ngIf="pest.pest_name == symptom.pest_name">
+          </div>
+          </ul>
+        </ion-text>
 
+        <div *ngFor="let img of imgs$|async">
+          <img *ngIf="pest.pest_name == img.pest_name" src="{{ img.img_path }}" class="img1">
+        </div>
+        <br><br>
+
+        <ion-text>
+          <b> Management </b>
+          <div [innerHtml]="pest.management">
+            {{ pest.management }}
+          </div>
+        </ion-text>
+      </ion-card-content>
+    </ion-card>
   </div>
   <br>
+
 
 </ion-content>
 

@@ -4,7 +4,7 @@
       <ion-icon slot="icon-only" name="arrow-back-outline" class="header-footer-component"></ion-icon>
     </ion-buttons>
 
-    <ion-title class="header-footer-component">{{ crop.crop_name }} - Diseases</ion-title>
+    <ion-title class="header-footer-component">{{ disease.disease_name }}</ion-title>
 
     <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
       <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
@@ -40,30 +40,40 @@
 </ion-header>
 
 <ion-content style="--background: rgb(19, 1, 1);">
-  <div id="top"></div>
-  <br>
+
+  <h4 style="color: #5cf304; margin-left: 10px;">{{ disease.disease_name }}</h4>
 
   <div>
-    <ion-text style="color: #ffffff;">Click on a Disease name to see details</ion-text>
-    <br><br>
+    <ion-card style="--background: rgb(19, 1, 1);">
+      <ion-card-content style="color: #ffffff; font-size: 17px;">
+        <ion-text>
+          <b>Causal Organism:</b>  {{ disease.causal_organism }}<br> <br>
 
-    <div *ngFor="let diseasetype of diseasetypes$|async">
-      <ion-item (click)="nothing()" style="--background: rgb(19, 1, 1);">
-        <h3 style="color: #ffffff; font-size: 20px;"><b>{{ diseasetype.disease_type }}</b></h3><br>
-      </ion-item>
-      <div *ngFor="let disease of diseases$|async">
-        <div *ngIf="diseasetype.disease_type == disease.disease_type">
-          <ion-item (click)="openDiseaseDetailsModal(disease)" style="--background: rgb(19, 1, 1);">
-             <ion-text style="color: #5cf304; font-size: 16px;">{{ disease.disease_name }}</ion-text>
-           </ion-item>
+          <b> Symptoms:</b>
+  ,       <ul>
+            <div *ngFor="let symptom of symptoms$|async">
+             <li *ngIf="disease.disease_name == symptom.disease_name">{{ symptom.symptom }}</li>
+             <br *ngIf="disease.disease_name == symptom.disease_name">
+            </div>
+          </ul>
+        </ion-text>
+
+        <div *ngFor="let img of imgs$|async">
+          <img *ngIf="disease.disease_name == img.disease_name" src="{{ img.img_path }}" class="img">
         </div>
-      </div>
-    </div>
+        <br>
 
+        <ion-text>
+          <b> Management </b>
+          <div [innerHTML]="disease.management">
+  ,         {{ disease.management }}
+          </div>
+        </ion-text>
+      </ion-card-content>
+    </ion-card>
   </div>
-  <br>
 
-  </ion-content>
+</ion-content>
 
 
 
