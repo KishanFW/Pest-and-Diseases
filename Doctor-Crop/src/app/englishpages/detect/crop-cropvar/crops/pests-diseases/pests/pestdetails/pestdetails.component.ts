@@ -5,6 +5,7 @@ import { tap } from "rxjs/operators";
 import { Pest, PestImg, PestSymptom } from '../../pests-diseases.model';
 import { ImgsofpestService } from 'src/app/services/imgsofpest.service';
 import { SymptomsofpestService } from 'src/app/services/symptomsofpest.service';
+import { ModalService } from 'src/app/services/modal.service';
 
 
 @Component({
@@ -23,7 +24,8 @@ export class PestdetailsComponent implements OnInit {
     private imgsofpestService: ImgsofpestService,
     private symptomsofpestService: SymptomsofpestService,
     private loadingCtrl: LoadingController,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private modalService: ModalService
   ) { }
 
  async ngOnInit() {
@@ -46,6 +48,10 @@ export class PestdetailsComponent implements OnInit {
 
  closeModal(){
   this.modalCtrl.dismiss();
+}
+
+async closeAllModals() {
+  await this.modalService.closeAllModals();
 }
 
 @ViewChild('popover') popover;

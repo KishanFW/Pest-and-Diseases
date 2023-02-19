@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { tap } from "rxjs/operators";
 import { DiseasesofcropService } from 'src/app/services/diseasesofcrop.service';
 import { Disease } from '../pests-diseases.model';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-diseases',
@@ -22,7 +23,8 @@ export class DiseasesComponent implements OnInit {
   constructor(
     private loadingCtrl: LoadingController,
     private modalCtrl: ModalController,
-    private diseasesofcropService: DiseasesofcropService
+    private diseasesofcropService: DiseasesofcropService,
+    private modalService: ModalService
   ) { }
 
   async ngOnInit() {
@@ -48,6 +50,10 @@ export class DiseasesComponent implements OnInit {
     this.modalCtrl.dismiss();
   }
 
+  async closeAllModals() {
+    await this.modalService.closeAllModals();
+  }
+
   @ViewChild('popover') popover;
 
   isOpen = false;
@@ -62,7 +68,8 @@ export class DiseasesComponent implements OnInit {
       component: DiseasedetailsComponent,
       componentProps: {disease},
     });
-      modal.present();
+    this.modalService.addModal(modal);
+    modal.present();
   }
 
   nothing(){

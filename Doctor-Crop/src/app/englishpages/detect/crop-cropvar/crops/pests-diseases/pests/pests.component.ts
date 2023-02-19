@@ -6,6 +6,7 @@ import { PestsofcropService } from 'src/app/services/pestsofcrop.service';
 import { Observable } from 'rxjs';
 import { tap } from "rxjs/operators";
 import { Pest } from '../pests-diseases.model';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-pests',
@@ -20,7 +21,8 @@ export class PestsComponent implements OnInit {
   constructor(
     private pestsofcropService: PestsofcropService,
     private loadingCtrl: LoadingController,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private modalService: ModalService
     ) { }
 
 
@@ -43,12 +45,17 @@ export class PestsComponent implements OnInit {
       component: PestdetailsComponent,
       componentProps: {pest},
     });
-      modal.present();
+    this.modalService.addModal(modal);
+    modal.present();
 
   }
 
-  closeModal(){
-    this.modalCtrl.dismiss();
+  async closeModal() {
+    await this.modalCtrl.dismiss();
+  }
+
+  async closeAllModals() {
+    await this.modalService.closeAllModals();
   }
 
 @ViewChild('popover') popover;

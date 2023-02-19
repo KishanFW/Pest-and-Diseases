@@ -4,6 +4,7 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { PestsComponent } from './pests/pests.component';
 import { DiseasesComponent } from './diseases/diseases.component';
 import { Injectable } from '@angular/core';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,8 @@ export class PestsDiseasesComponent implements OnInit {
   @Input() crop: Crop;
 
   constructor(
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private modalService: ModalService
     ) { }
 
   ngOnInit() {}
@@ -30,7 +32,8 @@ export class PestsDiseasesComponent implements OnInit {
       component: PestsComponent,
       componentProps: {crop},
     });
-      modal.present();
+    this.modalService.addModal(modal);
+    modal.present();
 
   }
 
@@ -39,8 +42,8 @@ export class PestsDiseasesComponent implements OnInit {
       component: DiseasesComponent,
       componentProps: {crop},
     });
-      modal.present();
-
+    this.modalService.addModal(modal);
+    modal.present();
   }
 
   closeModal(){

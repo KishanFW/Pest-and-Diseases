@@ -6,6 +6,7 @@ import { Disease, DiseaseType, DiseaseImg, DiseaseSymptom } from '../../pests-di
 import { DiseasesymptomsService } from 'src/app/services/diseasesymptoms.service';
 import { DiseaseimgsService } from 'src/app/services/diseaseimgs.service';
 import { DiseasesofcropService } from 'src/app/services/diseasesofcrop.service';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-diseasedetails',
@@ -25,7 +26,8 @@ export class DiseasedetailsComponent implements OnInit {
     private modalCtrl: ModalController,
     private diseasesofcropService: DiseasesofcropService,
     private diseaseimgsService: DiseaseimgsService,
-    private diseasesymptomsService: DiseasesymptomsService
+    private diseasesymptomsService: DiseasesymptomsService,
+    private modalService: ModalService
   ) { }
 
  async ngOnInit() {
@@ -53,8 +55,12 @@ export class DiseasedetailsComponent implements OnInit {
 
  }
 
- closeModal(){
+closeModal(){
   this.modalCtrl.dismiss();
+}
+
+async closeAllModals() {
+  await this.modalService.closeAllModals();
 }
 
 @ViewChild('popover') popover;
