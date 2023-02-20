@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Crop } from 'src/app/englishpages/detect/crop-cropvar/crops/crop.model';
 import { ModalController } from '@ionic/angular';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-prevent-pests-diseases',
@@ -11,13 +12,18 @@ export class PreventPestsDiseasesComponent implements OnInit {
   @Input() crop: Crop;
 
   constructor(
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private modalService: ModalService
   ) { }
 
   ngOnInit() {}
 
-  closeModal(){
-    this.modalCtrl.dismiss();
+  async closeModal() {
+    await this.modalCtrl.dismiss();
+  }
+
+  async closeAllModals() {
+    await this.modalService.closeAllModals();
   }
 
   @ViewChild('popover') popover;
