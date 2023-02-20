@@ -6,6 +6,7 @@ import { VarietiesService } from 'src/app/services/varieties.service';
 import { Crop } from 'src/app/englishpages/detect/crop-cropvar/crops/crop.model';
 import { Variety } from 'src/app/englishpages/detect/crop-cropvar/crops-varieties/variety.model';
 import { PVPestsDiseasesComponent } from './p-v-pests-diseases/p-v-pests-diseases.component';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-prevent-varieties',
@@ -21,6 +22,7 @@ export class PreventVarietiesComponent implements OnInit {
     private loadingCtrl: LoadingController,
     private modalCtrl: ModalController,
     private varietiesService: VarietiesService,
+    private modalService: ModalService
   ) { }
 
   async ngOnInit() {
@@ -40,12 +42,16 @@ export class PreventVarietiesComponent implements OnInit {
       component: PVPestsDiseasesComponent,
       componentProps: {variety},
     });
-
-      modal.present();
+    this.modalService.addModal(modal);
+    modal.present();
   }
 
-  closeModal(){
-    this.modalCtrl.dismiss();
+  async closeModal() {
+    await this.modalCtrl.dismiss();
+  }
+
+  async closeAllModals() {
+    await this.modalService.closeAllModals();
   }
 
   @ViewChild('popover') popover;
