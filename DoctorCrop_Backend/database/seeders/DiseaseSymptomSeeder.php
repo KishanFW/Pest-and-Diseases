@@ -34,7 +34,7 @@ class DiseaseSymptomSeeder extends Seeder
 
         Disease_symptom::create([
             'disease_name'=>'Collar rot',
-            'symptom'=>'Yellowing of leaves and wilt'
+            'symptom'=>'Yellowing of leaves'
         ]);
 
         Disease_symptom::create([
