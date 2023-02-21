@@ -8,14 +8,37 @@ use Illuminate\Support\Facades\DB;
 
 class ApiController extends Controller
 {
-    public function crops(){
-        $crops = DB::select("select crop_name, img_path from crops");
+    public function crops($lang)
+    {
+        $crops = DB::select("select crop_name, translatable_crop_name, img_path from crops");
+
+        // To get the translated data
+        foreach ($crops as $crop) {
+            $translatable_crop_name = json_decode($crop->translatable_crop_name, true);
+            if (is_array($translatable_crop_name) && isset($translatable_crop_name[$lang])) {
+                $crop->translatable_crop_name = $translatable_crop_name[$lang];
+            }
+        }
         return response()->json($crops);
     }
 
-    public function pestsofcrop($crop){
-        $pestsdetails = DB::select("select pest_name, management from pests where pest_name in
-                                    (select pest_name from crops_pests where crop_name = ?)",[$crop]);
+    public function pestsofcrop($lang, $crop)
+    {
+        $pestsdetails = DB::select("select pest_name, translatable_pest_name, management from pests where pest_name in
+                                    (select pest_name from crops_pests where crop_name = ?)", [$crop]);
+
+        // To get the translated data
+        foreach ($pestsdetails as $pestsdetail) {
+            $translatable_pest_name = json_decode($pestsdetail->translatable_pest_name, true);
+            if (is_array($translatable_pest_name) && isset($translatable_pest_name[$lang])) {
+                $pestsdetail->translatable_pest_name = $translatable_pest_name[$lang];
+            }
+
+            $translatable_management = json_decode($pestsdetail->management, true);
+            if (is_array($translatable_management) && isset($translatable_management[$lang])) {
+                $pestsdetail->management = $translatable_management[$lang];
+            }
+        }
         return response()->json($pestsdetails);
     }
 

@@ -15,6 +15,7 @@ class CreateCropsTable extends Migration
     {
         Schema::create('crops', function (Blueprint $table) {
             $table->string('crop_name')->primary();
+            $table->text('translatable_crop_name');
             $table->string('img_path');
             $table->timestamps();
         });

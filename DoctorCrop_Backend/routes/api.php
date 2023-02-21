@@ -16,14 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('crops',[ApiController::class,'crops']);
-Route::get('pestsofcrop/{crop}',[ApiController::class,'pestsofcrop']);
-Route::get('pestimgs',[ApiController::class,'pestimgs']);
-Route::get('pestsymptoms',[ApiController::class,'pestsymptoms']);
-Route::get('diseasesofcrop/{crop}',[ApiController::class,'diseasesofcrop']);
-Route::get('diseasetypes', [ApiController::class, 'diseasetypes']);
-Route::get('diseaseimgs',[ApiController::class,'diseaseimgs']);
-Route::get('diseasesymptoms',[ApiController::class,'diseasesymptoms']);
-Route::get('varietiesofcrop/{crop}',[ApiController::class,'varietiesofcrop']);
-Route::get('pestsymptmsofcrop/{crop}', [ApiController::class, 'pestsymptmsofcrop']);
-Route::get('diseasesymptmsofcrop/{crop}', [ApiController::class, 'diseasesymptmsofcrop']);
+Route::get('{lang}/crops',[ApiController::class,'crops']);
+Route::get('{lang}/pestsofcrop/{crop}',[ApiController::class,'pestsofcrop']);
+Route::get('{lang}/pestimgs',[ApiController::class,'pestimgs']);
+Route::get('{lang}/pestsymptoms',[ApiController::class,'pestsymptoms']);
+Route::get('{lang}/diseasesofcrop/{crop}',[ApiController::class,'diseasesofcrop']);
+Route::get('{lang}/diseasetypes', [ApiController::class, 'diseasetypes']);
+Route::get('{lang}/diseaseimgs',[ApiController::class,'diseaseimgs']);
+Route::get('{lang}/diseasesymptoms',[ApiController::class,'diseasesymptoms']);
+Route::get('{lang}/varietiesofcrop/{crop}',[ApiController::class,'varietiesofcrop']);
+Route::get('{lang}/pestsymptmsofcrop/{crop}', [ApiController::class, 'pestsymptmsofcrop']);
+Route::get('{lang}/diseasesymptmsofcrop/{crop}', [ApiController::class, 'diseasesymptmsofcrop']);

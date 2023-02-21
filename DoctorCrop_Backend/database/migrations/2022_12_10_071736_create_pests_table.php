@@ -16,6 +16,7 @@ class CreatePestsTable extends Migration
         Schema::create('pests', function (Blueprint $table) {
 
             $table->String('pest_name')->primary();
+            $table->text('translatable_pest_name');
             $table->longText('management');
             $table->timestamps();
         });

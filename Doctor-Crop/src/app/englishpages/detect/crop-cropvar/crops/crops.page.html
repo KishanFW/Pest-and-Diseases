@@ -15,20 +15,21 @@
        <ion-content style="background-color: rgb(19, 1, 1);">
 
         <ion-list style="background-color: rgb(19, 1, 1);">
-          <ion-radio-group value="english">
+          <ion-radio-group value="en" [(ngModel)]='language' (ionChange)='languageChange()'>
+
             <ion-item color="rgb(19, 1, 1)">
               <ion-label style="color: #ffffff;">English</ion-label>
-              <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/detect/crop-cropvar/crops"></ion-radio>
+              <ion-radio slot="end" value='en' (click)="isOpen = false"></ion-radio>
             </ion-item>
 
             <ion-item color="rgb(19, 1, 1)">
               <ion-label style="color: #ffffff;">සිංහල</ion-label>
-              <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/sdetect/scrop-cropvar/scrops"></ion-radio>
+              <ion-radio slot="end" value='si' (click)="isOpen = false"></ion-radio>
             </ion-item>
 
             <ion-item color="rgb(19, 1, 1)">
               <ion-label style="color: #ffffff;">தமிழ்</ion-label>
-              <ion-radio slot="end" value="tamil" (click)="isOpen = false" routerLink="/tdetect/tcrop-cropvar/tcrops"></ion-radio>
+              <ion-radio slot="end" value='ta' (click)="isOpen = false"></ion-radio>
             </ion-item>
 
           </ion-radio-group>
@@ -46,7 +47,7 @@
 
   <div *ngFor="let crop of crops$|async">
     <ion-item style="--background: rgb(19, 1, 1);" (click)="openPests_diseasesModal(crop)">
-      <img src="{{crop.img_path}}"><ion-label style="color: #ffffff; font-size: 20px;">{{crop.crop_name}}</ion-label>
+      <img src="{{crop.img_path}}"><ion-label style="color: #ffffff; font-size: 20px;">{{crop.translatable_crop_name}}</ion-label>
       <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
     </ion-item>
     <br>
