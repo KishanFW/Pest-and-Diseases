@@ -189,16 +189,6 @@ class VarietySeeder extends Seeder
             'img_path'=>'assets/crops/cassava/cassavavarieties/swarna.png',
         ]);
 
-        Variety::create([
-            'variety_name'=>'Suwarne',
-            'crop_name'=>'Cassava',
-            'img_path'=>'assets/crops/cassava/cassavavarieties/swarna.png',
-        ]);
-
-
-
-
-
 
     }
 }
