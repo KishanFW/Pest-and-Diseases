@@ -33,3 +33,8 @@ export interface DiseaseSymptom{
   disease_name: string;
   symptom: string;
 }
+
+export interface SymptomCatagory{
+  symptom: string;
+  catagory: string;
+}

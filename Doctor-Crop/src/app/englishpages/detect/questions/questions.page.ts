@@ -4,12 +4,13 @@ import { Observable } from 'rxjs';
 import { Component, OnInit, ViewChild, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Crop } from '../crop-cropvar/crops/crop.model';
 import { CropsService } from 'src/app/services/crops.service';
+import { SymptomcatagoriesService } from 'src/app/services/symptomcatagories.service';
 import { LoadingController } from '@ionic/angular';
 import { tap } from 'rxjs/operators';
 import { AlertController } from '@ionic/angular';
 import { SymptomsofpestService } from 'src/app/services/symptomsofpest.service';
 import { DiseasesymptomsService } from './../../../services/diseasesymptoms.service';
-import { DiseaseSymptom, PestSymptom } from '../crop-cropvar/crops/pests-diseases/pests-diseases.model';
+import { DiseaseSymptom, PestSymptom, SymptomCatagory } from '../crop-cropvar/crops/pests-diseases/pests-diseases.model';
 
 @Component({
   selector: 'app-questions',
@@ -21,16 +22,13 @@ export class QuestionsPage implements OnInit {
   varietyname: string = undefined;
   pestsordiseases: string = undefined;
   symptomslist: any[] = [];
+  catagories: any[] = [];
 
   crops$: Observable<Crop[]>;
   varieties$: Observable<Variety[]>;
   pestsymptoms$: Observable<PestSymptom[]>;
   diseasesymptoms$: Observable<DiseaseSymptom[]>;
-
-  pesthidden: boolean = true;
-  diseasehidden: boolean = true;
-  pestupdownicon: String = "caret-down-outline";
-  diseaseupdownicon: String = "caret-down-outline";
+  catagories$: Observable<SymptomCatagory[]>;
 
   constructor(
     private cropsService: CropsService,
@@ -38,7 +36,8 @@ export class QuestionsPage implements OnInit {
     private alertController: AlertController,
     private varietiesService: VarietiesService,
     private pestSymptomService: SymptomsofpestService,
-    private diseaseSymptomService: DiseasesymptomsService
+    private diseaseSymptomService: DiseasesymptomsService,
+    private symptomcatagoriesService: SymptomcatagoriesService
   ) { }
 
   async ngOnInit() {
@@ -96,6 +95,18 @@ export class QuestionsPage implements OnInit {
     }
   }
 
+  async catagory(){
+    const loading = await this.loadingCtrl.create({message: 'Please Wait ...'});
+    loading.present();
+
+    this.catagories$ = this.symptomcatagoriesService.getCatagories().pipe(
+      tap((catagories)=>{
+        loading.dismiss();
+        return catagories;
+      })
+    )
+  }
+
   async alertcropselect(){
     if(this.cropname == null){
       const alert = await this.alertController.create({
@@ -124,10 +135,13 @@ export class QuestionsPage implements OnInit {
     this.cropname = null;
     this.varietyname = null;
     this.pestsordiseases = null;
+    this.symptomslist = [];
+    this.catagories = [];
   }
 
   unselect(){
     this.symptomslist = [];
+    this.catagories = [];
   }
 
   @ViewChild('popover') popover;
@@ -140,7 +154,7 @@ export class QuestionsPage implements OnInit {
   }
 
   test(){
-    console.log(this.symptomslist);
+    console.log(this.catagories);
   }
 
 }
