@@ -78,13 +78,13 @@ class VarietySeeder extends Seeder
         Variety::create([
             'variety_name'=>'Kandula',
             'crop_name'=>'Banana',
-            'img_path'=>'assets/crops/Banana/Bananavaraieties/kandula.jpg',
+            'img_path'=>'assets/crops/Banana/Bananavaraieties/Kandula.jpg',
         ]);
 
         Variety::create([
             'variety_name'=>'Kolikuttu',
             'crop_name'=>'Banana',
-            'img_path'=>'assets/crops/Banana/Bananavaraieties/kolikttu.jpg',
+            'img_path'=>'assets/crops/Banana/Bananavaraieties/kolikuttu.jpg',
         ]);
 
         Variety::create([
