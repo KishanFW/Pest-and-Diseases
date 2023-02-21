@@ -68,4 +68,9 @@ class ApiController extends Controller
 
         return response()->json($symptoms);
     }
+
+    public function symptomcatagories(){
+        $catogories = DB::select("select distinct catagory from symptom_catagories");
+        return response()->json($catogories);
+    }
 }
