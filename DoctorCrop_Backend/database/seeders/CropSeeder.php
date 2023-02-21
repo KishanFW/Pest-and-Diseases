@@ -19,7 +19,7 @@ class CropSeeder extends Seeder
             'img_path'=>'/assets/crops/banana.png'
         ]);
         Crop::create([
-            'crop_name'=>'Bitter Gound',
+            'crop_name'=>'Bitter Gourd',
             'img_path'=>'/assets/crops/bitterground.png'
         ]);
         Crop::create([
