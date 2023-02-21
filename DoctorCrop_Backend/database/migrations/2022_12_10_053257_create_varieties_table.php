@@ -18,6 +18,8 @@ class CreateVarietiesTable extends Migration
             $table->string('crop_name');
             $table->foreign('crop_name')->references('crop_name')->on('crops');
             $table->string('img_path');
+            $table->string('pest_description');
+            $table->string('disease_description');
             $table->timestamps();
         });
     }
