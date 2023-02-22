@@ -84,7 +84,7 @@
       <ion-label style="color: #ffffff; font-size: 16px;">Where is/are change(s)?</ion-label>
       <ion-text *ngIf="pestsordiseases == undefined"  (click)="alertpestdiseaseselect()" style="color: #ffffff;">Click to select</ion-text>
 
-      <ion-select *ngIf="pestsordiseases != undefined" [(ngModel)]="catagories" (ngModelChange)="symptom();" placeholder="Click to select" style="color: #ffffff; --placeholder-color: #ffffff; --placeholder-opacity: 1;" okText="Choose Options" multiple="true">
+      <ion-select *ngIf="pestsordiseases != undefined" [(ngModel)]="catagories" (ngModelChange)="symptom(); unselectforcat()" placeholder="Click to select" style="color: #ffffff; --placeholder-color: #ffffff; --placeholder-opacity: 1;" okText="Choose Options" multiple="true">
         <div *ngFor="let catagories of catagories$|async">
           <ion-select-option value="{{ catagories.catagory }}">
             {{  catagories.catagory  }}
@@ -128,7 +128,7 @@
     </ion-item><br><br>
 
       <ion-button class="mainbuttons" size="medium" (click)="resetall();" style="margin-left: 5%;">Reset</ion-button>
-      <ion-button class="mainbuttons" size="medium" style="margin-left: 5%;" (click)="test()">Detect</ion-button>
+      <ion-button class="mainbuttons" size="medium" style="margin-left: 5%;" (click)="openResultsModal(); variables()">Detect</ion-button>
       <br><br>
 
 </ion-content>

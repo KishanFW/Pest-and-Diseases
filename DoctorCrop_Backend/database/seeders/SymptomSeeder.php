@@ -15,7 +15,7 @@ class SymptomSeeder extends Seeder
     public function run()
     {
         Symptom::create([
-            'symptom'=>'Leaf shrinkage, curling, and yellowing from the leaf edge to the middle'
+            'symptom'=>'Leaf shrinkage and curling and yellowing from the leaf edge to the middle'
         ]);
 
         Symptom::create([
@@ -35,7 +35,7 @@ class SymptomSeeder extends Seeder
         ]);
 
         Symptom::create([
-            'symptom'=>'Mycelia mat with white / brown Sclerotia on collar region'
+            'symptom'=>'Mycelia mat with white or brown Sclerotia on collar region'
         ]);
 
         Symptom::create([
@@ -71,7 +71,7 @@ class SymptomSeeder extends Seeder
         ]);
 
         Symptom::create([
-            'symptom'=>'leaves are narrow, soft, smooth and yellow'
+            'symptom'=>'leaves are narrow and soft and smooth and yellow'
         ]);
 
         Symptom::create([
@@ -124,7 +124,7 @@ class SymptomSeeder extends Seeder
         ]);
 
         Symptom::create([
-            'symptom'=>'Slight wilting of single branch/ branches'
+            'symptom'=>'Slight wilting of single branch or branches'
         ]);
 
         Symptom::create([
@@ -144,7 +144,7 @@ class SymptomSeeder extends Seeder
         ]);
 
         Symptom::create([
-            'symptom'=>'Flowers remain green/ no flowering'
+            'symptom'=>'Flowers remain green or no flowering'
         ]);
 
         Symptom::create([
@@ -160,7 +160,7 @@ class SymptomSeeder extends Seeder
         ]);
 
         Symptom::create([
-            'symptom'=>'Leaf rolling, browning, and dry dieback are seen'
+            'symptom'=>'Leaf rolling and browning and dry dieback are seen'
         ]);
 
 
