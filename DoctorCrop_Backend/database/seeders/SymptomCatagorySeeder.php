@@ -81,6 +81,17 @@ class SymptomCatagorySeeder extends Seeder
         ]);
 
         Symptom_catagory::create([
+            'symptom'=>'Leaf rolling, browning, and dry dieback are seen',
+            'catagory'=>'color'
+        ]);
+
+        Symptom_catagory::create([
+            'symptom'=>'Leaf rolling, browning, and dry dieback are seen',
+            'catagory'=>'leaves'
+        ]);
+
+
+        Symptom_catagory::create([
             'symptom'=>'A few leaves of the plant are bunched up and the larvae are fed in them',
             'catagory'=>'leaves'
         ]);
@@ -225,7 +236,10 @@ class SymptomCatagorySeeder extends Seeder
             'catagory'=>'other'
         ]);
 
-
+        Symptom_catagory::create([
+            'symptom'=>'Mites are more common on the underside',
+            'catagory'=>'other'
+        ]);
 
 
     }

@@ -26,7 +26,10 @@ class DatabaseSeeder extends Seeder
             CropsPestSeeder::class,
             SymptomCatagorySeeder::class,
             VarietiesPestSeeder::class,
-            VarietiesDiseaseSeeder::class
+            VarietiesDiseaseSeeder::class,
+            PestPreventionSeeder::class,
+            DiseasePreventionSeeder::class,
+            SymptomSeeder::class
     ]);
 
     }
