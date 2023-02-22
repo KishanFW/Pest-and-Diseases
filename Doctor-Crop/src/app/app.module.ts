@@ -1,3 +1,4 @@
+import { DetectresultsComponent } from './englishpages/detect/questions/detectresults/detectresults.component';
 import { DiseasedetailsComponent } from './englishpages/detect/crop-cropvar/crops/pests-diseases/diseases/diseasedetails/diseasedetails.component';
 import { PestdetailsComponent } from './englishpages/detect/crop-cropvar/crops/pests-diseases/pests/pestdetails/pestdetails.component';
 
@@ -43,7 +44,8 @@ export function createTranslateLoader(http: HttpClient) {
                  VPestsDiseasesComponent,
                  PVPestsDiseasesComponent,
                  PestdetailsComponent,
-                 DiseasedetailsComponent],
+                 DiseasedetailsComponent,
+                 DetectresultsComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
     TranslateModule.forRoot({
       loader: {

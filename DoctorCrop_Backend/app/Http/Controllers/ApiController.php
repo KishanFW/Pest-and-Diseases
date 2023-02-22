@@ -183,9 +183,36 @@ class ApiController extends Controller
 
     }
 
-
     public function symptomcatagories(){
         $catogories = DB::select("select distinct catagory from symptom_catagories");
         return response()->json($catogories);
+    }
+
+    public function pestsofsymptoms(){
+        $symptoms = request('symptoms');
+        $symptoms = explode(',', $symptoms);
+        $pests[] = [];
+
+        foreach ($symptoms as $symptom){
+            $array = DB::select("select pest_name from pest_symptoms where symptom = ?",[$symptom]);
+
+            $pests = array_merge($pests, $array);
+        }
+        $pests = collect($pests)->unique('pest_name')->values()->all();
+        return response()->json($pests);
+    }
+
+    public function diseasesofsymptoms(){
+        $symptoms = request('symptoms');
+        $symptoms = explode(',', $symptoms);
+        $diseases[] = [];
+
+        foreach ($symptoms as $symptom){
+            $array = DB::select("select disease_name from disease_symptoms where symptom = ?",[$symptom]);
+
+            $diseases = array_merge($diseases, $array);
+        }
+        $diseases = collect($diseases)->unique('disease_name')->values()->all();
+        return response()->json($diseases);
     }
 }

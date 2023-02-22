@@ -55,7 +55,7 @@ class PestSymptomSeeder extends Seeder
 
       Pest_symptom::create([
         'pest_name'=>'Leaf aphid',
-        'symptom'=>'Leaf shrinkage, curling, and yellowing from the leaf edge to the middle'
+        'symptom'=>'Leaf shrinkage and curling and yellowing from the leaf edge to the middle'
       ]);
 
       Pest_symptom::create([
@@ -80,7 +80,7 @@ class PestSymptomSeeder extends Seeder
 
       Pest_symptom::create([
         'pest_name'=>'Mite damage',
-        'symptom'=>'Leaf rolling, browning, and dry dieback are seen'
+        'symptom'=>'Leaf rolling and browning and dry dieback are seen'
       ]);
 
       Pest_symptom::create([

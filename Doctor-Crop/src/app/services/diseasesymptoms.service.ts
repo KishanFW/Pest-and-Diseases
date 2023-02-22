@@ -1,4 +1,4 @@
-import { DiseaseSymptom } from './../englishpages/detect/crop-cropvar/crops/pests-diseases/pests-diseases.model';
+import { DiseaseSymptom, Disease } from './../englishpages/detect/crop-cropvar/crops/pests-diseases/pests-diseases.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
@@ -21,5 +21,9 @@ export class DiseasesymptomsService {
 
   getdiseasesymptomsofvariety(variety: string,catagory: string[]): Observable<DiseaseSymptom[]>{
     return this.http.get<DiseaseSymptom[]>(this.apiUrl+'/diseasesymptmsofvariety/'+variety+'/'+catagory);
+  }
+
+  diseasesofsymptoms(symptoms: any[]){
+    return this.http.get<Disease[]>(this.apiUrl+'/diseasesofsymptoms/'+symptoms);
   }
 }

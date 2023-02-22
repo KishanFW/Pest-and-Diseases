@@ -16,7 +16,7 @@ class SymptomCatagorySeeder extends Seeder
     public function run()
     {
         Symptom_catagory::create([
-            'symptom'=>'Leaf shrinkage, curling, and yellowing from the leaf edge to the middle',
+            'symptom'=>'Leaf shrinkage and curling and yellowing from the leaf edge to the middle',
             'catagory'=>'color'
         ]);
 
@@ -41,7 +41,7 @@ class SymptomCatagorySeeder extends Seeder
         ]);
 
         Symptom_catagory::create([
-            'symptom'=>'Mycelia mat with white / brown Sclerotia on collar region',
+            'symptom'=>'Mycelia mat with white or brown Sclerotia on collar region',
             'catagory'=>'color'
         ]);
 
@@ -81,12 +81,12 @@ class SymptomCatagorySeeder extends Seeder
         ]);
 
         Symptom_catagory::create([
-            'symptom'=>'Leaf rolling, browning, and dry dieback are seen',
+            'symptom'=>'Leaf rolling and browning and dry dieback are seen',
             'catagory'=>'color'
         ]);
 
         Symptom_catagory::create([
-            'symptom'=>'Leaf rolling, browning, and dry dieback are seen',
+            'symptom'=>'Leaf rolling and browning and dry dieback are seen',
             'catagory'=>'leaves'
         ]);
 
@@ -97,7 +97,7 @@ class SymptomCatagorySeeder extends Seeder
         ]);
 
         Symptom_catagory::create([
-            'symptom'=>'Leaf shrinkage, curling, and yellowing from the leaf edge to the middle',
+            'symptom'=>'Leaf shrinkage and curling and yellowing from the leaf edge to the middle',
             'catagory'=>'leaves'
         ]);
 
@@ -122,7 +122,7 @@ class SymptomCatagorySeeder extends Seeder
         ]);
 
         Symptom_catagory::create([
-            'symptom'=>'leaves are narrow, soft, smooth and yellow',
+            'symptom'=>'leaves are narrow and soft and smooth and yellow',
             'catagory'=>'leaves'
         ]);
 
@@ -202,7 +202,7 @@ class SymptomCatagorySeeder extends Seeder
         ]);
 
         Symptom_catagory::create([
-            'symptom'=>'Slight wilting of single branch/ branches',
+            'symptom'=>'Slight wilting of single branch or branches',
             'catagory'=>'other'
         ]);
 
@@ -227,7 +227,7 @@ class SymptomCatagorySeeder extends Seeder
         ]);
 
         Symptom_catagory::create([
-            'symptom'=>'Flowers remain green/ no flowering',
+            'symptom'=>'Flowers remain green or no flowering',
             'catagory'=>'other'
         ]);
 

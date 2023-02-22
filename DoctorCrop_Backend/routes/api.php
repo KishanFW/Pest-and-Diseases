@@ -35,3 +35,6 @@ Route::get('symptomsofcrop/{crop}/{catagories}', [ApiController::class, 'symptom
 Route::get('pestsymptmsofvariety/{variety}/{catagories}', [ApiController::class, 'pestsymptmsofvariety']);
 Route::get('diseasesymptmsofvariety/{variety}/{catagories}', [ApiController::class, 'diseasesymptmsofvariety']);
 Route::get('symptomsofvariety/{variety}/{catagories}', [ApiController::class, 'symptomsofvariety']);
+
+Route::get('pestsofsymptoms/{symptoms}', [ApiController::class, 'pestsofsymptoms']);
+Route::get('diseasesofsymptoms/{symptoms}', [ApiController::class, 'diseasesofsymptoms']);
