@@ -38,3 +38,7 @@ export interface SymptomCatagory{
   symptom: string;
   catagory: string;
 }
+
+export interface Symptom{
+  symptom : string[];
+}

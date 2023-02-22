@@ -15,7 +15,11 @@ export class DiseasesymptomsService {
     return this.http.get<DiseaseSymptom[]>(this.apiUrl+'/diseasesymptoms');
   }
 
-  getdiseasesymptomsofcrop(crop: string): Observable<DiseaseSymptom[]>{
-    return this.http.get<DiseaseSymptom[]>(this.apiUrl+'/diseasesymptmsofcrop/'+crop);
+  getdiseasesymptomsofcrop(crop: string,catagory: string[]): Observable<DiseaseSymptom[]>{
+    return this.http.get<DiseaseSymptom[]>(this.apiUrl+'/diseasesymptmsofcrop/'+crop+'/'+catagory);
+  }
+
+  getdiseasesymptomsofvariety(variety: string,catagory: string[]): Observable<DiseaseSymptom[]>{
+    return this.http.get<DiseaseSymptom[]>(this.apiUrl+'/diseasesymptmsofvariety/'+variety+'/'+catagory);
   }
 }
