@@ -15,7 +15,11 @@ export class SymptomsofpestService {
     return this.http.get<PestSymptom[]>(this.apiUrl+'/pestsymptoms');
   }
 
-  getpestsymptomsofcrop(crop: string): Observable<PestSymptom[]>{
-    return this.http.get<PestSymptom[]>(this.apiUrl+'/pestsymptmsofcrop/'+crop);
+  getpestsymptomsofcrop(crop: string,catagory: string[]): Observable<PestSymptom[]>{
+    return this.http.get<PestSymptom[]>(this.apiUrl+'/pestsymptmsofcrop/'+crop+'/'+catagory);
+  }
+
+  getpestsymptomsofvariety(variety: string,catagory: string[]): Observable<PestSymptom[]>{
+    return this.http.get<PestSymptom[]>(this.apiUrl+'/pestsymptmsofvariety/'+variety+'/'+catagory);
   }
 }
