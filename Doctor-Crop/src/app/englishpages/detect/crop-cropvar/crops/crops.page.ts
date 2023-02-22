@@ -25,9 +25,20 @@ export class CropsPage implements OnInit {
     private translateService: TranslateService //3
   ) { }
 
-  languageChange() {  // add this
-    this.translateService.use(this.language);  // add this
-  }  // add this
+  async languageChange() {  
+    this.translateService.use(this.language);  //4
+  
+    this.translateService.onLangChange.subscribe(()=>{
+      this.crops$ = this.cropsService.getCrops().pipe(
+        tap((crops) => {
+        return crops;
+        })
+      );
+    })
+    
+  }  //5
+
+
 
 
   async ngOnInit() {

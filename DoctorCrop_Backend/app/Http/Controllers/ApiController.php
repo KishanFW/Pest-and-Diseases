@@ -16,7 +16,7 @@ class ApiController extends Controller
         foreach ($crops as $crop) {
             $translatable_crop_name = json_decode($crop->translatable_crop_name, true);
             if (is_array($translatable_crop_name) && isset($translatable_crop_name[$lang])) {
-                $crop->translatable_crop_name = $translatable_crop_name[$lang];
+                $crop->translatable_crop_name = $translatable_crop_name[$lang]; 
             }
         }
         return response()->json($crops);
