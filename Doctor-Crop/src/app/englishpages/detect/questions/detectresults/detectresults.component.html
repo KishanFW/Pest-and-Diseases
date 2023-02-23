@@ -48,7 +48,7 @@
     <div *ngIf="pestsordiseases == 'pests'">
       <h3 style="color: #ffffff;">Pests</h3>
       <div *ngFor="let pest of pests$|async">
-        <ion-item style="--background: rgb(19, 1, 1);">
+        <ion-item style="--background: rgb(19, 1, 1);" (click)="openpestModal(pest)">
           <ion-text style="color: #5cf304; font-size: 16px;">{{ pest.pest_name }}</ion-text>
         </ion-item>
       </div>
@@ -57,7 +57,7 @@
     <div *ngIf="pestsordiseases == 'diseases'">
       <h3 style="color: #ffffff;">Diseases</h3>
       <div *ngFor="let disease of diseases$|async">
-        <ion-item style="--background: rgb(19, 1, 1);">
+        <ion-item style="--background: rgb(19, 1, 1);" (click)="opendiseaseModal(disease)">
           <ion-text style="color: #5cf304; font-size: 16px;">{{ disease.disease_name }}</ion-text>
         </ion-item>
       </div>
@@ -67,14 +67,14 @@
 
       <h3 style="color: #ffffff;">Pests</h3>
       <div *ngFor="let pest of pests$|async">
-        <ion-item style="--background: rgb(19, 1, 1);">
+        <ion-item style="--background: rgb(19, 1, 1);" (click)="openpestModal(pest)">
           <ion-text style="color: #5cf304; font-size: 16px;">{{ pest.pest_name }}</ion-text>
         </ion-item>
       </div><br>
 
       <h3 style="color: #ffffff;">Diseases</h3>
       <div *ngFor="let disease of diseases$|async">
-        <ion-item style="--background: rgb(19, 1, 1);">
+        <ion-item style="--background: rgb(19, 1, 1);" (click)="opendiseaseModal(disease)">
           <ion-text style="color: #5cf304; font-size: 16px;">{{ disease.disease_name }}</ion-text>
         </ion-item>
       </div>

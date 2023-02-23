@@ -194,7 +194,8 @@ class ApiController extends Controller
         $pests[] = [];
 
         foreach ($symptoms as $symptom){
-            $array = DB::select("select pest_name from pest_symptoms where symptom = ?",[$symptom]);
+            $array = DB::select("select pest_name, management from pests where pest_name in
+                                 (select pest_name from  pest_symptoms where symptom = ?)",[$symptom]);
 
             $pests = array_merge($pests, $array);
         }
@@ -208,7 +209,8 @@ class ApiController extends Controller
         $diseases[] = [];
 
         foreach ($symptoms as $symptom){
-            $array = DB::select("select disease_name from disease_symptoms where symptom = ?",[$symptom]);
+            $array = DB::select("select disease_name, causal_organism, management from diseases where disease_name in
+                                (select disease_name from  disease_symptoms where symptom = ?)",[$symptom]);
 
             $diseases = array_merge($diseases, $array);
         }

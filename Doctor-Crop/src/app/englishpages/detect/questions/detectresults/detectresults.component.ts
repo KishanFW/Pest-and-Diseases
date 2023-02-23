@@ -7,7 +7,8 @@ import { tap } from "rxjs/operators";
 import { ModalService } from 'src/app/services/modal.service';
 import { SymptomsofpestService } from 'src/app/services/symptomsofpest.service';
 import { DiseasesymptomsService } from 'src/app/services/diseasesymptoms.service';
-import { JsonPipe } from '@angular/common';
+import { PestdetailsComponent } from '../../crop-cropvar/crops/pests-diseases/pests/pestdetails/pestdetails.component';
+import { DiseasedetailsComponent } from '../../crop-cropvar/crops/pests-diseases/diseases/diseasedetails/diseasedetails.component';
 
 @Component({
   selector: 'app-detectresults',
@@ -34,34 +35,33 @@ export class DetectresultsComponent implements OnInit {
   async ngOnInit() {
     const loading = await this.loadingCtrl.create({message: 'Please Wait ...'});
     loading.present();
-    console.log(this.symptomslist);
 
     if(this.pestsordiseases == 'pests'){
       this.pests$ = this.symptomsofpestService.pestsofsymptoms(this.symptomslist).pipe(
         tap((pests) => {
           loading.dismiss();
-          return pests;
+          return pests.splice(0,1);
           })
       );
     }
     else if(this.pestsordiseases == 'diseases'){
       this.diseases$ = this.diseasesymptomsService.diseasesofsymptoms(this.symptomslist).pipe(
-        tap((pests) => {
+        tap((diseases) => {
           loading.dismiss();
-          return pests;
+          return diseases.splice(0,1);
           })
       );
     }
     else{
       this.pests$ = this.symptomsofpestService.pestsofsymptoms(this.symptomslist).pipe(
         tap((pests) => {
-          return pests;
+          return pests.splice(0,1);
           })
       );
       this.diseases$ = this.diseasesymptomsService.diseasesofsymptoms(this.symptomslist).pipe(
-        tap((pests) => {
+        tap((diseases) => {
           loading.dismiss();
-          return pests;
+          return diseases.splice(0,1);
           })
       );
     }
@@ -75,6 +75,25 @@ export class DetectresultsComponent implements OnInit {
   async closeAllModals() {
     await this.modalService.closeAllModals();
   }
+
+  async openpestModal(pest: Pest){
+    const modal = await this.modalCtrl.create({
+      component: PestdetailsComponent,
+      componentProps: {pest}
+    });
+    this.modalService.addModal(modal);
+    modal.present();
+  }
+
+  async opendiseaseModal(disease: Disease){
+    const modal = await this.modalCtrl.create({
+      component: DiseasedetailsComponent,
+      componentProps: {disease}
+    });
+    this.modalService.addModal(modal);
+    modal.present();
+  }
+
 
 @ViewChild('popover') popover;
 

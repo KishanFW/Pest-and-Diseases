@@ -7,6 +7,7 @@ export class VaiablesService {
 
   public pestsordiseases: string;
   public symptomslist: any[] = [];
+  public pestordisease: string;
 
   constructor() { }
 
@@ -14,5 +15,13 @@ export class VaiablesService {
 
     this.pestsordiseases = pestsordiseases;
     this.symptomslist = symptomslist;
-  }
+   }
+
+   setpestdisease(value: string){
+    if(value == 'pests'){
+      this.pestordisease = value;
+    }else if(value == 'diseases'){
+      this.pestordisease = value;
+    }
+   }
 }
