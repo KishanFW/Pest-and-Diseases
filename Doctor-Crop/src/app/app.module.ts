@@ -1,3 +1,7 @@
+import { PPestDetailsComponent } from './englishpages/prevent/crop-cropvar/crops/prevent-pests-diseases/p-pests/p-pest-details/p-pest-details.component';
+import { PPestsComponent } from './englishpages/prevent/crop-cropvar/crops/prevent-pests-diseases/p-pests/p-pests.component';
+import { PDiseaseDetailsComponent } from './englishpages/prevent/crop-cropvar/crops/prevent-pests-diseases/p-diseases/p-disease-details/p-disease-details.component';
+import { PDiseasesComponent } from './englishpages/prevent/crop-cropvar/crops/prevent-pests-diseases/p-diseases/p-diseases.component';
 import { VPestsComponent } from './englishpages/detect/crop-cropvar/crops-varieties/varieties/v-pests-diseases/v-pests/v-pests.component';
 import { DetectresultsComponent } from './englishpages/detect/questions/detectresults/detectresults.component';
 import { DiseasedetailsComponent } from './englishpages/detect/crop-cropvar/crops/pests-diseases/diseases/diseasedetails/diseasedetails.component';
@@ -49,7 +53,11 @@ export function createTranslateLoader(http: HttpClient) {
                  DiseasedetailsComponent,
                  DetectresultsComponent,
                  VPestsComponent,
-                 VDiseasesComponent],
+                 VDiseasesComponent,
+                 PDiseasesComponent,
+                 PDiseaseDetailsComponent,
+                 PPestsComponent,
+                 PPestDetailsComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
     TranslateModule.forRoot({
       loader: {

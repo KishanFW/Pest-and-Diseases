@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Disease } from '../englishpages/detect/crop-cropvar/crops/pests-diseases/pests-diseases.model';
+import { Prevention } from '../englishpages/prevent/prevent.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +19,9 @@ export class DiseasesofcropService {
 
   getDiseasetypes(): Observable<DiseaseType[]>{
     return this.http.get<DiseaseType[]>(this.apiUrl+'/diseasetypes');
+  }
+
+  getpreventionsofdisease(disease: string): Observable<Prevention[]>{
+    return this.http.get<Prevention[]>(this.apiUrl+'/preventionsofdisease/'+disease);
   }
 }

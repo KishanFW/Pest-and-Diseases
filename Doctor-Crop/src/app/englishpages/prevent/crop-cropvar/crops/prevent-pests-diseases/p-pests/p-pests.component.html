@@ -1,11 +1,11 @@
 <ion-header>
   <ion-toolbar class="header-footer-background-color">
-
-    <ion-buttons slot="start">
-      <ion-back-button routerLink="/home" class="header-footer-component"></ion-back-button>
+    <ion-buttons slot="start" (click)="closeModal()">
+      <ion-icon slot="icon-only" name="arrow-back-outline" class="header-footer-component"></ion-icon>
     </ion-buttons>
 
-    <ion-title class="header-footer-component">{{'PREVENT.header' | translate }}</ion-title>
+    <ion-title class="header-footer-component">{{ crop.crop_name }} - Pests</ion-title>
+
     <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
       <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
     </ion-button>
@@ -14,20 +14,20 @@
        <ion-content style="background-color: rgb(19, 1, 1);">
 
         <ion-list style="background-color: rgb(19, 1, 1);">
-          <ion-radio-group value="en" [(ngModel)]='language' (ionChange)='languageChange()'>
+          <ion-radio-group value="english">
             <ion-item color="rgb(19, 1, 1)">
               <ion-label style="color: #ffffff;">English</ion-label>
-              <ion-radio slot="end" value="en" (click)="isOpen = false"></ion-radio>
+              <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/detect/crop-cropvar/crops/brinjal/pest"></ion-radio>
             </ion-item>
 
             <ion-item color="rgb(19, 1, 1)">
               <ion-label style="color: #ffffff;">සිංහල</ion-label>
-              <ion-radio slot="end" value="si" (click)="isOpen = false"></ion-radio>
+              <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/sdetect/scrop-cropvar/scrops/sbrinjal/spest"></ion-radio>
             </ion-item>
 
             <ion-item color="rgb(19, 1, 1)">
               <ion-label style="color: #ffffff;">தமிழ்</ion-label>
-              <ion-radio slot="end" value="ta" (click)="isOpen = false"></ion-radio>
+              <ion-radio slot="end" value="tamil" (click)="isOpen = false" routerLink="/tdetect/tcrop-cropvar/tcrops/tbrinjal/tpest"></ion-radio>
             </ion-item>
 
           </ion-radio-group>
@@ -40,30 +40,29 @@
 </ion-header>
 
 <ion-content  style="--background: rgb(19, 1, 1);">
+  <br>
+  <div>
+    <ion-text style="color: #ffffff;">Click on a pest name to see details</ion-text>
     <br><br>
 
-    <ion-item style="--background: rgb(19, 1, 1);" routerLink="/prevent/crop-cropvar/crops">
-      <ion-text style="font-size:17px; color: #ffffff;">{{'PREVENT.option1' | translate }}</ion-text>
-      <img src="/assets/read.png" slot="start" style="width:50px;height:50px;">
-      <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
-    </ion-item> <br><br>
+    <div *ngFor="let pest of pests$|async">
+      <ion-item (click)="openPestDetailsModal(pest)" style="--background: rgb(19, 1, 1);">
+        <ion-text style="color: #5cf304; font-size: 16px;">{{ pest.pest_name }}</ion-text>
+     </ion-item>
+    </div>
 
-    <ion-item style="--background: rgb(19, 1, 1);">
-      <ion-text style="font-size:17px; color: #ffffff;">{{'PREVENT.option2' | translate }}</ion-text>
-      <img src="/assets/precautions1.jpg" slot="start" style="width:50px;height:50px;">
-      <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
-    </ion-item>
-
+  </div>
+  <br>
 
 </ion-content>
 
 <ion-footer [translucent]="true">
   <ion-toolbar class="header-footer-background-color">
     <div id="footer" class="header-footer-component">
-      <ion-button routerLink="/home"  fill="clear">
+      <ion-button fill="clear" (click)="closeAllModals()" routerLink="/home">
         <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
       </ion-button>
-      <br>{{'PREVENT.footer' | translate }}
+      <br>Home
     </div>
   </ion-toolbar>
 </ion-footer>
