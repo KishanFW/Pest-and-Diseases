@@ -54,7 +54,13 @@
       "option1": "Select only the crop",
       "option2": "Select crops and varieties",
       "footer": "Home"
+    },
+
+    "CROPS": {
+      "header": "Crops",
+      "footer": "Home"
     }
+
 
 
 

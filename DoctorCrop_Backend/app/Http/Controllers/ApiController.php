@@ -10,14 +10,25 @@ use function PHPUnit\Framework\isEmpty;
 
 class ApiController extends Controller
 {
-    public function crops(){
-        $crops = DB::select("select crop_name, img_path from crops");
+    public function crops($lang)
+    {
+        $crops = DB::select("select crop_name, translatable_crop_name, img_path from crops");
+
+        // To get the translated data
+        foreach ($crops as $crop) {
+            $translatable_crop_name = json_decode($crop->translatable_crop_name, true);
+            if (is_array($translatable_crop_name) && isset($translatable_crop_name[$lang])) {
+                $crop->translatable_crop_name = $translatable_crop_name[$lang]; 
+            }
+        }
         return response()->json($crops);
     }
 
-    public function pestsofcrop($crop){
+    public function pestsofcrop($crop)
+    {
         $pestsdetails = DB::select("select pest_name, management from pests where pest_name in
-                                    (select pest_name from crops_pests where crop_name = ?)",[$crop]);
+                                    (select pest_name from crops_pests where crop_name = ?)", [$crop]);
+
         return response()->json($pestsdetails);
     }
 
