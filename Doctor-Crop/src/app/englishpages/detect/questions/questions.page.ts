@@ -1,6 +1,6 @@
 import { VarietiesService } from 'src/app/services/varieties.service';
 import { Variety } from './../crop-cropvar/crops-varieties/variety.model';
-import { EMPTY, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Crop } from '../crop-cropvar/crops/crop.model';
 import { CropsService } from 'src/app/services/crops.service';
@@ -81,7 +81,6 @@ export class QuestionsPage implements OnInit {
     if(this.catagories.length !== 0){
       const loading = await this.loadingCtrl.create({message: 'Please Wait ...'});
       loading.present();
-      console.log(this.catagories);
 
     if(this.varietyname == undefined || this.varietyname == "not identified"){
 
