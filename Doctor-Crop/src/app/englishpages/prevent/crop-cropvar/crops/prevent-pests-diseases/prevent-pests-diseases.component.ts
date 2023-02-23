@@ -2,6 +2,8 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Crop } from 'src/app/englishpages/detect/crop-cropvar/crops/crop.model';
 import { ModalController } from '@ionic/angular';
 import { ModalService } from 'src/app/services/modal.service';
+import { PPestsComponent } from './p-pests/p-pests.component';
+import { PDiseasesComponent } from './p-diseases/p-diseases.component';
 
 @Component({
   selector: 'app-prevent-pests-diseases',
@@ -24,6 +26,25 @@ export class PreventPestsDiseasesComponent implements OnInit {
 
   async closeAllModals() {
     await this.modalService.closeAllModals();
+  }
+
+  async openPestModal(crop: Crop){
+    const modal = await this.modalCtrl.create({
+      component: PPestsComponent,
+      componentProps: {crop},
+    });
+    this.modalService.addModal(modal);
+    modal.present();
+
+  }
+
+  async openDiseaseModal(crop: Crop){
+    const modal = await this.modalCtrl.create({
+      component: PDiseasesComponent,
+      componentProps: {crop},
+    });
+    this.modalService.addModal(modal);
+    modal.present();
   }
 
   @ViewChild('popover') popover;

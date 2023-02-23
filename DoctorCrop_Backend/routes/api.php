@@ -40,3 +40,6 @@ Route::get('symptomsofvariety/{variety}/{catagories}', [ApiController::class, 's
 
 Route::get('pestsofsymptoms/{symptoms}', [ApiController::class, 'pestsofsymptoms']);
 Route::get('diseasesofsymptoms/{symptoms}', [ApiController::class, 'diseasesofsymptoms']);
+
+Route::get('preventionsofpest/{pest}', [ApiController::class, 'preventionsofpest']);
+Route::get('preventionsofdisease/{disease}', [ApiController::class, 'preventionsofdisease']);

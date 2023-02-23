@@ -241,4 +241,16 @@ class ApiController extends Controller
                                     (select disease_name from varieties_diseases where variety_name = ?)",[$variety]);
         return response()->json($diseasesdetails);
     }
+
+    public function preventionsofpest($pest){
+        $preventions = DB::select("select prevention from pest_preventions where pest_name = ?", [$pest]);
+
+        return response()->json($preventions);
+    }
+
+    public function preventionsofdisease($disease){
+        $preventions = DB::select("select prevention from disease_preventions where disease_name = ?", [$disease]);
+
+        return response()->json($preventions);
+    }
 }
