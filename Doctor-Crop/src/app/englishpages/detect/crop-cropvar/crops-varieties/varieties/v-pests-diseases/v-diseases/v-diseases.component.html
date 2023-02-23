@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar class="header-footer-background-color">
+    <ion-buttons slot="start" (click)="closeModal()">
+      <ion-icon slot="icon-only" name="arrow-back-outline" class="header-footer-component"></ion-icon>
+    </ion-buttons>
+
+    <ion-title class="header-footer-component">{{ variety.variety_name }} - Diseases</ion-title>
+
+    <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
+      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
+    </ion-button>
+    <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
+      <ng-template >
+       <ion-content style="background-color: rgb(19, 1, 1);">
+
+        <ion-list style="background-color: rgb(19, 1, 1);">
+          <ion-radio-group value="english">
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label style="color: #ffffff;">English</ion-label>
+              <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/detect/crop-cropvar/crops/brinjal/pest-diseases/diseases"></ion-radio>
+            </ion-item>
+
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label style="color: #ffffff;">සිංහල</ion-label>
+              <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/sdetect/scrop-cropvar/scrops/sbrinjal/sdiseases"></ion-radio>
+            </ion-item>
+
+            <ion-item color="rgb(19, 1, 1)">
+              <ion-label style="color: #ffffff;">தமிழ்</ion-label>
+              <ion-radio slot="end" value="tamil" (click)="isOpen = false" routerLink="/tdetect/tcrop-cropvar/tcrops/tbrinjal/tdiseases"></ion-radio>
+            </ion-item>
+
+          </ion-radio-group>
+        </ion-list>
+
+       </ion-content>
+      </ng-template>
+    </ion-popover>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="--background: rgb(19, 1, 1);">
+  <div id="top"></div>
+  <br>
+
+  <div>
+    <ion-text style="color: #ffffff;">Click on a Disease name to see details</ion-text>
+    <br><br>
+
+    <div *ngFor="let diseasetype of diseasetypes$|async">
+      <ion-item (click)="nothing()" style="--background: rgb(19, 1, 1);">
+        <h3 style="color: #ffffff; font-size: 20px;"><b>{{ diseasetype.disease_type }}</b></h3><br>
+      </ion-item>
+      <div *ngFor="let disease of diseases$|async">
+        <div *ngIf="diseasetype.disease_type == disease.disease_type">
+          <ion-item (click)="openDiseaseDetailsModal(disease)" style="--background: rgb(19, 1, 1);">
+             <ion-text style="color: #5cf304; font-size: 16px;">{{ disease.disease_name }}</ion-text>
+           </ion-item>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <br>
+
+  </ion-content>
+
+
+
+
+  <ion-footer [translucent]="true">
+    <ion-toolbar class="header-footer-background-color">
+      <div id="footer" class="header-footer-component">
+        <ion-button routerLink="/home"  fill="clear" (click)="closeAllModals()">
+          <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
+        </ion-button>
+        <br>Home
+      </div>
+    </ion-toolbar>
+  </ion-footer>
+

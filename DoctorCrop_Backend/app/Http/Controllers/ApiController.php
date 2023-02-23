@@ -18,7 +18,7 @@ class ApiController extends Controller
         foreach ($crops as $crop) {
             $translatable_crop_name = json_decode($crop->translatable_crop_name, true);
             if (is_array($translatable_crop_name) && isset($translatable_crop_name[$lang])) {
-                $crop->translatable_crop_name = $translatable_crop_name[$lang]; 
+                $crop->translatable_crop_name = $translatable_crop_name[$lang];
             }
         }
         return response()->json($crops);
@@ -227,5 +227,18 @@ class ApiController extends Controller
         }
         $diseases = collect($diseases)->unique('disease_name')->values()->all();
         return response()->json($diseases);
+    }
+
+    public function pestsofvariety($variety){
+        $pestsdetails = DB::select("select pest_name, management from pests where pest_name in
+                                    (select pest_name from varieties_pests where variety_name = ?)", [$variety]);
+
+        return response()->json($pestsdetails);
+    }
+
+    public function diseasesofvariety($variety){
+        $diseasesdetails = DB::select("select disease_name, disease_type, causal_organism, management from diseases where disease_name in
+                                    (select disease_name from varieties_diseases where variety_name = ?)",[$variety]);
+        return response()->json($diseasesdetails);
     }
 }

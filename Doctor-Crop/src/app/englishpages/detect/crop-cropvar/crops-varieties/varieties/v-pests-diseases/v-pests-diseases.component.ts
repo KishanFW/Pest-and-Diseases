@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Variety } from '../../variety.model';
 import { ModalService } from 'src/app/services/modal.service';
+import { VPestsComponent } from './v-pests/v-pests.component';
+import { VDiseasesComponent } from './v-diseases/v-diseases.component';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +32,24 @@ export class VPestsDiseasesComponent implements OnInit {
 
   async closeAllModals() {
     await this.modalService.closeAllModals();
+  }
+
+  async openpestModal(variety: Variety){
+    const modal = await this.modalCtrl.create({
+      component: VPestsComponent,
+      componentProps: {variety}
+    });
+    this.modalService.addModal(modal);
+    modal.present();
+  }
+
+  async opendiseaseModal(variety: Variety){
+    const modal = await this.modalCtrl.create({
+      component: VDiseasesComponent,
+      componentProps: {variety}
+    });
+    this.modalService.addModal(modal);
+    modal.present();
   }
 
   @ViewChild('popover') popover;
