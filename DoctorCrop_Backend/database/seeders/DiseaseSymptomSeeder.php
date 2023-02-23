@@ -34,7 +34,7 @@ class DiseaseSymptomSeeder extends Seeder
 
         Disease_symptom::create([
             'disease_name'=>'Collar rot',
-            'symptom'=>'Yellowing of leaves and wilt'
+            'symptom'=>'Yellowing of leaves'
         ]);
 
         Disease_symptom::create([
@@ -44,7 +44,7 @@ class DiseaseSymptomSeeder extends Seeder
 
         Disease_symptom::create([
             'disease_name'=>'Collar rot',
-            'symptom'=>'Mycelia mat with white / brown Sclerotia on collar region'
+            'symptom'=>'Mycelia mat with white or brown Sclerotia on collar region'
         ]);
 
 
@@ -101,7 +101,7 @@ class DiseaseSymptomSeeder extends Seeder
 
         Disease_symptom::create([
             'disease_name'=>'Bacterial wilt',
-            'symptom'=>'Slight wilting of single branch/ branches'
+            'symptom'=>'Slight wilting of single branch or branches'
         ]);
 
         Disease_symptom::create([
@@ -124,7 +124,7 @@ class DiseaseSymptomSeeder extends Seeder
 
         Disease_symptom::create([
             'disease_name'=>'Little leaf disease',
-            'symptom'=>'Leaves are narrow, soft, smooth and yellow'
+            'symptom'=>'Leaves are narrow and soft and smooth and yellow'
         ]);
 
         Disease_symptom::create([
@@ -140,7 +140,7 @@ class DiseaseSymptomSeeder extends Seeder
 
         Disease_symptom::create([
             'disease_name'=>'Little leaf disease',
-            'symptom'=>'Flowers remain green/ no flowering'
+            'symptom'=>'Flowers remain green or no flowering'
         ]);
 
         Disease_symptom::create([

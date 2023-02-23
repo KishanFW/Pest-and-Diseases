@@ -6,6 +6,7 @@ import { tap } from "rxjs/operators";
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { LoadingController, ModalController } from '@ionic/angular';
 import { VarietiesService } from 'src/app/services/varieties.service';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-varieties',
@@ -21,6 +22,7 @@ export class VarietiesComponent implements OnInit {
     private loadingCtrl: LoadingController,
     private modalCtrl: ModalController,
     private varietiesService: VarietiesService,
+    private modalService: ModalService
   ) { }
 
   async ngOnInit() {
@@ -40,12 +42,16 @@ export class VarietiesComponent implements OnInit {
       component: VPestsDiseasesComponent,
       componentProps: {variety},
     });
-
-      modal.present();
+    this.modalService.addModal(modal);
+    modal.present();
   }
 
-  closeModal(){
-    this.modalCtrl.dismiss();
+  async closeModal() {
+    await this.modalCtrl.dismiss();
+  }
+
+  async closeAllModals() {
+    await this.modalService.closeAllModals();
   }
 
   @ViewChild('popover') popover;

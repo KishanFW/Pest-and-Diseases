@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { PestSymptom } from '../englishpages/detect/crop-cropvar/crops/pests-diseases/pests-diseases.model';
+import { PestSymptom, Pest } from '../englishpages/detect/crop-cropvar/crops/pests-diseases/pests-diseases.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,15 @@ export class SymptomsofpestService {
     return this.http.get<PestSymptom[]>(this.apiUrl+'/pestsymptoms');
   }
 
-  getpestsymptomsofcrop(crop: string): Observable<PestSymptom[]>{
-    return this.http.get<PestSymptom[]>(this.apiUrl+'/pestsymptmsofcrop/'+crop);
+  getpestsymptomsofcrop(crop: string,catagory: string[]): Observable<PestSymptom[]>{
+    return this.http.get<PestSymptom[]>(this.apiUrl+'/pestsymptmsofcrop/'+crop+'/'+catagory);
+  }
+
+  getpestsymptomsofvariety(variety: string,catagory: string[]): Observable<PestSymptom[]>{
+    return this.http.get<PestSymptom[]>(this.apiUrl+'/pestsymptmsofvariety/'+variety+'/'+catagory);
+  }
+
+  pestsofsymptoms(symptoms: any[]){
+    return this.http.get<Pest[]>(this.apiUrl+'/pestsofsymptoms/'+symptoms);
   }
 }

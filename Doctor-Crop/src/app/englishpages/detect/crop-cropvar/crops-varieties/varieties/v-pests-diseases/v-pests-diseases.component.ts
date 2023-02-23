@@ -2,6 +2,7 @@ import { Component, Input, OnInit, ViewChild  } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Variety } from '../../variety.model';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,13 +18,18 @@ export class VPestsDiseasesComponent implements OnInit {
 
 
   constructor(
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private modalService: ModalService
   ) { }
 
   ngOnInit() {}
 
-  closeModal(){
-    this.modalCtrl.dismiss();
+  async closeModal() {
+    await this.modalCtrl.dismiss();
+  }
+
+  async closeAllModals() {
+    await this.modalService.closeAllModals();
   }
 
   @ViewChild('popover') popover;

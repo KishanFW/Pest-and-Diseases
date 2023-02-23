@@ -21,9 +21,15 @@ class DatabaseSeeder extends Seeder
             DiseaseImgPathSeeder::class,
             PestImgPathSeeder::class,
             CropsDiseaseSeeder::class,
+            SymptomSeeder::class,
             DiseaseSymptomSeeder::class,
             PestSymptomSeeder::class,
-            CropsPestSeeder::class
+            CropsPestSeeder::class,
+            SymptomCatagorySeeder::class,
+            VarietiesPestSeeder::class,
+            VarietiesDiseaseSeeder::class,
+            PestPreventionSeeder::class,
+            DiseasePreventionSeeder::class
     ]);
 
     }

@@ -17,38 +17,234 @@ class VarietySeeder extends Seeder
         Variety::create([
             'variety_name'=>'Amanda F1',
             'crop_name'=>'Brinjal',
-            'img_path'=>'assets/crops/brinjal/brinjalvarieties/amanda.jpg'
+            'img_path'=>'assets/crops/brinjal/brinjalvarieties/amanda.jpg',
+            'pest_description'=>'Resistant variety to Borer and Fruit borer',
+            'disease_description'=>'Moderately resistance to bacterial wilt'
         ]);
 
         Variety::create([
             'variety_name'=>'Anjalee-F1',
             'crop_name'=>'Brinjal',
-            'img_path'=>'assets/crops/brinjal/brinjalvarieties/anjalee.jpg'
+            'img_path'=>'assets/crops/brinjal/brinjalvarieties/anjalee.jpg',
+            'pest_description'=>'',
+            'disease_description'=>''
         ]);
 
 
         Variety::create([
             'variety_name'=>'HORDI Lenairi 1',
             'crop_name'=>'Brinjal',
-            'img_path'=>'assets/crops/brinjal/brinjalvarieties/hordi.jpg'
+            'img_path'=>'assets/crops/brinjal/brinjalvarieties/hordi.jpg',
+            'pest_description'=>'',
+            'disease_description'=>'Moderately resistance to bacterial wilt'
         ]);
 
         Variety::create([
             'variety_name'=>'Thinnaweli purple',
             'crop_name'=>'Brinjal',
-            'img_path'=>'assets/crops/brinjal/brinjalvarieties/thinnawely.png'
+            'img_path'=>'assets/crops/brinjal/brinjalvarieties/thinnawely.png',
+            'pest_description'=>'',
+            'disease_description'=>'Susceptible to bacterial wilt'
         ]);
 
         Variety::create([
             'variety_name'=>'Padagoda(BW-11)',
             'crop_name'=>'Brinjal',
-            'img_path'=>'assets/crops/brinjal/brinjalvarieties/padagoda.png'
+            'img_path'=>'assets/crops/brinjal/brinjalvarieties/padagoda.png',
+            'pest_description'=>'Lowest resistant to Borer and Fruit borer',
+            'disease_description'=>''
         ]);
 
         Variety::create([
             'variety_name'=>'SM-164',
             'crop_name'=>'Brinjal',
-            'img_path'=>'assets/crops/brinjal/brinjalvarieties/SM.png'
+            'img_path'=>'assets/crops/brinjal/brinjalvarieties/SM.png',
+            'pest_description'=>'',
+            'disease_description'=>'Moderately resistance to bacterial wilt'
+        ]);
+
+        Variety::create([
+            'variety_name'=>'Agra(Puwalu)',
+            'crop_name'=>'Banana',
+            'img_path'=>'assets/crops/Banana/Bananavaraieties/puwalu.jpg',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'Amban',
+            'crop_name'=>'Banana',
+            'img_path'=>'assets/crops/Banana/Bananavaraieties/amban.jpg',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'Anamalu',
+            'crop_name'=>'Banana',
+            'img_path'=>'assets/crops/Banana/Bananavaraieties/anamalu.jpg',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'Cavendish',
+            'crop_name'=>'Banana',
+            'img_path'=>'assets/crops/Banana/Bananavaraieties/Cavendish.jpg',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'Kandula',
+            'crop_name'=>'Banana',
+            'img_path'=>'assets/crops/Banana/Bananavaraieties/Kandula.jpg',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'Kolikuttu',
+            'crop_name'=>'Banana',
+            'img_path'=>'assets/crops/Banana/Bananavaraieties/kolikuttu.jpg',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'Nadee(Ambul kesel)',
+            'crop_name'=>'Banana',
+            'img_path'=>'assets/crops/Banana/Bananavaraieties/Ambul.jpg',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'Parakum(Sini kesel)',
+            'crop_name'=>'Banana',
+            'img_path'=>'assets/crops/Banana/Bananavaraieties/Sinikesel.jpg',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'Rathambala',
+            'crop_name'=>'Banana',
+            'img_path'=>'assets/crops/Banana/Bananavaraieties/rathambala.jpg',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'Matale Green',
+            'crop_name'=>'Bitter Gourd',
+            'img_path'=>'assets/crops/bitterground/Bittergroundvarieties/Mathale-Green.jpg',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'MC 43',
+            'crop_name'=>'Bitter Gourd',
+            'img_path'=>'assets/crops/bitterground/Bittergroundvarieties/MC-43.png',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'Neerogi',
+            'crop_name'=>'Bitter Gourd',
+            'img_path'=>'assets/crops/bitterground/Bittergroundvarieties/neerogi.jpg',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'Thinnavely white',
+            'crop_name'=>'Bitter Gourd',
+            'img_path'=>'assets/crops/bitterground/Bittergroundvarieties/thinnaweliwhite.png',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'Firewage',
+            'crop_name'=>'Carrot',
+            'img_path'=>'assets/crops/carrot/carrotvarieties/fw.jpg',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'Lanka carrot',
+            'crop_name'=>'Carrot',
+            'img_path'=>'assets/crops/carrot/carrotvarieties/lc.jpg',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'New kuroda',
+            'crop_name'=>'Carrot',
+            'img_path'=>'assets/crops/carrot/carrotvarieties/New Kuroda.png',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'Terracotta',
+            'crop_name'=>'Carrot',
+            'img_path'=>'assets/crops/carrot/carrotvarieties/TERRACOTTA.jpg',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'HORDI Mu- 01',
+            'crop_name'=>'Cassava',
+            'img_path'=>'assets/crops/cassava/cassavavarieties/HORDI-MU-1.png',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'Kirikawadi',
+            'crop_name'=>'Cassava',
+            'img_path'=>'assets/crops/cassava/cassavavarieties/kirikawadi.png',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'MU-51',
+            'crop_name'=>'Cassava',
+            'img_path'=>'assets/crops/cassava/cassavavarieties/MU-51.png',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'Shani',
+            'crop_name'=>'Cassava',
+            'img_path'=>'assets/crops/cassava/cassavavarieties/shani.png',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'Suranimala',
+            'crop_name'=>'Cassava',
+            'img_path'=>'assets/crops/cassava/cassavavarieties/suranimala.png',
+            'pest_description'=>'',
+            'disease_description'=>''
+        ]);
+
+        Variety::create([
+            'variety_name'=>'Suwarne',
+            'crop_name'=>'Cassava',
+            'img_path'=>'assets/crops/cassava/cassavavarieties/swarna.png',
+            'pest_description'=>'',
+            'disease_description'=>''
         ]);
 
 

@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { tap } from "rxjs/operators";
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { LoadingController, ModalController } from '@ionic/angular';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-crops-varieties',
@@ -20,6 +21,7 @@ export class CropsVarietiesPage implements OnInit {
     private cropsService: CropsService,
     private loadingCtrl: LoadingController,
     private modalCtrl: ModalController,
+    private modalService: ModalService
   ) { }
 
   async ngOnInit() {
@@ -52,7 +54,7 @@ export class CropsVarietiesPage implements OnInit {
       component: VarietiesComponent,
       componentProps: {crop},
     });
-
+    this.modalService.addModal(modal);
     modal.present();
   }
 

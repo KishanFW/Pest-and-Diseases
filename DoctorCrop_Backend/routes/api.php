@@ -25,5 +25,16 @@ Route::get('diseasetypes', [ApiController::class, 'diseasetypes']);
 Route::get('diseaseimgs',[ApiController::class,'diseaseimgs']);
 Route::get('diseasesymptoms',[ApiController::class,'diseasesymptoms']);
 Route::get('varietiesofcrop/{crop}',[ApiController::class,'varietiesofcrop']);
-Route::get('pestsymptmsofcrop/{crop}', [ApiController::class, 'pestsymptmsofcrop']); 
-Route::get('diseasesymptmsofcrop/{crop}', [ApiController::class, 'diseasesymptmsofcrop']);
+
+Route::get('symptomcatagories', [ApiController::class, 'symptomcatagories']);
+
+Route::get('pestsymptmsofcrop/{crop}/{catagories}', [ApiController::class, 'pestsymptmsofcrop']);
+Route::get('diseasesymptmsofcrop/{crop}/{catagories}', [ApiController::class, 'diseasesymptmsofcrop']);
+Route::get('symptomsofcrop/{crop}/{catagories}', [ApiController::class, 'symptomsofcrop']);
+
+Route::get('pestsymptmsofvariety/{variety}/{catagories}', [ApiController::class, 'pestsymptmsofvariety']);
+Route::get('diseasesymptmsofvariety/{variety}/{catagories}', [ApiController::class, 'diseasesymptmsofvariety']);
+Route::get('symptomsofvariety/{variety}/{catagories}', [ApiController::class, 'symptomsofvariety']);
+
+Route::get('pestsofsymptoms/{symptoms}', [ApiController::class, 'pestsofsymptoms']);
+Route::get('diseasesofsymptoms/{symptoms}', [ApiController::class, 'diseasesofsymptoms']);

@@ -5,6 +5,7 @@ import { tap } from "rxjs/operators";
 import { LoadingController, ModalController } from '@ionic/angular';
 import { Crop } from 'src/app/englishpages/detect/crop-cropvar/crops/crop.model';
 import { CropsService } from 'src/app/services/crops.service';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-crops',
@@ -17,7 +18,8 @@ export class CropsPage implements OnInit {
   constructor(
     private cropsService: CropsService,
     private loadingCtrl: LoadingController,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private modalService: ModalService
   ) { }
 
   async ngOnInit() {
@@ -37,8 +39,8 @@ export class CropsPage implements OnInit {
       component: PreventPestsDiseasesComponent,
       componentProps: {crop},
     });
-
-      modal.present();
+    this.modalService.addModal(modal);
+    modal.present();
   }
 
 

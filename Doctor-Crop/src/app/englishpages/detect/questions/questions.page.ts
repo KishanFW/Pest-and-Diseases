@@ -1,15 +1,20 @@
 import { VarietiesService } from 'src/app/services/varieties.service';
 import { Variety } from './../crop-cropvar/crops-varieties/variety.model';
 import { Observable } from 'rxjs';
-import { Component, OnInit, ViewChild, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Crop } from '../crop-cropvar/crops/crop.model';
 import { CropsService } from 'src/app/services/crops.service';
-import { LoadingController } from '@ionic/angular';
+import { SymptomcatagoriesService } from 'src/app/services/symptomcatagories.service';
+import { SymptomsService } from 'src/app/services/symptoms.service';
+import { VaiablesService } from 'src/app/services/vaiables.service';
+import { LoadingController, ModalController } from '@ionic/angular';
 import { tap } from 'rxjs/operators';
 import { AlertController } from '@ionic/angular';
 import { SymptomsofpestService } from 'src/app/services/symptomsofpest.service';
 import { DiseasesymptomsService } from './../../../services/diseasesymptoms.service';
-import { DiseaseSymptom, PestSymptom } from '../crop-cropvar/crops/pests-diseases/pests-diseases.model';
+import { DiseaseSymptom, PestSymptom, SymptomCatagory, Symptom } from '../crop-cropvar/crops/pests-diseases/pests-diseases.model';
+import { DetectresultsComponent } from './detectresults/detectresults.component';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-questions',
@@ -20,17 +25,15 @@ export class QuestionsPage implements OnInit {
   cropname: string = undefined;
   varietyname: string = undefined;
   pestsordiseases: string = undefined;
-  symptomslist: any[] = [];
+  symptomslist: any[] = null;
+  catagories: any[] = null;
 
   crops$: Observable<Crop[]>;
   varieties$: Observable<Variety[]>;
   pestsymptoms$: Observable<PestSymptom[]>;
   diseasesymptoms$: Observable<DiseaseSymptom[]>;
-
-  pesthidden: boolean = true;
-  diseasehidden: boolean = true;
-  pestupdownicon: String = "caret-down-outline";
-  diseaseupdownicon: String = "caret-down-outline";
+  symptoms$: Observable<Symptom[]>;
+  catagories$: Observable<SymptomCatagory[]>;
 
   constructor(
     private cropsService: CropsService,
@@ -38,7 +41,12 @@ export class QuestionsPage implements OnInit {
     private alertController: AlertController,
     private varietiesService: VarietiesService,
     private pestSymptomService: SymptomsofpestService,
-    private diseaseSymptomService: DiseasesymptomsService
+    private diseaseSymptomService: DiseasesymptomsService,
+    private symptomcatagoriesService: SymptomcatagoriesService,
+    private symptomService: SymptomsService,
+    private variableService: VaiablesService,
+    private modalCtrl: ModalController,
+    private modalService: ModalService
   ) { }
 
   async ngOnInit() {
@@ -70,30 +78,81 @@ export class QuestionsPage implements OnInit {
   }
 
   async symptom(){
-    if(this.pestsordiseases != undefined){
+    if(this.catagories.length !== 0){
       const loading = await this.loadingCtrl.create({message: 'Please Wait ...'});
       loading.present();
 
+    if(this.varietyname == undefined || this.varietyname == "not identified"){
+
       if(this.pestsordiseases == "pests"){
-        this.pestsymptoms$ = this.pestSymptomService.getpestsymptomsofcrop(this.cropname).pipe(
+        this.pestsymptoms$ = this.pestSymptomService.getpestsymptomsofcrop(this.cropname,this.catagories).pipe(
           tap((pestsymptoms)=>{
             loading.dismiss();
-            return pestsymptoms;
+            return pestsymptoms.splice(0,1);
           })
         );
+
       }
       else if(this.pestsordiseases == "diseases"){
-        this.diseasesymptoms$ = this.diseaseSymptomService.getdiseasesymptomsofcrop(this.cropname).pipe(
+        this.diseasesymptoms$ = this.diseaseSymptomService.getdiseasesymptomsofcrop(this.cropname,this.catagories).pipe(
           tap((diseasesymptoms)=>{
             loading.dismiss();
-            return diseasesymptoms;
+            return diseasesymptoms.splice(0,1);
           })
         );
       }
       else if(this.pestsordiseases == "not identified"){
-        loading.dismiss();
+        this.symptoms$ = this.symptomService.getsymptomsofcrop(this.cropname,this.catagories).pipe(
+          tap((symptoms)=>{
+            loading.dismiss();
+            return symptoms.splice(0,1);
+          })
+        );
+      }
+    }else{
+      if(this.pestsordiseases == "pests"){
+        this.pestsymptoms$ = this.pestSymptomService.getpestsymptomsofvariety(this.varietyname,this.catagories).pipe(
+          tap((pestsymptoms)=>{
+            loading.dismiss();
+            return pestsymptoms.splice(0,1);
+          })
+        );
+
+      }
+      else if(this.pestsordiseases == "diseases"){
+        this.diseasesymptoms$ = this.diseaseSymptomService.getdiseasesymptomsofvariety(this.varietyname,this.catagories).pipe(
+          tap((diseasesymptoms)=>{
+            loading.dismiss();
+            return diseasesymptoms.splice(0,1);
+          })
+        );
+      }
+      else if(this.pestsordiseases == "not identified"){
+        this.symptoms$ = this.symptomService.getsymptomsofvariety(this.varietyname,this.catagories).pipe(
+          tap((symptoms)=>{
+            loading.dismiss();
+            return symptoms.splice(0,1);
+          })
+        );
       }
     }
+
+    }
+    else{
+      this.catagories = null;
+    }
+  }
+
+  async catagory(){
+    const loading = await this.loadingCtrl.create({message: 'Please Wait ...'});
+    loading.present();
+
+    this.catagories$ = this.symptomcatagoriesService.getCatagories().pipe(
+      tap((catagories)=>{
+        loading.dismiss();
+        return catagories;
+      })
+    )
   }
 
   async alertcropselect(){
@@ -120,14 +179,43 @@ export class QuestionsPage implements OnInit {
     }
   }
 
+  async alertcatagorisselect(){
+    if(this.catagories == null){
+      const alert = await this.alertController.create({
+        header: 'Alert',
+        message: 'Choose Catagory(s)',
+        buttons: ['OK'],
+      });
+
+      await alert.present();
+    }
+  }
+
   resetall(){
-    this.cropname = null;
-    this.varietyname = null;
-    this.pestsordiseases = null;
+    this.cropname = undefined;
+    this.varietyname = undefined;
+    this.pestsordiseases = undefined;
+    this.symptomslist = null;
+    this.catagories = null
   }
 
   unselect(){
-    this.symptomslist = [];
+    this.symptomslist = null;
+    this.catagories = null;
+  }
+
+  unselectforvariety(){
+    this.pestsordiseases = undefined;
+    this.symptomslist = null;
+    this.catagories = null;
+  }
+
+  unselectforcat(){
+    this.symptomslist = null;
+  }
+
+  variables(){
+      this.variableService.changeData(this.pestsordiseases,this.symptomslist);
   }
 
   @ViewChild('popover') popover;
@@ -139,8 +227,27 @@ export class QuestionsPage implements OnInit {
     this.isOpen = true;
   }
 
-  test(){
-    console.log(this.symptomslist);
+  async openResultsModal(){
+
+    if(this.symptomslist != null){
+      const modal = await this.modalCtrl.create({
+        component: DetectresultsComponent,
+      });
+      this.modalService.addModal(modal);
+      modal.present();
+    }else{
+        this.alertdetect();
+    }
+  }
+
+  async alertdetect(){
+      const alert = await this.alertController.create({
+        header: 'Alert',
+        message: 'Choose Symptom(s)',
+        buttons: ['OK'],
+      });
+
+      await alert.present();
   }
 
 }
