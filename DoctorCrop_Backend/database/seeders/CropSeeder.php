@@ -21,9 +21,9 @@ class CropSeeder extends Seeder
         ]);
         Crop::create([
             'crop_name'=>'Bitter Gourd',
-            'translatable_crop_name'=>json_encode(['en' => 'Bitter Gourd', 'ta' => 'பாகற்காய்', 'si' => 'කරවිල',
+            'translatable_crop_name'=>json_encode(['en' => 'Bitter Gourd', 'ta' => 'பாகற்காய்', 'si' => 'කරවිල']),
             'img_path'=>'/assets/crops/bitterground.png'
-         ]);
+        ]);
         Crop::create([
             'crop_name'=>'Brinjal',
             'translatable_crop_name'=>json_encode(['en' => 'Brinjal', 'ta' => 'கத்தரிக்காய்', 'si' => 'බටු']),
