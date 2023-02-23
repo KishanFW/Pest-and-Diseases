@@ -22,23 +22,11 @@ class ApiController extends Controller
         return response()->json($crops);
     }
 
-    public function pestsofcrop($lang, $crop)
+    public function pestsofcrop($crop)
     {
-        $pestsdetails = DB::select("select pest_name, translatable_pest_name, management from pests where pest_name in
+        $pestsdetails = DB::select("select pest_name, management from pests where pest_name in
                                     (select pest_name from crops_pests where crop_name = ?)", [$crop]);
 
-        // To get the translated data
-        foreach ($pestsdetails as $pestsdetail) {
-            $translatable_pest_name = json_decode($pestsdetail->translatable_pest_name, true);
-            if (is_array($translatable_pest_name) && isset($translatable_pest_name[$lang])) {
-                $pestsdetail->translatable_pest_name = $translatable_pest_name[$lang];
-            }
-
-            $translatable_management = json_decode($pestsdetail->management, true);
-            if (is_array($translatable_management) && isset($translatable_management[$lang])) {
-                $pestsdetail->management = $translatable_management[$lang];
-            }
-        }
         return response()->json($pestsdetails);
     }
 
