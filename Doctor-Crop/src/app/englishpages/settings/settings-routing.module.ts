@@ -15,7 +15,11 @@ const routes: Routes = [
   {
     path: 'appsettings',
     loadChildren: () => import('./appsettings/appsettings.module').then( m => m.AppsettingsPageModule)
+  },  {
+    path: 'welcometour',
+    loadChildren: () => import('./welcometour/welcometour.module').then( m => m.WelcometourPageModule)
   }
+
 ];
 
 @NgModule({
