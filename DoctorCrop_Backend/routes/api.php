@@ -43,3 +43,5 @@ Route::get('diseasesofsymptoms/{symptoms}', [ApiController::class, 'diseasesofsy
 
 Route::get('preventionsofpest/{pest}', [ApiController::class, 'preventionsofpest']);
 Route::get('preventionsofdisease/{disease}', [ApiController::class, 'preventionsofdisease']);
+
+Route::post('newsymptoms', [ApiController::class, 'newsymptoms']);

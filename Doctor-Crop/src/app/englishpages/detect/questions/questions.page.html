@@ -105,6 +105,7 @@
               {{  symptoms.symptom   }}
             </ion-select-option><br>
           </div>
+            <ion-select-option value="other">Other</ion-select-option>
         </div>
 
         <div *ngIf="pestsordiseases == 'diseases'">
@@ -113,6 +114,7 @@
               {{  symptoms.symptom   }}
             </ion-select-option><br>
           </div>
+          <ion-select-option value="other">Other</ion-select-option>
         </div>
 
         <div *ngIf="pestsordiseases == 'not identified'">
@@ -121,6 +123,7 @@
               {{  symptoms.symptom   }}
             </ion-select-option><br>
           </div>
+          <ion-select-option value="other">Other</ion-select-option>
         </div>
 
       </ion-select>
@@ -128,7 +131,7 @@
     </ion-item><br><br>
 
       <ion-button class="mainbuttons" size="medium" (click)="resetall();" style="margin-left: 5%;">Reset</ion-button>
-      <ion-button class="mainbuttons" size="medium" style="margin-left: 5%;" (click)="openResultsModal(); variables()">Detect</ion-button>
+      <ion-button class="mainbuttons" size="medium" style="margin-left: 5%;" (click)="detect(); variables()">Detect</ion-button>
       <br><br>
 
 </ion-content>
