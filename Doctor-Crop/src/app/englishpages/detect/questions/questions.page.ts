@@ -15,6 +15,7 @@ import { DiseasesymptomsService } from './../../../services/diseasesymptoms.serv
 import { DiseaseSymptom, PestSymptom, SymptomCatagory, Symptom } from '../crop-cropvar/crops/pests-diseases/pests-diseases.model';
 import { DetectresultsComponent } from './detectresults/detectresults.component';
 import { ModalService } from 'src/app/services/modal.service';
+import { NewsymptomService } from 'src/app/services/newsymptom.service';
 
 @Component({
   selector: 'app-questions',
@@ -23,7 +24,7 @@ import { ModalService } from 'src/app/services/modal.service';
 })
 export class QuestionsPage implements OnInit {
   cropname: string = undefined;
-  varietyname: string = undefined;
+  varietyname: string = "undefined";
   pestsordiseases: string = undefined;
   symptomslist: any[] = null;
   catagories: any[] = null;
@@ -46,7 +47,8 @@ export class QuestionsPage implements OnInit {
     private symptomService: SymptomsService,
     private variableService: VaiablesService,
     private modalCtrl: ModalController,
-    private modalService: ModalService
+    private modalService: ModalService,
+    private newsymptomService: NewsymptomService
   ) { }
 
   async ngOnInit() {
@@ -73,7 +75,7 @@ export class QuestionsPage implements OnInit {
         })
       )
     }
-    this.varietyname = undefined;
+    this.varietyname = "undefined";
     this.pestsordiseases = undefined;
   }
 
@@ -82,7 +84,7 @@ export class QuestionsPage implements OnInit {
       const loading = await this.loadingCtrl.create({message: 'Please Wait ...'});
       loading.present();
 
-    if(this.varietyname == undefined || this.varietyname == "not identified"){
+    if(this.varietyname == "undefined" || this.varietyname == "not identified"){
 
       if(this.pestsordiseases == "pests"){
         this.pestsymptoms$ = this.pestSymptomService.getpestsymptomsofcrop(this.cropname,this.catagories).pipe(
@@ -193,7 +195,7 @@ export class QuestionsPage implements OnInit {
 
   resetall(){
     this.cropname = undefined;
-    this.varietyname = undefined;
+    this.varietyname = "undefined";
     this.pestsordiseases = undefined;
     this.symptomslist = null;
     this.catagories = null
@@ -249,5 +251,92 @@ export class QuestionsPage implements OnInit {
 
       await alert.present();
   }
+
+  async detect(){
+
+    if(this.symptomslist != null){
+    if(this.symptomslist.includes('other')){
+      this.alerttest();
+    }else{
+    const modal = await this.modalCtrl.create({
+      component: DetectresultsComponent,
+    });
+    this.modalService.addModal(modal);
+    modal.present();
+    }
+    }
+  else{
+        this.alertdetect();
+    }
+
+  }
+
+  async alerttest(){
+    const alert = await this.alertController.create({
+      header: 'New Symptom',
+      message: 'Provide us symptoms that are not in the app to further research',
+      inputs: [
+        {
+          name: 'District',
+          type: 'text',
+          placeholder: 'type your district here'
+        },
+        {
+          name: 'Symptoms',
+          type: 'text',
+          placeholder: 'type symptom(s) here'
+        },
+
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Submit',
+          handler: (data) => {
+            console.log('Submit clicked');
+            const district = data.District;
+            const symptoms = data.Symptoms;
+
+            this.addnewsymptom(district,symptoms);
+
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+
+  }
+
+  async addnewsymptom(district: string,symptoms: string){
+    const loading = await this.loadingCtrl.create({message: 'Please Wait ...'});
+    loading.present();
+
+    this.newsymptomService.newsymptoms(district,this.cropname,this.varietyname,this.pestsordiseases,symptoms).subscribe(
+      response => {
+        console.log(response);
+      }
+    );
+    this.resetall();
+    this.alertsuccess();
+    loading.dismiss();
+  }
+
+  async alertsuccess(){
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      message: 'Success',
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+}
+
 
 }

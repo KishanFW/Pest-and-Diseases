@@ -253,4 +253,16 @@ class ApiController extends Controller
 
         return response()->json($preventions);
     }
+
+    public function newsymptoms(Request $request){
+        $district = $request->input('district');
+        $crop = $request->input('crop');
+        $variety = $request->input('variety');
+        $pestordisease = $request->input('pestordisease');
+        $symptoms = $request->input('symptoms');
+
+        $result = DB::statement("insert into new_symptoms (district,crop,variety,pestordisease,symptoms)
+                                values (?,?,?,?,?)",
+                                [$district,$crop,$variety,$pestordisease,$symptoms]);
+    }
 }
