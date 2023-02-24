@@ -7,37 +7,6 @@
 
     <ion-title class="header-footer-component">{{crop.crop_name}}</ion-title>
 
-    <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
-      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
-    </ion-button>
-    <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
-      <ng-template >
-       <ion-content style="background-color: rgb(19, 1, 1);">
-
-        <ion-list style="background-color: rgb(19, 1, 1);">
-          <ion-radio-group value="english">
-            <ion-item color="rgb(19, 1, 1)">
-              <ion-label style="color: #ffffff;">English</ion-label>
-              <ion-radio slot="end" value="english" (click)="isOpen = false" routerLink="/detect/crop-cropvar/crops/pests_diseases"></ion-radio>
-            </ion-item>
-
-            <ion-item color="rgb(19, 1, 1)">
-              <ion-label style="color: #ffffff;">සිංහල</ion-label>
-              <ion-radio slot="end" value="sinhala" (click)="isOpen = false" routerLink="/sdetect/scrop-cropvar/scrops/sbrinjal"></ion-radio>
-            </ion-item>
-
-            <ion-item color="rgb(19, 1, 1)">
-              <ion-label tyle="color: #ffffff;">தமிழ்</ion-label>
-              <ion-radio slot="end" value="tamil" (click)="isOpen = false" routerLink="/tdetect/tcrop-cropvar/tcrops/tbrinjal"></ion-radio>
-            </ion-item>
-
-          </ion-radio-group>
-        </ion-list>
-
-       </ion-content>
-      </ng-template>
-    </ion-popover>
-
   </ion-toolbar>
 </ion-header>
 
