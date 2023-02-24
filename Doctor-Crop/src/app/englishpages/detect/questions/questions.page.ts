@@ -279,12 +279,12 @@ export class QuestionsPage implements OnInit {
         {
           name: 'District',
           type: 'text',
-          placeholder: 'type your district here'
+          placeholder: 'Type your District here'
         },
         {
           name: 'Symptoms',
           type: 'text',
-          placeholder: 'type symptom(s) here'
+          placeholder: 'Type symptom(s) here'
         },
 
       ],

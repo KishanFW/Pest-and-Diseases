@@ -27,7 +27,8 @@ class DiseaseImgPathSeeder extends Seeder
             'img_path'=>'assets/crops/brinjal/read/collar-rot-1.png'
         ]);
         Disease_img_path::create([
-            'disease_name'=>'Fusarium wilt'
+            'disease_name'=>'Fusarium wilt',
+            'img_path'=>'assets/crops/brinjal/read/Fusarium-wilt.png'
         ]);
         Disease_img_path::create([
             'disease_name'=>'Powdery mildew',

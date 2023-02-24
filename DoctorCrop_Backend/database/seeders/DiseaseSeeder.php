@@ -25,7 +25,8 @@ class DiseaseSeeder extends Seeder
             <li>Seed treatment (should be done just before seeding)-Thiram 80% WP  – 5g/ kg -Thiophanate-methyl  50% WP  + Thiram  30% WP –  4g/ kg -Captan 50% WP  – 6g/ kg.</li>
             <li>Soil treatment – Drench with a recommended fungicide around the base of the plant as spot application
               – Thiophanate-methyl 50% WP  + Thiram 30% WP  –  50g/50l / 10m2 – Thiram 80% WP –  70g/50l    10m2 – Captan  50% WP  –  60g/50l / 10m2</li>
-          </ul>'
+          </ul>',
+          'img_path'=>'assets/crops/brinjal/read/damping-off-1.png'
         ]);
 
         Disease::create([
@@ -40,7 +41,8 @@ class DiseaseSeeder extends Seeder
             <li>Soil treatment – Drench with a recommended fungicide around the base of the plant as spot application
               – Thiophanate-methyl 50% WP  + Thiram 30% WP  –  50g/50l / 10m2 – Thiram 80% WP –  70g/50l / 10m2 – Captan  50% WP  –  60g/50l / 10m2</li>
 
-          </ul>'
+          </ul>',
+          'img_path'=>'assets/crops/brinjal/read/collar-rot-1.png'
         ]);
 
         Disease::create([
@@ -55,7 +57,8 @@ class DiseaseSeeder extends Seeder
             <li>Soil treatment – Drench with a recommended fungicide around the base of the plant as spot application
               – Thiophanate-methyl 50% WP  + Thiram 30% WP  –  50g/50l / 10m2 – Thiram 80% WP –  70g/50l / 10m2
               – Captan  50% WP  –  60g/50l / 10m2   </li>
-          </ul>'
+          </ul>',
+          'img_path'=>'assets/crops/brinjal/read/Fusarium-wilt.png'
         ]);
 
         Disease::create([
@@ -68,7 +71,8 @@ class DiseaseSeeder extends Seeder
               <li>Apply sulfur 80% WG 50 g/10 l of water</li>
               <li>Chlorothalonil 500g/l SC- 30 ml/10 l of water</li>
               <li>Carbendazim 50% WP- 7 g/10 l of water</li>
-            </ul>'
+            </ul>',
+            'img_path'=>'assets/crops/brinjal/read/powdery-mildew.jpg'
         ]);
 
         Disease::create([
@@ -82,7 +86,8 @@ class DiseaseSeeder extends Seeder
             <li>Seed treatment (should be done just before seeding)–Thiram 80% WP  – 5g/ kg -Thiophanate-methyl  50% WP  + Thiram  30% WP –  4g/ kg -Captan 50% WP  – 6g/ kg. </li>
             <li>Foliar application of fungicides start at flowering stage in rainy season
               – Fluzinam 500g/1 SC – 10 ml/10l of water – Metiram 55% +  Pyraclostrobin 5%  WP  – 20 g/10l  of water – Cabendazim 50%  WG  – 7 g/10l   of water – Thiophanate-methyl  70% WP  –  6g/10l of water –  Chlorothalonil 500 SC  – 30ml/10l of water</li>
-           </ul>'
+           </ul>',
+           'img_path'=>'assets/crops/brinjal/read/anthracnose1.png'
         ]);
 
         Disease::create([
@@ -92,7 +97,8 @@ class DiseaseSeeder extends Seeder
             'management'=>' <ul>
             <li>Remove and destruction of infected fruits</li>
             <li>Use recommended fungicides at initial stage of disease development (Refer: Pesticide recommendation DOA, 2019 -Chlorothalonil 500g/l SC- 30 ml/10 l of water -Carbendazim 50% WP- 7 g/10 l of water – Thiophanate-methyl  70% WP  of 6g/10l  of water</li>
-            </ul>'
+            </ul>',
+            'img_path'=>'assets/crops/brinjal/read/Phomopsis-blight.png'
         ]);
 
         Disease::create([
@@ -106,7 +112,8 @@ class DiseaseSeeder extends Seeder
             <li>Use of resistant varieties </li>
             <li>Disinfect all farm implements/tools with bleach after they have been</li>
             <li>No chemical controlling method </li>
-            </ul>'
+            </ul>',
+            'img_path'=>'assets/crops/brinjal/read/bacterial-wilt1.png'
         ]);
 
         Disease::create([
@@ -116,7 +123,8 @@ class DiseaseSeeder extends Seeder
             'management'=>' <ul>
             <li>Remove and burn infected plants. </li>
             <li>Control leaf hopper with recommended insecticides to minimize disease spread </li>
-            </ul>'
+            </ul>',
+            'img_path'=>'assets/crops/brinjal/read/Little-leaf-disease.png'
         ]);
 
 

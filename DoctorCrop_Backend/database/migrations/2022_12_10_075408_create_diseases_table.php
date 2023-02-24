@@ -18,6 +18,7 @@ class CreateDiseasesTable extends Migration
             $table->string('disease_type')->nullable();
             $table->string('causal_organism');
             $table->longText('management');
+            $table->String('img_path');
             $table->timestamps();
         });
     }

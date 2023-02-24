@@ -47,7 +47,9 @@
 
     <div *ngFor="let pest of pests$|async">
       <ion-item (click)="openPestDetailsModal(pest)" style="--background: rgb(19, 1, 1);">
-        <ion-text style="color: #5cf304; font-size: 16px;">{{ pest.pest_name }}</ion-text>
+        <img src="{{pest.img_path}}">
+        <ion-text style="color: #ffffff; font-size: 16px;">{{ pest.pest_name }}</ion-text>
+        <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
      </ion-item>
     </div>
 
