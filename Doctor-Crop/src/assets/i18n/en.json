@@ -58,6 +58,8 @@
 
     "CROPS": {
       "header": "Crops",
+      "title1": "Varieties",
+      "title2": "Click on a crop to see varieties",
       "footer": "Home"
     }
 
