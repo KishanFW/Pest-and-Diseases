@@ -1,6 +1,7 @@
 export interface Pest{
   pest_name: string;
   management: string;
+  img_path: string;
 }
 
 export interface PestImg{
@@ -18,6 +19,7 @@ export interface Disease{
   disease_type: string;
   causal_organism: string;
   management: string;
+  img_path: string;
 }
 
 export interface DiseaseType{

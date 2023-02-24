@@ -26,7 +26,7 @@ class ApiController extends Controller
 
     public function pestsofcrop($crop)
     {
-        $pestsdetails = DB::select("select pest_name, management from pests where pest_name in
+        $pestsdetails = DB::select("select pest_name, management, img_path from pests where pest_name in
                                     (select pest_name from crops_pests where crop_name = ?)", [$crop]);
 
         return response()->json($pestsdetails);
@@ -43,7 +43,7 @@ class ApiController extends Controller
     }
 
     public function diseasesofcrop($crop){
-        $diseasesdetails = DB::select("select disease_name, disease_type, causal_organism, management from diseases where disease_name in
+        $diseasesdetails = DB::select("select disease_name, disease_type, causal_organism, management, img_path from diseases where disease_name in
                                     (select disease_name from crops_diseases where crop_name = ?)",[$crop]);
         return response()->json($diseasesdetails);
     }
@@ -230,14 +230,14 @@ class ApiController extends Controller
     }
 
     public function pestsofvariety($variety){
-        $pestsdetails = DB::select("select pest_name, management from pests where pest_name in
+        $pestsdetails = DB::select("select pest_name, management, img_path from pests where pest_name in
                                     (select pest_name from varieties_pests where variety_name = ?)", [$variety]);
 
         return response()->json($pestsdetails);
     }
 
     public function diseasesofvariety($variety){
-        $diseasesdetails = DB::select("select disease_name, disease_type, causal_organism, management from diseases where disease_name in
+        $diseasesdetails = DB::select("select disease_name, disease_type, causal_organism, management, img_path from diseases where disease_name in
                                     (select disease_name from varieties_diseases where variety_name = ?)",[$variety]);
         return response()->json($diseasesdetails);
     }

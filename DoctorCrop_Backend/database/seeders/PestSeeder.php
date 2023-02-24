@@ -37,7 +37,8 @@ class PestSeeder extends Seeder
                       <li>Apply recommended agrochemicals as recommended</li>
                     </ul>
                   </li>
-                </ul>'
+                </ul>',
+                'img_path'=>'assets/crops/brinjal/detect/pest/Stem-and-Fruit-borer-in-Brinjal.jfif'
           ]);
 
           Pest::create([
@@ -49,7 +50,8 @@ class PestSeeder extends Seeder
                 <li>Apply recommended agrochemicals as recommended</li>
                 <br>
                 <li>Harvest only after at least 7-10 days of applying a recommended insecticide.</li>
-              </ul>'
+              </ul>',
+              'img_path'=>'assets/crops/brinjal/detect/pest/Eggplant-caterpillar-Leaf-rolling-catepillar.jfif'
           ]);
 
           Pest::create([
@@ -59,7 +61,8 @@ class PestSeeder extends Seeder
                   <li>Good crop maintenance and in case of widespread damage, control with a recommended insecticide.</li>
                   <br>
                   <li>Apply recommended agrochemicals as recommended.</li>
-                </ul>'
+                </ul>',
+                'img_path'=>'assets/crops/brinjal/detect/pest/Tiny-Leafhopper-insect(Cicadellidae,Homoptera)on-a-leaf-in-the-garden.jpg'
           ]);
 
           Pest::create([
@@ -72,7 +75,8 @@ class PestSeeder extends Seeder
                   <li>Spray irrigation can reduce the mite population in the crop.</li>
                   <br>
                   <li>If damage spreads, control with a recommended insecticide.</li>
-                </ul>'
+                </ul>',
+            'img_path'=>'assets/crops/brinjal/detect/pest/Spidaer-mites-injury-to-eggplant.jpg'
           ]);
     }
 }

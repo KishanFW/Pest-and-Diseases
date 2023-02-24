@@ -54,7 +54,9 @@
       <div *ngFor="let disease of diseases$|async">
         <div *ngIf="diseasetype.disease_type == disease.disease_type">
           <ion-item (click)="openDiseaseDetailsModal(disease)" style="--background: rgb(19, 1, 1);">
-             <ion-text style="color: #5cf304; font-size: 16px;">{{ disease.disease_name }}</ion-text>
+            <img src="{{disease.img_path}}">
+            <ion-text style="color: #ffffff; font-size: 16px;">{{ disease.disease_name }}</ion-text>
+            <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
            </ion-item>
         </div>
       </div>

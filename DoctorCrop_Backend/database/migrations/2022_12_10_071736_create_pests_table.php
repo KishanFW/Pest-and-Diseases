@@ -17,6 +17,7 @@ class CreatePestsTable extends Migration
 
             $table->String('pest_name')->primary();
             $table->longText('management');
+            $table->String('img_path');
             $table->timestamps();
         });
     }
