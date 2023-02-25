@@ -230,16 +230,11 @@ export class QuestionsPage implements OnInit {
   }
 
   async openResultsModal(){
-
-    if(this.symptomslist != null){
       const modal = await this.modalCtrl.create({
         component: DetectresultsComponent,
       });
       this.modalService.addModal(modal);
       modal.present();
-    }else{
-        this.alertdetect();
-    }
   }
 
   async alertdetect(){
@@ -302,8 +297,11 @@ export class QuestionsPage implements OnInit {
             console.log('Submit clicked');
             const district = data.District;
             const symptoms = data.Symptoms;
-
-            this.addnewsymptom(district,symptoms);
+            if(district != "" && symptoms != ""){
+              this.addnewsymptom(district,symptoms);
+            }else{
+              this.alertemptyform();
+            }
 
           }
         }
@@ -321,22 +319,48 @@ export class QuestionsPage implements OnInit {
     this.newsymptomService.newsymptoms(district,this.cropname,this.varietyname,this.pestsordiseases,symptoms).subscribe(
       response => {
         console.log(response);
+        loading.dismiss();
       }
     );
-    this.resetall();
     this.alertsuccess();
-    loading.dismiss();
   }
 
   async alertsuccess(){
     const alert = await this.alertController.create({
       header: 'Alert',
       message: 'Success',
-      buttons: ['OK'],
+      buttons: [{
+        text : 'OK',
+        handler: () => {
+          if(this.symptomslist.length > 1){
+            this.openResultsModal();
+          }
+          else{
+            this.resetall();
+          }
+        }
+      }],
     });
 
     await alert.present();
-}
+  }
+
+  async alertemptyform(){
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      message: 'Form is not filled completely',
+      buttons: [
+        {
+          text: 'OK',
+          handler: () => {
+            this.alerttest();
+          }
+        }],
+    });
+
+    await alert.present();
+
+  }
 
 
 }
