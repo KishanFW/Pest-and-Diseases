@@ -24,7 +24,7 @@ import { NewsymptomService } from 'src/app/services/newsymptom.service';
 })
 export class QuestionsPage implements OnInit {
   cropname: string = undefined;
-  varietyname: string = "undefined";
+  varietyname: string = undefined;
   pestsordiseases: string = undefined;
   symptomslist: any[] = null;
   catagories: any[] = null;
@@ -75,7 +75,7 @@ export class QuestionsPage implements OnInit {
         })
       )
     }
-    this.varietyname = "undefined";
+    this.varietyname = undefined;
     this.pestsordiseases = undefined;
   }
 
@@ -84,7 +84,7 @@ export class QuestionsPage implements OnInit {
       const loading = await this.loadingCtrl.create({message: 'Please Wait ...'});
       loading.present();
 
-    if(this.varietyname == "undefined" || this.varietyname == "not identified"){
+    if(this.varietyname == undefined || this.varietyname == "not identified"){
 
       if(this.pestsordiseases == "pests"){
         this.pestsymptoms$ = this.pestSymptomService.getpestsymptomsofcrop(this.cropname,this.catagories).pipe(
@@ -195,7 +195,7 @@ export class QuestionsPage implements OnInit {
 
   resetall(){
     this.cropname = undefined;
-    this.varietyname = "undefined";
+    this.varietyname = undefined;
     this.pestsordiseases = undefined;
     this.symptomslist = null;
     this.catagories = null
@@ -315,6 +315,10 @@ export class QuestionsPage implements OnInit {
   async addnewsymptom(district: string,symptoms: string){
     const loading = await this.loadingCtrl.create({message: 'Please Wait ...'});
     loading.present();
+
+    if(this.varietyname == undefined){
+      this.varietyname = "not identified";
+    }
 
     this.newsymptomService.newsymptoms(district,this.cropname,this.varietyname,this.pestsordiseases,symptoms).subscribe(
       response => {
