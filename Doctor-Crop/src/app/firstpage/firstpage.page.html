@@ -1,9 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar  class="header-footer-background-color">
 
-    <ion-buttons slot="start">
-      <ion-back-button routerLink="/home" class="header-footer-component"></ion-back-button>
-    </ion-buttons>
+    <ion-button routerLink="/settings"  fill="clear" slot="start">
+      <ion-icon slot="icon-only" name="menu" class="header-footer-component"></ion-icon>
+    </ion-button>
 
     <ion-title class="header-footer-component">
       {{ 'FIRST.header' | translate }}
@@ -71,7 +71,7 @@
 <ion-footer [translucent]="true">
   <ion-toolbar  class="header-footer-background-color">
     <div id="footer" class="header-footer-component">
-      <ion-button routerLink="/home"  fill="clear">
+      <ion-button routerLink="/firstpage"  fill="clear">
         <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
       </ion-button>
       <br>{{ 'HOME.footer' | translate }}
