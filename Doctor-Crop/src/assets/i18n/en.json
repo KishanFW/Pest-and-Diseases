@@ -1,6 +1,14 @@
 {
     "HOME": {
       "header": "Pests and Diseases",
+      "title": "For a Pests & Diseases Free Home Garden",
+      "button": "Get Started",
+      "footer": "Home",
+      "welcome": "Welcome !"
+    },
+
+    "FIRST": {
+      "header": "Pests and Diseases",
       "title": "Choose Detect or Prevent to proceed with pest and diseases",
       "option1": "Detect",
       "option2": "Prevent",

@@ -1,12 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar  class="header-footer-background-color">
 
-    <ion-button routerLink="/settings"  fill="clear" slot="start">
-      <ion-icon slot="icon-only" name="menu" class="header-footer-component"></ion-icon>
-    </ion-button>
+    <ion-buttons slot="start">
+      <ion-back-button routerLink="/home" class="header-footer-component"></ion-back-button>
+    </ion-buttons>
 
     <ion-title class="header-footer-component">
-      {{ 'HOME.header' | translate }}
+      {{ 'FIRST.header' | translate }}
     </ion-title>
 
     <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
@@ -45,22 +45,26 @@
 </ion-header>
 
 
-<ion-content [fullscreen]="true">
-  <div class="bg-image"></div>
+<ion-content [fullscreen]="true" style="--background: rgb(19, 1, 1);">
 <br>
+<p style="color: white; font-size: 24px; text-align: center;">{{ 'FIRST.title' | translate }}</p>
+<br><br>
 
-<ion-text style="margin-left: 20px; color:#ffffff; font-size: 40px;"><b>{{ 'HOME.welcome' | translate }}</b></ion-text>
-<br><br><br><br><br><br>
 
-<div style="text-align: center;">
-  <ion-text style="color:#ffffff; font-size: 30px; text-align: center;">
-    {{ 'HOME.title' | translate }}
-  </ion-text><br><br>
-</div>
+<ion-item style="--background: rgb(19, 1, 1);" routerLink="/detect">
+  <ion-text style="font-size:25px; color: #ffffff;">{{ 'FIRST.option1' | translate }}</ion-text>
+  <img src="/assets/detect1.jpg" slot="start" style="width:50px;height:50px;">
+  <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
+</ion-item>
+<br><br>
 
-<div class="center">
-  <ion-button fill="solid" style="color: #ffffff; --background: #50ce07c0; opacity: 0.99;" size="medium" shape="round" routerLink="/firstpage"><b>{{ 'HOME.button' | translate }}</b></ion-button>
-</div>
+
+<ion-item style="--background: rgb(19, 1, 1);" routerLink="/prevent">
+  <img src="/assets/preventnew.png" slot="start" style="width:50px;height:50px;">
+  <ion-text style="font-size:25px; color: #ffffff;">{{ 'FIRST.option2' | translate }}</ion-text>
+  <ion-icon name="chevron-forward-outline" style="color: #5cf304;" slot="end"></ion-icon>
+</ion-item>
+
 </ion-content>
 
 
