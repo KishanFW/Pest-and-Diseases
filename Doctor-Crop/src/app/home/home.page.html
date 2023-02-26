@@ -1,49 +1,3 @@
-<ion-header [translucent]="true">
-  <ion-toolbar  class="header-footer-background-color">
-
-    <ion-button routerLink="/settings"  fill="clear" slot="start">
-      <ion-icon slot="icon-only" name="menu" class="header-footer-component"></ion-icon>
-    </ion-button>
-
-    <ion-title class="header-footer-component">
-      {{ 'HOME.header' | translate }}
-    </ion-title>
-
-    <ion-button (click)="presentPopover($event)" fill="clear" slot="end">
-      <ion-icon slot="icon-only" name="ellipsis-vertical-outline" class="header-footer-component"></ion-icon>
-    </ion-button>
-    <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false" >
-      <ng-template >
-       <ion-content style="background-color: rgb(19, 1, 1);">
-
-        <ion-list style="background-color: rgb(19, 1, 1);">
-          <ion-radio-group value="en" [(ngModel)]='language' (ionChange)='languageChange()'>
-
-            <ion-item color="rgb(19, 1, 1)">
-              <ion-label style="color: #ffffff;">English</ion-label>
-              <ion-radio slot="end" value='en' (click)="isOpen = false"></ion-radio>
-            </ion-item>
-
-            <ion-item color="rgb(19, 1, 1)">
-              <ion-label style="color: #ffffff;">සිංහල</ion-label>
-              <ion-radio slot="end" value='si' (click)="isOpen = false"></ion-radio>
-            </ion-item>
-
-            <ion-item color="rgb(19, 1, 1)">
-              <ion-label style="color: #ffffff;">தமிழ்</ion-label>
-              <ion-radio slot="end" value='ta' (click)="isOpen = false"></ion-radio>
-            </ion-item>
-
-          </ion-radio-group>
-        </ion-list>
-
-       </ion-content>
-      </ng-template>
-    </ion-popover>
-
-  </ion-toolbar>
-</ion-header>
-
 
 <ion-content [fullscreen]="true">
   <div class="bg-image"></div>
@@ -63,14 +17,3 @@
 </div>
 </ion-content>
 
-
-<ion-footer [translucent]="true">
-  <ion-toolbar  class="header-footer-background-color">
-    <div id="footer" class="header-footer-component">
-      <ion-button routerLink="/home"  fill="clear">
-        <ion-icon slot="icon-only" name="home" size="large" class="header-footer-component"></ion-icon>
-      </ion-button>
-      <br>{{ 'HOME.footer' | translate }}
-    </div>
-  </ion-toolbar>
-</ion-footer>
