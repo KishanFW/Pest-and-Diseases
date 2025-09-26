@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  frontend:
+    build: ./Doctor-Crop
+    container_name: doctorcrop-frontend
+    ports:
+      - "8081:80"
+
+  backend:
+    build: ./DoctorCrop_Backend
+    container_name: doctorcrop-backend
+    ports:
+      - "8082:8000"
+    depends_on:
+      - frontend
